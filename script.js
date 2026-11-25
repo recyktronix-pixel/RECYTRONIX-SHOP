@@ -1,4 +1,4 @@
-const products = [
+﻿const products = [
   {id:1,name:"Smartfon Pro 256 GB",category:"electronics",price:1299,image:"assets/products/smartphone.jpg"},
   {id:2,name:"Słuchawki Gaming Pro RGB",category:"audio",price:249,image:"assets/products/headphones.jpg"},
   {id:3,name:"Laptop Business 16",category:"computers",price:1899,image:"assets/products/laptop.jpg"},
@@ -91,3 +91,4 @@ document.getElementById("language").addEventListener("change",event=>{
   showToast(event.target.value==="de"?"Wersja niemiecka wymaga uzupełnienia tłumaczeń.":"Wybrano język polski.");
 });
 renderProducts();
+
