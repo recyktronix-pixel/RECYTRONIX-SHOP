@@ -100,10 +100,29 @@
 
 <footer id="contact">
   <div class="footer-brand">RECYKTRONIX <span>Business Pro</span></div>
-  <div>Kontakt: <a href="mailto:kontakt@example.com">kontakt@example.com</a></div>
+  <div>Kontakt: <a href="mailto:recyktronix@gmail.com">recyktronix@gmail.com</a></div>
+  <div>Telegram: <a href="https://t.me/ShadowAIHubBot" target="_blank">@ShadowAIHubBot</a> - zapraszamy do kontaktu!</div>
   <div>© <span id="year"></span> RECYKTRONIX. Wszelkie prawa zastrzeżone.</div>
   <div class="footer-links"><a href="#">Regulamin</a><a href="#">Polityka prywatności</a><a href="#">Dostawa i zwroty</a></div>
 </footer>
+
+<!-- AI Chat Modal -->
+<div id="aiChatModal" class="ai-chat-modal" style="display:none">
+  <div class="ai-chat-content">
+    <div class="ai-chat-header">
+      <h3>RECYKTRONIX AI</h3>
+      <button id="closeAiChat" class="ai-chat-close">×</button>
+    </div>
+    <div id="aiChatMessages" class="ai-chat-messages">
+      <div class="ai-message">Witaj! Jestem asystentem RECYKTRONIX AI. W czym mogę pomóc?</div>
+    </div>
+    <div class="ai-chat-input">
+      <input type="text" id="aiChatInput" placeholder="Napisz wiadomość...">
+      <button id="sendAiMessage">Wyślij</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="script.js"></script>
 </body>

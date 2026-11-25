@@ -362,3 +362,41 @@ if (localStorage.getItem('recyktronix-interface') === 'alt') {
 
 updateLanguage();
 renderProducts();
+
+// AI Chat Modal
+document.querySelector(".ai-card a").addEventListener("click",(e)=>{
+  e.preventDefault();
+  document.getElementById("aiChatModal").style.display="flex";
+});
+
+document.getElementById("closeAiChat").addEventListener("click",()=>{
+  document.getElementById("aiChatModal").style.display="none";
+});
+
+document.getElementById("sendAiMessage").addEventListener("click",()=>{
+  const input=document.getElementById("aiChatInput");
+  const message=input.value.trim();
+  if(!message)return;
+  
+  const messages=document.getElementById("aiChatMessages");
+  const userMsg=document.createElement("div");
+  userMsg.className="user-message";
+  userMsg.textContent=message;
+  messages.appendChild(userMsg);
+  
+  input.value="";
+  messages.scrollTop=messages.scrollHeight;
+  
+  // Simulate AI response
+  setTimeout(()=>{
+    const aiMsg=document.createElement("div");
+    aiMsg.className="ai-message";
+    aiMsg.textContent="Dziękuję za wiadomość! Wkrótce odpowiem. W pilnych sprawach proszę pisać na Telegram: @ShadowAIHubBot";
+    messages.appendChild(aiMsg);
+    messages.scrollTop=messages.scrollHeight;
+  },1000);
+});
+
+document.getElementById("aiChatInput").addEventListener("keypress",(e)=>{
+  if(e.key==="Enter")document.getElementById("sendAiMessage").click();
+});
