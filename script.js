@@ -345,5 +345,20 @@ document.getElementById("language").addEventListener("change",event=>{
   updateLanguage();
   renderProducts();
 });
+
+// Interface switcher
+document.getElementById("interfaceSwitch").addEventListener("click",()=>{
+  const current = localStorage.getItem('recyktronix-interface') || 'default';
+  const next = current === 'default' ? 'alt' : 'default';
+  localStorage.setItem('recyktronix-interface', next);
+  document.body.classList.toggle('alt-interface', next === 'alt');
+  showToast(next === 'alt' ? 'Interfejs: Alternatywny' : 'Interfejs: Domyślny');
+});
+
+// Apply saved interface
+if (localStorage.getItem('recyktronix-interface') === 'alt') {
+  document.body.classList.add('alt-interface');
+}
+
 updateLanguage();
 renderProducts();
