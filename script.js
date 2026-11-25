@@ -387,11 +387,14 @@ document.getElementById("sendAiMessage").addEventListener("click",()=>{
   input.value="";
   messages.scrollTop=messages.scrollHeight;
   
-  // Simulate AI response
+  // Redirect to Telegram with pre-filled message
+  const telegramMessage = encodeURIComponent(`[Strona WWW] ${message}`);
+  const telegramUrl = `https://t.me/ShadowAIHubBot?start=${telegramMessage}`;
+  
   setTimeout(()=>{
     const aiMsg=document.createElement("div");
     aiMsg.className="ai-message";
-    aiMsg.textContent="Dziękuję za wiadomość! Wkrótce odpowiem. W pilnych sprawach proszę pisać na Telegram: @ShadowAIHubBot";
+    aiMsg.innerHTML=`Twoja wiadomość została wysłana do Shadow AI. <a href="${telegramUrl}" target="_blank" style="color:var(--blue);text-decoration:underline">Kliknij tutaj aby kontynuować rozmowę w Telegram</a>`;
     messages.appendChild(aiMsg);
     messages.scrollTop=messages.scrollHeight;
   },1000);
