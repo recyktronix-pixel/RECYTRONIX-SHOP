@@ -225,7 +225,7 @@ const translations = {
   }
 };
 
-let currentLang = localStorage.getItem('recyktronix-lang') || 'pl';
+let currentLang = localStorage.getItem('recyktronix-lang') || 'en';
 let selectedCategory="all",searchQuery="",favorites=[],cart=[],showFavoritesOnly=false;
 const grid=document.getElementById("productGrid");
 const emptyMessage=document.getElementById("emptyMessage");
@@ -353,6 +353,104 @@ document.getElementById("interfaceSwitch").addEventListener("click",()=>{
   localStorage.setItem('recyktronix-interface', next);
   document.body.classList.toggle('alt-interface', next === 'alt');
   showToast(next === 'alt' ? 'Interfejs: Alternatywny' : 'Interfejs: Domyślny');
+});
+
+// Admin Panel
+const adminButton=document.getElementById("adminButton");
+const adminModal=document.getElementById("adminModal");
+const closeAdmin=document.getElementById("closeAdmin");
+const adminTabs=document.querySelectorAll(".admin-tab");
+const adminSections=document.querySelectorAll(".admin-section");
+
+adminButton.addEventListener("click",()=>{
+  adminModal.style.display="flex";
+  loadAdminData();
+});
+
+closeAdmin.addEventListener("click",()=>{
+  adminModal.style.display="none";
+});
+
+adminTabs.forEach(tab=>{
+  tab.addEventListener("click",()=>{
+    adminTabs.forEach(t=>t.classList.remove("active"));
+    adminSections.forEach(s=>s.classList.remove("active"));
+    tab.classList.add("active");
+    document.getElementById(`admin${tab.dataset.tab.charAt(0).toUpperCase()+tab.dataset.tab.slice(1)}`).classList.add("active");
+  });
+});
+
+function loadAdminData(){
+  // Load products
+  const productList=document.getElementById("adminProductList");
+  productList.innerHTML="";
+  products.forEach(p=>{
+    const item=document.createElement("div");
+    item.className="admin-item";
+    item.innerHTML=`
+      <div class="admin-item-info">
+        <div class="admin-item-name">${p.name}</div>
+        <div class="admin-item-details">${formatPrice(p.price)} | ${p.category}</div>
+      </div>
+      <div class="admin-item-actions">
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+      </div>`;
+    productList.appendChild(item);
+  });
+  
+  // Load categories
+  const categoryList=document.getElementById("adminCategoryList");
+  categoryList.innerHTML="";
+  const categories=[...new Set(products.map(p=>p.category))];
+  categories.forEach(cat=>{
+    const item=document.createElement("div");
+    item.className="admin-item";
+    item.innerHTML=`
+      <div class="admin-item-info">
+        <div class="admin-item-name">${cat}</div>
+      </div>
+      <div class="admin-item-actions">
+        <button class="delete-btn">Delete</button>
+      </div>`;
+    categoryList.appendChild(item);
+  });
+}
+
+document.getElementById("addProductForm").addEventListener("submit",(e)=>{
+  e.preventDefault();
+  const name=document.getElementById("prodName").value;
+  const price=parseFloat(document.getElementById("prodPrice").value);
+  const category=document.getElementById("prodCategory").value;
+  const desc=document.getElementById("prodDesc").value;
+  const image=document.getElementById("prodImage").value;
+  
+  const newProduct={
+    id:Date.now(),
+    name,
+    price,
+    category,
+    description:desc,
+    image:image||""
+  };
+  
+  products.push(newProduct);
+  renderProducts();
+  loadAdminData();
+  e.target.reset();
+  showToast("Product added successfully");
+});
+
+document.getElementById("addCategoryForm").addEventListener("submit",(e)=>{
+  e.preventDefault();
+  const name=document.getElementById("catName").value;
+  showToast(`Category "${name}" added (demo)`);
+  e.target.reset();
+});
+
+document.getElementById("settingsForm").addEventListener("submit",(e)=>{
+  e.preventDefault();
+  showToast("Settings saved (demo)");
 });
 
 // Apply saved interface

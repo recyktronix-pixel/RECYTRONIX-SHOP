@@ -24,6 +24,7 @@
   <button class="header-icon" title="Konto" aria-label="Konto">♙</button>
   <button class="header-icon" id="favoritesButton" title="Ulubione" aria-label="Ulubione">♡ <span id="favoritesCount">0</span></button>
   <button class="header-icon" id="cartButton" title="Koszyk" aria-label="Koszyk">🛒 <span id="cartCount">0</span></button>
+  <button class="header-icon" id="adminButton" title="Administrator" aria-label="Administrator">⚙</button>
   <button class="header-icon" id="interfaceSwitch" title="Zmień interfejs" aria-label="Zmień interfejs">⇄</button>
 </header>
 
@@ -44,7 +45,6 @@
     <div class="hero-visual" aria-hidden="true">
       <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
       <div class="hero-symbol">R</div><div class="hero-caption">PREMIUM TECHNOLOGY STORE</div>
-      <div class="hero-grafika"><img src="grafika.png" alt="RECYKTRONIX" onerror="this.style.display='none'"></div>
     </div>
   </section>
 
@@ -114,11 +114,73 @@
       <button id="closeAiChat" class="ai-chat-close">×</button>
     </div>
     <div id="aiChatMessages" class="ai-chat-messages">
-      <div class="ai-message">Witaj! Jestem asystentem RECYKTRONIX AI. W czym mogę pomóc?</div>
+      <div class="ai-message">Welcome! I am RECYKTRONIX AI assistant. How can I help you?</div>
     </div>
     <div class="ai-chat-input">
-      <input type="text" id="aiChatInput" placeholder="Napisz wiadomość...">
-      <button id="sendAiMessage">Wyślij</button>
+      <input type="text" id="aiChatInput" placeholder="Type a message...">
+      <button id="sendAiMessage">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- Admin Panel Modal -->
+<div id="adminModal" class="admin-modal" style="display:none">
+  <div class="admin-content">
+    <div class="admin-header">
+      <h3>Administrator Panel</h3>
+      <button id="closeAdmin" class="admin-close">×</button>
+    </div>
+    <div class="admin-tabs">
+      <button class="admin-tab active" data-tab="products">Products</button>
+      <button class="admin-tab" data-tab="categories">Categories</button>
+      <button class="admin-tab" data-tab="users">Users</button>
+      <button class="admin-tab" data-tab="settings">Settings</button>
+    </div>
+    <div class="admin-body">
+      <div id="adminProducts" class="admin-section active">
+        <h4>Add New Product</h4>
+        <form id="addProductForm">
+          <input type="text" id="prodName" placeholder="Product name" required>
+          <input type="number" id="prodPrice" placeholder="Price (EUR)" required>
+          <select id="prodCategory">
+            <option value="electronics">Electronics</option>
+            <option value="computers">Computers & IT</option>
+            <option value="audio">Audio & Video</option>
+            <option value="accessories">Accessories</option>
+            <option value="home">Home & Office</option>
+            <option value="tools">Tools</option>
+            <option value="other">Other</option>
+          </select>
+          <textarea id="prodDesc" placeholder="Description" rows="3"></textarea>
+          <input type="url" id="prodImage" placeholder="Image URL">
+          <button type="submit">Add Product</button>
+        </form>
+        <h4>Existing Products</h4>
+        <div id="adminProductList"></div>
+      </div>
+      <div id="adminCategories" class="admin-section">
+        <h4>Add Category</h4>
+        <form id="addCategoryForm">
+          <input type="text" id="catName" placeholder="Category name" required>
+          <button type="submit">Add Category</button>
+        </form>
+        <h4>Categories</h4>
+        <div id="adminCategoryList"></div>
+      </div>
+      <div id="adminUsers" class="admin-section">
+        <h4>User Management</h4>
+        <div id="adminUserList"></div>
+      </div>
+      <div id="adminSettings" class="admin-section">
+        <h4>Site Settings</h4>
+        <form id="settingsForm">
+          <input type="text" id="siteName" placeholder="Site name">
+          <input type="email" id="siteEmail" placeholder="Contact email">
+          <input type="tel" id="sitePhone" placeholder="Phone">
+          <textarea id="siteDesc" placeholder="Site description" rows="3"></textarea>
+          <button type="submit">Save Settings</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>
