@@ -1,14 +1,108 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/RECYTRONIX-SHOP/logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RECYTRONIX - AI Solutions & Services</title>
-    <script type="module" crossorigin src="/RECYTRONIX-SHOP/assets/index-CTufDmXR.js"></script>
-    <link rel="stylesheet" crossorigin href="/RECYTRONIX-SHOP/assets/index-_zVYiDCP.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050a12">
+  <meta name="description" content="RECYKTRONIX Business Pro – sklep technologiczny.">
+  <title>RECYKTRONIX | e-Shop Business Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a href="#" class="brand">
+    <span class="brand-mark">R</span>
+    <span><strong>RECYKTRONIX</strong><small>e-Shop <b>Business Pro</b></small></span>
+  </a>
+  <div class="search">
+    <input id="searchInput" type="search" placeholder="Szukaj produktów, kategorii, modelu..." aria-label="Szukaj produktów">
+    <button id="searchButton" aria-label="Szukaj">⌕</button>
+  </div>
+  <select id="language" aria-label="Język">
+    <option value="pl">PL</option><option value="de">DE</option>
+  </select>
+  <button class="header-icon" title="Konto" aria-label="Konto">♙</button>
+  <button class="header-icon" id="favoritesButton" title="Ulubione" aria-label="Ulubione">♡ <span id="favoritesCount">0</span></button>
+  <button class="header-icon" id="cartButton" title="Koszyk" aria-label="Koszyk">🛒 <span id="cartCount">0</span></button>
+</header>
+
+<nav class="navigation" aria-label="Główna nawigacja">
+  <a class="active" href="#">Start</a><a href="#products">Produkty</a>
+  <a href="#promotions">Promocje</a><a href="#products">Nowości</a>
+  <a href="#ai">RECYKTRONIX AI</a><a href="#help">Pomoc</a><a href="#contact">Kontakt</a>
+</nav>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">TECHNOLOGY • QUALITY • TRUST</div>
+      <h1>RECYKTRONIX</h1><h2>e-Shop <span>Business Pro</span></h2>
+      <p>Nowoczesna technologia. Sprawdzony sprzęt. Profesjonalna obsługa.</p>
+      <a href="#products" class="primary-button">SPRAWDŹ OFERTĘ →</a>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      <div class="hero-symbol">R</div><div class="hero-caption">PREMIUM TECHNOLOGY STORE</div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div>🚚 <span>Szybka wysyłka</span></div>
+    <div>🛡 <span>Bezpieczne zakupy</span></div>
+    <div>◇ <span>Sprawdzony asortyment</span></div>
+    <div>↻ <span>Obsługa zwrotów</span></div>
+    <div>◎ <span>Pomoc PL / DE</span></div>
+  </section>
+
+  <section class="shop-layout">
+    <aside class="sidebar">
+      <h3>KATEGORIE</h3>
+      <button class="category active" data-category="all">Wszystkie produkty</button>
+      <button class="category" data-category="electronics">Elektronika</button>
+      <button class="category" data-category="computers">Komputery i IT</button>
+      <button class="category" data-category="audio">Audio i Video</button>
+      <button class="category" data-category="accessories">Akcesoria</button>
+      <button class="category" data-category="home">Dom i biuro</button>
+      <button class="category" data-category="tools">Narzędzia</button>
+      <button class="category" data-category="other">Pozostałe</button>
+      <div class="ai-card" id="ai">
+        <div class="ai-icon">AI</div><h3>RECYKTRONIX AI</h3>
+        <p>Twój asystent zakupowy. Porady, dobór sprzętu i pomoc technologiczna.</p>
+        <a href="#contact" class="ai-button">Otwórz AI →</a>
+      </div>
+    </aside>
+
+    <section class="catalog" id="products">
+      <div class="section-heading">
+        <div><span class="eyebrow">NASZA OFERTA</span><h2>Wybrane produkty</h2></div>
+        <select id="sortProducts" aria-label="Sortowanie">
+          <option value="default">Polecane</option><option value="priceAsc">Cena rosnąco</option>
+          <option value="priceDesc">Cena malejąco</option><option value="name">Nazwa A–Z</option>
+        </select>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <p id="emptyMessage" class="empty-message" hidden>Nie znaleziono produktów.</p>
+    </section>
+  </section>
+
+  <section class="business-strip" id="promotions">
+    <div><span class="strip-logo">R</span><strong>RECYKTRONIX</strong><small>BUSINESS PRO</small></div>
+    <div>✦ Jakość biznesowa</div><div>⚙ Profesjonalna obsługa</div><div>◇ Wyselekcjonowany asortyment</div>
+  </section>
+
+  <section class="info-section" id="help">
+    <h2>RECYKTRONIX – technologia w jednym miejscu</h2>
+    <p>Zapoznaj się z naszą ofertą i skontaktuj się z nami, jeśli potrzebujesz pomocy w wyborze produktu.</p>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="footer-brand">RECYKTRONIX <span>Business Pro</span></div>
+  <div>Kontakt: <a href="mailto:kontakt@example.com">kontakt@example.com</a></div>
+  <div>© <span id="year"></span> RECYKTRONIX. Wszelkie prawa zastrzeżone.</div>
+  <div class="footer-links"><a href="#">Regulamin</a><a href="#">Polityka prywatności</a><a href="#">Dostawa i zwroty</a></div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
 </html>
