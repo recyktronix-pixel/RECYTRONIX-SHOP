@@ -363,6 +363,7 @@ function updateLanguage(){
   document.querySelector('.footer-links a[href="legal/privacy-policy.html"]').textContent=t('navPrivacy');
   document.querySelector('.footer-links a[href="legal/returns-and-complaints.html"]').textContent=t('navShipping');
   document.querySelectorAll('[data-i18n]').forEach(el=>{el.textContent=t(el.dataset.i18n);});
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{el.placeholder=t(el.dataset.i18nPh);});
   renderProducts();
   localStorage.setItem('recyktronix-lang',currentLang);
 }

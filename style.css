@@ -171,8 +171,8 @@ footer{background:#080f19;border-top:1px solid var(--border);padding:28px 4%;dis
 .cond-tab.active{background:linear-gradient(135deg,var(--blue2),var(--blue));color:#04121f;border-color:transparent;font-weight:bold}
 
 /* Copy buttons */
-.copy-btn{display:inline-block;margin-top:8px;padding:7px 16px;border-radius:8px;border:none;background:linear-gradient(135deg,var(--blue2),var(--blue));color:#04121f;font-size:.8rem;font-weight:bold;cursor:pointer;transition:.2s;box-shadow:0 2px 10px rgba(0,200,255,.25)}
-.copy-btn:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.copy-btn{display:inline-block;margin-top:8px;padding:8px 18px;border-radius:8px;border:none;background:var(--blue);color:#fff;font-size:.82rem;font-weight:bold;cursor:pointer;transition:.2s;box-shadow:0 0 12px rgba(0,200,255,.45)}
+.copy-btn:hover{background:var(--blue2);box-shadow:0 0 18px rgba(0,200,255,.7);transform:translateY(-1px)}
 
 /* Newsletter */
 .newsletter-form{display:flex;gap:10px;justify-content:center;max-width:480px;margin:18px auto 0;flex-wrap:wrap}
