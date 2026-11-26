@@ -1,10 +1,10 @@
 ﻿const DEFAULT_PRODUCTS = [
-  {id:1,name:"Smartfon Pro 256 GB",category:"electronics",price:1299,image:"assets/products/smartphone.jpg",description:"Flagowy smartfon z aparatem 108MP",stock:5,condition:"new"},
-  {id:2,name:"Słuchawki Gaming Pro RGB",category:"audio",price:249,image:"assets/products/headphones.jpg",description:"Słuchawki bezprzewodowe z RGB",stock:12,condition:"new"},
-  {id:3,name:"Laptop Business 16",category:"computers",price:1899,image:"assets/products/laptop.jpg",description:"Laptop do pracy i biznesu",stock:3,condition:"new"},
-  {id:4,name:"Kamera 4K Ultra HD",category:"electronics",price:299,image:"assets/products/camera.jpg",description:"Kamera do vlogów i pracy",stock:8,condition:"new"},
-  {id:5,name:"Dron Pro 4K GPS",category:"electronics",price:599,image:"assets/products/drone.jpg",description:"Dron z GPS i kamerą 4K",stock:4,condition:"new"},
-  {id:6,name:"Akcesoria komputerowe",category:"accessories",price:199,image:"",description:"Zestaw akcesoriów komputerowych",stock:20,condition:"new"}
+  {id:1,name:"Smartfon Pro 256 GB",category:"electronics",price:1299,image:"assets/products/smartphone.jpg",description:"Nowoczesny smartfon z pamięcią 256 GB - przestrzeń na zdjęcia, aplikacje, filmy i dokumenty. Praktyczne urządzenie do komunikacji, pracy, rozrywki i codziennego użytkowania.",stock:5,condition:"new"},
+  {id:2,name:"Słuchawki Gaming Pro RGB",category:"audio",price:249,image:"assets/products/headphones.jpg",description:"Słuchawki gamingowe RGB łączące nowoczesny wygląd z funkcjonalnością. Efektowne podświetlenie i konstrukcja gamingowa do gier, rozmów internetowych i multimediów.",stock:12,condition:"new"},
+  {id:3,name:"Laptop Business 16",category:"computers",price:1899,image:"assets/products/laptop.jpg",description:"Laptop z ekranem 16 cali - wygodna przestrzeń do pracy z dokumentami, przeglądania internetu i multimediów. Mobilny, do domu, biura i podróży.",stock:3,condition:"new"},
+  {id:4,name:"Kamera 4K Ultra HD",category:"electronics",price:299,image:"assets/products/camera.jpg",description:"Kamera 4K do nagrywania materiałów wideo w wysokiej rozdzielczości. Do filmów, dokumentowania wydarzeń i codziennych chwil.",stock:8,condition:"new"},
+  {id:5,name:"Dron Pro 4K GPS",category:"electronics",price:599,image:"assets/products/drone.jpg",description:"Dron 4K GPS z kamerą i lokalizacją satelitarną. Do fotografii z powietrza, filmów krajobrazowych i projektów kreatywnych.",stock:4,condition:"new"},
+  {id:6,name:"Zestaw akcesoriów technologicznych",category:"accessories",price:199,image:"",description:"Praktyczny zestaw akcesoriów do codziennego wyposażenia elektronicznego. Uzupełnienie stanowiska komputerowego do pracy, nauki i rozrywki.",stock:20,condition:"new"}
 ];
 
 const DEFAULT_CATEGORIES = [
@@ -23,12 +23,12 @@ function loadJSON(key, fallback){
 }
 function saveJSON(key, val){ localStorage.setItem(key, JSON.stringify(val)); }
 
-let products = loadJSON('recyktronix-products', null) || DEFAULT_PRODUCTS.slice();
+let products = loadJSON('recyktronix-products-v2', null) || DEFAULT_PRODUCTS.slice();
 let categories = loadJSON('recyktronix-categories', null) || DEFAULT_CATEGORIES.slice();
-if (!localStorage.getItem('recyktronix-products')) saveJSON('recyktronix-products', products);
+if (!localStorage.getItem('recyktronix-products-v2')) saveJSON('recyktronix-products-v2', products);
 if (!localStorage.getItem('recyktronix-categories')) saveJSON('recyktronix-categories', categories);
 
-function saveProducts(){ saveJSON('recyktronix-products', products); }
+function saveProducts(){ saveJSON('recyktronix-products-v2', products); }
 function saveCategories(){ saveJSON('recyktronix-categories', categories); }
 
 const translations = {
@@ -293,7 +293,8 @@ function renderProducts(){
         <button class="favorite ${favorites.includes(product.id)?"selected":""}" data-favorite="${product.id}" aria-label="${t('favorites')}">${favorites.includes(product.id)?"♥":"♡"}</button>
       </div>
       <div class="product-info"><h3>${product.name}</h3>
-        <p class="product-category">${product.category}</p>
+        <p class="product-category">${categoryLabel(categories.find(c=>c.id===product.category)||{id:product.category,name:product.category})}</p>
+        ${product.description?`<p class="product-desc">${product.description}</p>`:""}
         <div class="product-bottom"><span class="product-price">${formatPrice(product.price)}</span>
           <div style="display:flex;gap:5px">
             <button class="add-cart" data-cart="${product.id}" aria-label="${t('cart')}">🛒</button>

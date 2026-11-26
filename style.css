@@ -153,6 +153,7 @@ footer{background:#080f19;border-top:1px solid var(--border);padding:28px 4%;dis
 
 
 /* Admin form rows */
+.product-desc{font-size:.78rem;color:var(--muted);line-height:1.4;margin:.3rem 0 .5rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .form-row{display:flex;gap:.75rem}
 .form-row>*{flex:1}
 .admin-hint{color:var(--muted);font-size:.85rem;padding:.5rem 0}
