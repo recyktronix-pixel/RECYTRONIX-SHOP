@@ -250,7 +250,7 @@ const translations = {
 };
 
 let currentLang = localStorage.getItem('recyktronix-lang') || 'en';
-let selectedCategory="all",searchQuery="",favorites=[],cart=[],showFavoritesOnly=false;
+let selectedCategory="all",conditionFilter="all",searchQuery="",favorites=[],cart=[],showFavoritesOnly=false;
 const grid=document.getElementById("productGrid");
 const emptyMessage=document.getElementById("emptyMessage");
 const toast=document.getElementById("toast");
@@ -276,7 +276,8 @@ function renderProducts(){
     const categoryMatch=selectedCategory==="all"||product.category===selectedCategory;
     const searchMatch=product.name.toLowerCase().includes(searchQuery.toLowerCase());
     const favoritesMatch=!showFavoritesOnly||favorites.includes(product.id);
-    return categoryMatch&&searchMatch&&favoritesMatch;
+    const conditionMatch=conditionFilter==="all"||(product.condition||"new")===conditionFilter;
+    return categoryMatch&&searchMatch&&favoritesMatch&&conditionMatch;
   });
   const sort=document.getElementById("sortProducts").value;
   if(sort==="priceAsc")filtered.sort((a,b)=>a.price-b.price);
@@ -293,7 +294,7 @@ function renderProducts(){
         <button class="favorite ${favorites.includes(product.id)?"selected":""}" data-favorite="${product.id}" aria-label="${t('favorites')}">${favorites.includes(product.id)?"♥":"♡"}</button>
       </div>
       <div class="product-info"><h3>${product.name}</h3>
-        <p class="product-category">${categoryLabel(categories.find(c=>c.id===product.category)||{id:product.category,name:product.category})}</p>
+        <p class="product-category">${categoryLabel(categories.find(c=>c.id===product.category)||{id:product.category,name:product.category})}${product.condition==="used"?' · <span class="cond-badge used">używany</span>':''}</p>
         ${product.description?`<p class="product-desc">${product.description}</p>`:""}
         <div class="product-bottom"><span class="product-price">${formatPrice(product.price)}</span>
           <div style="display:flex;gap:5px">
@@ -710,6 +711,16 @@ document.getElementById("sendAiMessage").addEventListener("click",()=>{
 
 document.getElementById("aiChatInput").addEventListener("keypress",(e)=>{
   if(e.key==="Enter")document.getElementById("sendAiMessage").click();
+});
+
+// --- Condition tabs (Nowe / Używane) ---
+document.querySelectorAll("#conditionTabs .cond-tab").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll("#conditionTabs .cond-tab").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    conditionFilter=btn.dataset.cond;
+    renderProducts();
+  });
 });
 
 // --- Newsletter ---

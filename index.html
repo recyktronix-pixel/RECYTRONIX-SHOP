@@ -49,11 +49,9 @@
   </section>
 
   <section class="benefits">
-    <div>🚚 <span>Szybka wysyłka</span></div>
-    <div>🛡 <span>Bezpieczne zakupy</span></div>
-    <div>◇ <span>Sprawdzony asortyment</span></div>
-    <div>↻ <span>Obsługa zwrotów</span></div>
+    <div>🛡 <span>Bezpieczne płatności</span></div>
     <div>◎ <span>Pomoc PL / DE</span></div>
+    <div>✦ <span>Wsparcie AI Shadow</span></div>
   </section>
 
   <section class="shop-layout">
@@ -74,6 +72,11 @@
           <option value="default">Polecane</option><option value="priceAsc">Cena rosnąco</option>
           <option value="priceDesc">Cena malejąco</option><option value="name">Nazwa A–Z</option>
         </select>
+      </div>
+      <div class="condition-tabs" id="conditionTabs">
+        <button class="cond-tab active" data-cond="all">Wszystkie</button>
+        <button class="cond-tab" data-cond="new">Nowe</button>
+        <button class="cond-tab" data-cond="used">Używane / Refurbished</button>
       </div>
       <div class="product-grid" id="productGrid"></div>
       <p id="emptyMessage" class="empty-message" hidden>Nie znaleziono produktów.</p>
