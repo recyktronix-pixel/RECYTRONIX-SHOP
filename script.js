@@ -52,7 +52,7 @@ const translations = {
     priceAsc: "Cena rosnąco",
     priceDesc: "Cena malejąco",
     nameAZ: "Nazwa A–Z",
-    noProducts: "Nie znaleziono produktów.", condAll: "Wszystkie", navAbout: "O nas", navTerms: "Regulamin", navPrivacy: "Polityka prywatności", navShipping: "Dostawa i zwroty", navApk: "APK i boty", payTitle: "Metody płatności", payPalDesc: "Szybka i bezpieczna płatność", payBankTitle: "Przelew bankowy", payBankDesc: "Dostępny przelew SEPA", payBlikDesc: "Szybka płatność mobilna", payCryptoDesc: "Akceptujemy USDT TRON", payBtn: "Zapłać przez PayPal", condNew: "Nowe", condUsed: "Używane", badgeUsed: "używany",
+    noProducts: "Nie znaleziono produktów.", condAll: "Wszystkie", navAbout: "O nas", navTerms: "Regulamin", navPrivacy: "Polityka prywatności", navShipping: "Dostawa i zwroty", navApk: "APK i boty", payTitle: "Metody płatności", payPalDesc: "Szybka i bezpieczna płatność", payBankTitle: "Przelew bankowy", payBankDesc: "Dostępny przelew SEPA", payBlikDesc: "Szybka płatność mobilna", payCryptoDesc: "Akceptujemy USDT TRON", payBtn: "Zapłać przez PayPal", condNew: "Nowe", condUsed: "Używane", badgeUsed: "używany", payViaTelegram: "📩 Dane płatności w Telegramie",
     benefits1: "Bezpieczne płatności",
     benefits2: "Pomoc PL / DE",
     benefits3: "Wsparcie AI Shadow",
@@ -95,7 +95,7 @@ const translations = {
     priceAsc: "Preis aufsteigend",
     priceDesc: "Preis absteigend",
     nameAZ: "Name A–Z",
-    noProducts: "Keine Produkte gefunden.", condAll: "Alle", navAbout: "Über uns", navTerms: "AGB", navPrivacy: "Datenschutzerklärung", navShipping: "Versand & Rückgabe", navApk: "APK & Bots", payTitle: "Zahlungsmethoden", payPalDesc: "Schnelle und sichere Zahlung", payBankTitle: "Banküberweisung", payBankDesc: "SEPA-Überweisung verfügbar", payBlikDesc: "Schnelle mobile Zahlung", payCryptoDesc: "USDT TRON wird akzeptiert", payBtn: "Mit PayPal zahlen", condNew: "Neu", condUsed: "Gebraucht", badgeUsed: "gebraucht",
+    noProducts: "Keine Produkte gefunden.", condAll: "Alle", navAbout: "Über uns", navTerms: "AGB", navPrivacy: "Datenschutzerklärung", navShipping: "Versand & Rückgabe", navApk: "APK & Bots", payTitle: "Zahlungsmethoden", payPalDesc: "Schnelle und sichere Zahlung", payBankTitle: "Banküberweisung", payBankDesc: "SEPA-Überweisung verfügbar", payBlikDesc: "Schnelle mobile Zahlung", payCryptoDesc: "USDT TRON wird akzeptiert", payBtn: "Mit PayPal zahlen", condNew: "Neu", condUsed: "Gebraucht", badgeUsed: "gebraucht", payViaTelegram: "📩 Zahlungsdaten per Telegram",
     benefits1: "Sichere Zahlungen",
     benefits2: "Hilfe PL / DE",
     benefits3: "AI-Shadow-Support",
@@ -138,7 +138,7 @@ const translations = {
     priceAsc: "Price ascending",
     priceDesc: "Price descending",
     nameAZ: "Name A–Z",
-    noProducts: "No products found.", condAll: "All", navAbout: "About us", navTerms: "Terms", navPrivacy: "Privacy Policy", navShipping: "Shipping & Returns", navApk: "APK & Bots", payTitle: "Payment Methods", payPalDesc: "Fast and secure payment", payBankTitle: "Bank Transfer", payBankDesc: "SEPA transfer available", payBlikDesc: "Quick mobile payment", payCryptoDesc: "USDT TRON accepted", payBtn: "Pay with PayPal", condNew: "New", condUsed: "Used", badgeUsed: "used",
+    noProducts: "No products found.", condAll: "All", navAbout: "About us", navTerms: "Terms", navPrivacy: "Privacy Policy", navShipping: "Shipping & Returns", navApk: "APK & Bots", payTitle: "Payment Methods", payPalDesc: "Fast and secure payment", payBankTitle: "Bank Transfer", payBankDesc: "SEPA transfer available", payBlikDesc: "Quick mobile payment", payCryptoDesc: "USDT TRON accepted", payBtn: "Pay with PayPal", condNew: "New", condUsed: "Used", badgeUsed: "used", payViaTelegram: "📩 Get payment details on Telegram",
     benefits1: "Secure payments",
     benefits2: "Help PL / DE",
     benefits3: "AI Shadow support",
@@ -181,7 +181,7 @@ const translations = {
     priceAsc: "Prijs oplopend",
     priceDesc: "Prijs aflopend",
     nameAZ: "Naam A–Z",
-    noProducts: "Geen producten gevonden.", condAll: "Alle", condNew: "Nieuw", navAbout: "Over ons", navTerms: "Voorwaarden", navPrivacy: "Privacybeleid", navShipping: "Verzending & Retouren", navApk: "APK & Bots", payTitle: "Betaalmethoden", payPalDesc: "Snelle en veilige betaling", payBankTitle: "Bankoverschrijving", payBankDesc: "SEPA-overboeking beschikbaar", payBlikDesc: "Snelle mobiele betaling", payCryptoDesc: "USDT TRON geaccepteerd", payBtn: "Betalen met PayPal", condUsed: "Gebruikt", badgeUsed: "gebruikt",
+    noProducts: "Geen producten gevonden.", condAll: "Alle", condNew: "Nieuw", navAbout: "Over ons", navTerms: "Voorwaarden", navPrivacy: "Privacybeleid", navShipping: "Verzending & Retouren", navApk: "APK & Bots", payTitle: "Betaalmethoden", payPalDesc: "Snelle en veilige betaling", payBankTitle: "Bankoverschrijving", payBankDesc: "SEPA-overboeking beschikbaar", payBlikDesc: "Snelle mobiele betaling", payCryptoDesc: "USDT TRON geaccepteerd", payBtn: "Betalen met PayPal", condUsed: "Gebruikt", badgeUsed: "gebruikt", payViaTelegram: "📩 Betaalgegevens via Telegram",
     benefits1: "Veilige betalingen",
     benefits2: "Hulp PL / DE",
     benefits3: "AI Shadow-ondersteuning",
@@ -224,7 +224,7 @@ const translations = {
     priceAsc: "Цена по возрастанию",
     priceDesc: "Цена по убыванию",
     nameAZ: "Название А–Я",
-    noProducts: "Товары не найдены.", condAll: "Все", navAbout: "О нас", navTerms: "Условия", navPrivacy: "Политика конфиденциальности", navShipping: "Доставка и возврат", navApk: "APK и боты", payTitle: "Способы оплаты", payPalDesc: "Быстрый и безопасный платёж", payBankTitle: "Банковский перевод", payBankDesc: "Доступен перевод SEPA", payBlikDesc: "Быстрая мобильная оплата", payCryptoDesc: "Принимаем USDT TRON", payBtn: "Оплатить через PayPal", condNew: "Новые", condUsed: "Б/у", badgeUsed: "б/у",
+    noProducts: "Товары не найдены.", condAll: "Все", navAbout: "О нас", navTerms: "Условия", navPrivacy: "Политика конфиденциальности", navShipping: "Доставка и возврат", navApk: "APK и боты", payTitle: "Способы оплаты", payPalDesc: "Быстрый и безопасный платёж", payBankTitle: "Банковский перевод", payBankDesc: "Доступен перевод SEPA", payBlikDesc: "Быстрая мобильная оплата", payCryptoDesc: "Принимаем USDT TRON", payBtn: "Оплатить через PayPal", condNew: "Новые", condUsed: "Б/у", badgeUsed: "б/у", payViaTelegram: "📩 Данные для оплаты в Telegram",
     benefits1: "Безопасные платежи",
     benefits2: "Помощь PL / DE",
     benefits3: "Поддержка AI Shadow",
@@ -471,45 +471,6 @@ document.getElementById("checkoutBtn").addEventListener("click",openPaymentQR);
 document.getElementById("closePay").addEventListener("click",()=>{payModal.style.display="none";});
 document.getElementById("payDoneBtn").addEventListener("click",()=>{payModal.style.display="none";});
 payModal.addEventListener("click",(e)=>{if(e.target===payModal)payModal.style.display="none";});
-
-// --- QR per metoda płatności (PayPal / SEPA / Crypto) ---
-const PAYQR={
-  paypal:{
-    text:"https://paypal.me/RECYKTRONIX",
-    title:"PayPal",
-    detail:"paypal.me/RECYKTRONIX",
-    info:"Zeskanuj telefonem — otworzy się <strong>PayPal</strong> z gotową stroną płatności na Twoje konto."
-  },
-  bank:{
-    build:()=>["BCD","002","1","SCT","LT813250011871373390","RECYKTRONIX","","EUR","Platnosc RECYKTRONIX",""].join("\n"),
-    title:"Przelew bankowy SEPA",
-    detail:"SEPA Credit Transfer — IBAN LT81",
-    info:"Zeskanuj <strong>aplikacją bankową</strong> (Przelew na telefon / SEPA-QR) — odbiorca i tytuł wypełnią się same. <strong>Kwotę wpisz ręcznie.</strong>"
-  },
-  crypto:{
-    text:"THXkPP2g44fvJJw5TXyRqdPm78fBoH9wG5",
-    title:"Crypto — USDT TRC20",
-    detail:"TRON / USDT",
-    info:"Zeskanuj <strong>portfelem krypto</strong> (TrustWallet, TronLink) — adres odbiorcy wczyta się sam."
-  }
-};
-document.querySelectorAll(".pay-method-qr").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    const cfg=PAYQR[btn.dataset.payqr];
-    if(!cfg)return;
-    const text=cfg.build?cfg.build():cfg.text;
-    const box=document.getElementById("payQr");
-    box.innerHTML="";
-    if(typeof QRCode!=="undefined"){
-      new QRCode(box,{text,width:230,height:230,correctLevel:QRCode.CorrectLevel.M,colorDark:"#eef6ff",colorLight:"#0b1421"});
-    }
-    document.getElementById("payAmount").textContent=cfg.title;
-    document.getElementById("payTitle").textContent=cfg.detail;
-    document.getElementById("payNote").innerHTML=cfg.info;
-    document.querySelector("#payModal .cart-header h3").textContent=cfg.title;
-    payModal.style.display="flex";
-  });
-});
 document.getElementById("year").textContent=new Date().getFullYear();
 document.getElementById("langNav").addEventListener("click",event=>{
   const btn=event.target.closest("button[data-lang]");
