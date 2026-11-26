@@ -415,7 +415,9 @@ function renderCart(){
       <button class="cart-remove" data-idx="${idx}" title="Usuń">×</button>`;
     itemsEl.appendChild(row);
   });
-  totalEl.textContent=formatPrice(total);
+  totalEl.textContent=formatPrice(cartTotalAmount());
+  const discRow=document.getElementById("cartDiscount");
+  if(discRow)discRow.style.display=window.RECY_MEMBER?"flex":"none";
 }
 
 document.getElementById("cartButton").addEventListener("click",()=>{
@@ -441,7 +443,8 @@ const DEFAULT_PAY_NOTE=document.getElementById("payNote")?document.getElementByI
 const DEFAULT_PAY_TITLE=document.querySelector("#payModal .cart-header h3")?document.querySelector("#payModal .cart-header h3").textContent:"";
 
 function cartTotalAmount(){
-  return cart.reduce((s,id)=>s+(products.find(i=>i.id===id)?.price||0),0);
+  const t=cart.reduce((s,id)=>s+(products.find(i=>i.id===id)?.price||0),0);
+  return window.RECY_MEMBER?Math.round(t*95)/100:t;
 }
 
 function openPaymentQR(){
@@ -450,7 +453,8 @@ function openPaymentQR(){
   const orderNo="RCK-"+Date.now().toString(36).toUpperCase();
   const title=`Zamowienie ${orderNo}`;
   // QR = link do Telegrama @BetaTester91 z gotowym zamówieniem - bez danych odbiorcy
-  const tgMsg=`Zamowienie ${orderNo} na ${formatPrice(total)}`;
+  const memberEmail=window.RECY_USER&&window.RECY_USER.email?` (klient: ${window.RECY_USER.email})`:"";
+  const tgMsg=`Zamowienie ${orderNo} na ${formatPrice(total)}${memberEmail}`;
   const qrText=`https://t.me/BetaTester91?start=${encodeURIComponent(tgMsg)}`;
   const box=document.getElementById("payQr");
   box.innerHTML="";
@@ -465,6 +469,7 @@ function openPaymentQR(){
   document.querySelector("#payModal .cart-header h3").textContent=DEFAULT_PAY_TITLE;
   cartModal.style.display="none";
   payModal.style.display="flex";
+  window.dispatchEvent(new CustomEvent("recytronix:checkout",{detail:{orderNo,total,items:cart.slice()}}));
 }
 
 document.getElementById("checkoutBtn").addEventListener("click",openPaymentQR);
@@ -749,7 +754,7 @@ document.querySelectorAll(".payment-info:not(#blikCode)").forEach(el=>{
   btn.type="button";
   btn.textContent="📋 Kopiuj";
   btn.addEventListener("click",()=>{
-    const text=el.textContent.trim();
+    const text=el.firstChild.textContent.trim();
     if(navigator.clipboard&&navigator.clipboard.writeText){
       navigator.clipboard.writeText(text).then(()=>showToast("Skopiowano do schowka")).catch(()=>showToast("Nie udało się skopiować"));
     }else{
@@ -758,7 +763,7 @@ document.querySelectorAll(".payment-info:not(#blikCode)").forEach(el=>{
       ta.remove();
     }
   });
-  el.insertAdjacentElement("afterend",btn);
+  el.appendChild(btn);
 });
 
 // --- BLIK: ukryj/pokaż kod ---

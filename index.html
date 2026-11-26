@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#050a12">
   <meta name="description" content="RECYKTRONIX Business Pro – sklep technologiczny.">
   <title>RECYKTRONIX | e-Shop Business Pro</title>
-  <link rel="stylesheet" href="style.css?v=19">
+  <link rel="stylesheet" href="style.css?v=21">
 </head>
 <body>
 <header class="header">
@@ -21,7 +21,7 @@
   <div class="lang-nav" id="langNav" aria-label="Język">
     <button type="button" data-lang="pl">PL</button><button type="button" data-lang="de">DE</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="nl">NL</button><button type="button" data-lang="ru">RU</button>
   </div>
-  <button class="header-icon" title="Konto" aria-label="Konto">♙</button>
+  <button class="header-icon" id="accountButton" title="Konto" aria-label="Konto">♙</button>
   <button class="header-icon" id="favoritesButton" title="Ulubione" aria-label="Ulubione">♡ <span id="favoritesCount">0</span></button>
   <button class="header-icon" id="cartButton" title="Koszyk" aria-label="Koszyk">🛒 <span id="cartCount">0</span></button>
   <button class="header-icon" id="adminButton" title="Administrator" aria-label="Administrator">⚙</button>
@@ -98,19 +98,25 @@
       <div class="payment-method">
         <h3>💳 PayPal</h3>
         <p data-i18n="payPalDesc">Fast and secure payment</p>
-        <a href="https://paypal.me/RECYKTRONIX" target="_blank" class="payment-link" data-i18n="payBtn">Pay with PayPal</a>
-        <a href="https://t.me/BetaTester91" target="_blank" class="payment-link tg-link" data-i18n="payViaTelegram">📩 Get payment details on Telegram</a>
+        <div class="pay-actions">
+          <a href="https://paypal.me/RECYKTRONIX" target="_blank" class="payment-link" data-i18n="payBtn">Pay with PayPal</a>
+          <a href="https://t.me/BetaTester91" target="_blank" class="pay-toggle tg-link" data-i18n="payViaTelegram">📩 Get payment details on Telegram</a>
+        </div>
       </div>
       <div class="payment-method">
         <h3>🏦 <span data-i18n="payBankTitle">Bank Transfer</span></h3>
         <p data-i18n="payBankDesc">SEPA transfer available</p>
-        <a href="https://t.me/BetaTester91" target="_blank" class="payment-link" data-i18n="payViaTelegram">📩 Get payment details on Telegram</a>
+        <div class="pay-actions">
+          <a href="https://t.me/BetaTester91" target="_blank" class="payment-link" data-i18n="payViaTelegram">📩 Get payment details on Telegram</a>
+        </div>
       </div>
       <div class="payment-method">
         <h3>📱 BLIK</h3>
         <p data-i18n="payBlikDesc">Quick mobile payment</p>
         <p class="payment-info" id="blikCode" style="display:none">BLIK Code: 786881698</p>
-        <button class="pay-toggle" type="button" id="blikToggle" data-i18n="payShowBlik">👁 Show BLIK code</button>
+        <div class="pay-actions">
+          <button class="pay-toggle" type="button" id="blikToggle" data-i18n="payShowBlik">👁 Show BLIK code</button>
+        </div>
       </div>
       <div class="payment-method">
         <h3>₿ Crypto</h3>
@@ -190,6 +196,26 @@
           <input type="url" id="prodImage" placeholder="Image URL">
           <button type="submit">Add Product</button>
         </form>
+        <h4>Nowe ogłoszenie — zdjęcie + AI</h4>
+        <div class="listing-ai">
+          <div class="form-row">
+            <input type="file" id="listingPhoto" accept="image/*">
+          </div>
+          <img id="listingPreview" alt="Podgląd" style="display:none;max-width:140px;border-radius:8px;margin:8px auto">
+          <input type="text" id="listingName" placeholder="Nazwa (AI może zaproponować)">
+          <div class="form-row">
+            <select id="listingCategory"></select>
+            <select id="listingCondition">
+              <option value="new">New</option>
+              <option value="used">Used / Refurbished</option>
+            </select>
+          </div>
+          <button type="button" id="listingAiBtn" class="pay-toggle">✨ AI: wycena + opis</button>
+          <div id="listingAiResult" class="listing-ai-result" style="display:none"></div>
+          <input type="number" id="listingPrice" placeholder="Cena EUR (AI lub ręcznie)" step="0.01" min="0">
+          <textarea id="listingDesc" placeholder="Opis (AI lub ręcznie)" rows="3"></textarea>
+          <button type="button" id="listingPublishBtn">Opublikuj ogłoszenie</button>
+        </div>
         <h4>Existing Products</h4>
         <div id="adminProductList"></div>
       </div>
@@ -229,6 +255,7 @@
     </div>
     <div id="cartItems" class="cart-items"></div>
     <div class="cart-footer">
+      <div class="cart-discount" id="cartDiscount" style="display:none">Rabat członkowski −5%</div>
       <div class="cart-total"><span>Razem:</span><strong id="cartTotal">€0.00</strong></div>
       <button id="checkoutBtn" class="checkout-btn">DALEJ DO PŁATNOŚCI</button>
     </div>
@@ -256,6 +283,39 @@
   </div>
 </div>
 
+<!-- Auth Modal -->
+<div id="authModal" class="cart-modal" style="display:none">
+  <div class="cart-content auth-content">
+    <div class="cart-header">
+      <h3 id="authTitle">Logowanie</h3>
+      <button id="closeAuth" class="cart-close">×</button>
+    </div>
+    <div class="auth-tabs">
+      <button type="button" id="tabLogin" class="auth-tab active">Logowanie</button>
+      <button type="button" id="tabRegister" class="auth-tab">Rejestracja</button>
+    </div>
+    <form id="authForm" class="auth-form">
+      <input id="authName" type="text" placeholder="Imię i nazwisko" autocomplete="name" style="display:none">
+      <input id="authEmail" type="email" placeholder="E-mail" required autocomplete="email">
+      <input id="authPassword" type="password" placeholder="Hasło (min. 6 znaków)" required minlength="6" autocomplete="current-password">
+      <div id="authError" class="auth-error"></div>
+      <button type="submit" id="authSubmit" class="checkout-btn">Zaloguj się</button>
+    </form>
+    <p class="auth-note">Konto daje rabat −5% i historię zamówień.</p>
+  </div>
+</div>
+
+<!-- Account Modal -->
+<div id="accountModal" class="cart-modal" style="display:none">
+  <div class="cart-content auth-content">
+    <div class="cart-header">
+      <h3>Konto</h3>
+      <button id="closeAccount" class="cart-close">×</button>
+    </div>
+    <div id="accountBody" class="account-body"></div>
+  </div>
+</div>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- RODO Consent Modal -->
@@ -274,7 +334,11 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="script.js?v=19"></script>
+<script src="script.js?v=21"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase-config.js"></script>
+<script src="auth.js"></script>
+<script src="listing-ai.js"></script>
 </body>
 </html>
 
