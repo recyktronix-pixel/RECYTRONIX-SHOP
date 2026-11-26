@@ -52,7 +52,7 @@ const translations = {
     priceAsc: "Cena rosnąco",
     priceDesc: "Cena malejąco",
     nameAZ: "Nazwa A–Z",
-    noProducts: "Nie znaleziono produktów.", condAll: "Wszystkie", navAbout: "O nas", navTerms: "Regulamin", navPrivacy: "Polityka prywatności", navShipping: "Dostawa i zwroty", condNew: "Nowe", condUsed: "Używane / Refurbished", badgeUsed: "używany",
+    noProducts: "Nie znaleziono produktów.", condAll: "Wszystkie", navAbout: "O nas", navTerms: "Regulamin", navPrivacy: "Polityka prywatności", navShipping: "Dostawa i zwroty", condNew: "Nowe", condUsed: "Używane", badgeUsed: "używany",
     benefits1: "Bezpieczne płatności",
     benefits2: "Pomoc PL / DE",
     benefits3: "Wsparcie AI Shadow",
@@ -95,7 +95,7 @@ const translations = {
     priceAsc: "Preis aufsteigend",
     priceDesc: "Preis absteigend",
     nameAZ: "Name A–Z",
-    noProducts: "Keine Produkte gefunden.", condAll: "Alle", navAbout: "Über uns", navTerms: "AGB", navPrivacy: "Datenschutzerklärung", navShipping: "Versand & Rückgabe", condNew: "Neu", condUsed: "Gebraucht / Refurbished", badgeUsed: "gebraucht",
+    noProducts: "Keine Produkte gefunden.", condAll: "Alle", navAbout: "Über uns", navTerms: "AGB", navPrivacy: "Datenschutzerklärung", navShipping: "Versand & Rückgabe", condNew: "Neu", condUsed: "Gebraucht", badgeUsed: "gebraucht",
     benefits1: "Sichere Zahlungen",
     benefits2: "Hilfe PL / DE",
     benefits3: "AI-Shadow-Support",
@@ -138,7 +138,7 @@ const translations = {
     priceAsc: "Price ascending",
     priceDesc: "Price descending",
     nameAZ: "Name A–Z",
-    noProducts: "No products found.", condAll: "All", navAbout: "About us", navTerms: "Terms", navPrivacy: "Privacy Policy", navShipping: "Shipping & Returns", condNew: "New", condUsed: "Used / Refurbished", badgeUsed: "used",
+    noProducts: "No products found.", condAll: "All", navAbout: "About us", navTerms: "Terms", navPrivacy: "Privacy Policy", navShipping: "Shipping & Returns", condNew: "New", condUsed: "Used", badgeUsed: "used",
     benefits1: "Secure payments",
     benefits2: "Help PL / DE",
     benefits3: "AI Shadow support",
@@ -181,7 +181,7 @@ const translations = {
     priceAsc: "Prijs oplopend",
     priceDesc: "Prijs aflopend",
     nameAZ: "Naam A–Z",
-    noProducts: "Geen producten gevonden.", condAll: "Alle", condNew: "Nieuw", navAbout: "Over ons", navTerms: "Voorwaarden", navPrivacy: "Privacybeleid", navShipping: "Verzending & Retouren", condUsed: "Gebruikt / Refurbished", badgeUsed: "gebruikt",
+    noProducts: "Geen producten gevonden.", condAll: "Alle", condNew: "Nieuw", navAbout: "Over ons", navTerms: "Voorwaarden", navPrivacy: "Privacybeleid", navShipping: "Verzending & Retouren", condUsed: "Gebruikt", badgeUsed: "gebruikt",
     benefits1: "Veilige betalingen",
     benefits2: "Hulp PL / DE",
     benefits3: "AI Shadow-ondersteuning",
@@ -224,7 +224,7 @@ const translations = {
     priceAsc: "Цена по возрастанию",
     priceDesc: "Цена по убыванию",
     nameAZ: "Название А–Я",
-    noProducts: "Товары не найдены.", condAll: "Все", navAbout: "О нас", navTerms: "Условия", navPrivacy: "Политика конфиденциальности", navShipping: "Доставка и возврат", condNew: "Новые", condUsed: "Б/у / Восстановленные", badgeUsed: "б/у",
+    noProducts: "Товары не найдены.", condAll: "Все", navAbout: "О нас", navTerms: "Условия", navPrivacy: "Политика конфиденциальности", navShipping: "Доставка и возврат", condNew: "Новые", condUsed: "Б/у", badgeUsed: "б/у",
     benefits1: "Безопасные платежи",
     benefits2: "Помощь PL / DE",
     benefits3: "Поддержка AI Shadow",
@@ -717,6 +717,25 @@ document.getElementById("sendAiMessage").addEventListener("click",()=>{
 
 document.getElementById("aiChatInput").addEventListener("keypress",(e)=>{
   if(e.key==="Enter")document.getElementById("sendAiMessage").click();
+});
+
+// --- Copy buttons dla danych płatniczych ---
+document.querySelectorAll(".payment-info").forEach(el=>{
+  const btn=document.createElement("button");
+  btn.className="copy-btn";
+  btn.type="button";
+  btn.textContent="📋 Kopiuj";
+  btn.addEventListener("click",()=>{
+    const text=el.textContent.trim();
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(()=>showToast("Skopiowano do schowka")).catch(()=>showToast("Nie udało się skopiować"));
+    }else{
+      const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();
+      try{document.execCommand("copy");showToast("Skopiowano do schowka");}catch(_){showToast("Nie udało się skopiować");}
+      ta.remove();
+    }
+  });
+  el.insertAdjacentElement("afterend",btn);
 });
 
 // --- Condition tabs (Nowe / Używane) ---
