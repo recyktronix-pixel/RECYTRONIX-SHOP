@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#050a12">
   <meta name="description" content="RECYKTRONIX Business Pro – sklep technologiczny.">
   <title>RECYKTRONIX | e-Shop Business Pro</title>
-  <link rel="stylesheet" href="style.css?v=12">
+  <link rel="stylesheet" href="style.css?v=13">
 </head>
 <body>
 <header class="header">
@@ -230,7 +230,29 @@
     <div id="cartItems" class="cart-items"></div>
     <div class="cart-footer">
       <div class="cart-total"><span>Razem:</span><strong id="cartTotal">€0.00</strong></div>
-      <button id="checkoutBtn" class="checkout-btn">Zamów przez Telegram</button>
+      <button id="checkoutBtn" class="checkout-btn">DALEJ DO PŁATNOŚCI</button>
+    </div>
+  </div>
+</div>
+
+<!-- Payment QR Modal -->
+<div id="payModal" class="cart-modal" style="display:none">
+  <div class="cart-content pay-content">
+    <div class="cart-header">
+      <h3>Zapłać przelewem</h3>
+      <button id="closePay" class="cart-close">×</button>
+    </div>
+    <div class="pay-body">
+      <div id="payQr" class="pay-qr"></div>
+      <div class="pay-details">
+        <p class="pay-row"><span>Kwota:</span><strong id="payAmount"></strong></p>
+        <p class="pay-row"><span>IBAN:</span><strong>LT81 3250 0118 7137 3390</strong></p>
+        <p class="pay-row"><span>Tytuł:</span><strong id="payTitle"></strong></p>
+        <p class="pay-note">Zeskanuj kod aplikacją bankową (Przelew na telefon / BLIK) albo wpłać ręcznie na IBAN z powyższą kwotą i tytułem. Po zaksięgowaniu wyślij potwierdzenie na <a href="mailto:recyktronix@gmail.com">recyktronix@gmail.com</a> lub Telegram <a href="https://t.me/ShadowAIHubBot" target="_blank">@ShadowAIHubBot</a>.</p>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <button id="payDoneBtn" class="checkout-btn">Zamknij</button>
     </div>
   </div>
 </div>
@@ -252,7 +274,8 @@
   </div>
 </div>
 
-<script src="script.js?v=12"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="script.js?v=13"></script>
 </body>
 </html>
 

@@ -435,16 +435,39 @@ document.getElementById("cartItems").addEventListener("click",(e)=>{
     updateCounters();renderCart();
   }
 });
-document.getElementById("checkoutBtn").addEventListener("click",()=>{
+// --- Płatność QR (Przelew na telefon / EPDU) ---
+const payModal=document.getElementById("payModal");
+const PAY_IBAN="LT813250011871373390";
+const PAY_NAME="RECYKTRONIX";
+
+function cartTotalAmount(){
+  return cart.reduce((s,id)=>s+(products.find(i=>i.id===id)?.price||0),0);
+}
+
+function openPaymentQR(){
   if(!cart.length)return;
-  const lines=cart.map(id=>{
-    const p=products.find(item=>item.id===id);
-    return p?`- ${p.name} (${formatPrice(p.price)})`:"";
-  }).filter(Boolean);
-  const total=cart.reduce((s,id)=>s+(products.find(i=>i.id===id)?.price||0),0);
-  const msg=`Nowe zamówienie ze strony RECYKTRONIX:\n${lines.join("\n")}\nRazem: ${formatPrice(total)}\n\nProszę o kontakt w sprawie płatności.`;
-  window.open(`https://t.me/ShadowAIHubBot?start=${encodeURIComponent(msg)}`,"_blank");
-});
+  const total=cartTotalAmount();
+  const orderNo="RCK-"+Date.now().toString(36).toUpperCase();
+  const title=`Zamowienie ${orderNo}`;
+  // Format BCD / "Przelew na telefon" - czytelny przez aplikacje bankowe
+  const epdu=["BCD","002","1","SCT",PAY_IBAN,PAY_NAME,total.toFixed(2),"EUR",title, ""].join("\n");
+  const box=document.getElementById("payQr");
+  box.innerHTML="";
+  if(typeof QRCode!=="undefined"){
+    new QRCode(box,{text:epdu,width:230,height:230,correctLevel:QRCode.CorrectLevel.M,colorDark:"#eef6ff",colorLight:"#0b1421"});
+  }else{
+    box.innerHTML=`<p style="color:var(--muted);font-size:.85rem">Ładuję kod QR...</p>`;
+  }
+  document.getElementById("payAmount").textContent=formatPrice(total);
+  document.getElementById("payTitle").textContent=title;
+  cartModal.style.display="none";
+  payModal.style.display="flex";
+}
+
+document.getElementById("checkoutBtn").addEventListener("click",openPaymentQR);
+document.getElementById("closePay").addEventListener("click",()=>{payModal.style.display="none";});
+document.getElementById("payDoneBtn").addEventListener("click",()=>{payModal.style.display="none";});
+payModal.addEventListener("click",(e)=>{if(e.target===payModal)payModal.style.display="none";});
 document.getElementById("year").textContent=new Date().getFullYear();
 document.getElementById("langNav").addEventListener("click",event=>{
   const btn=event.target.closest("button[data-lang]");
