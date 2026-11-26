@@ -271,7 +271,10 @@ function renderProducts(){
       <div class="product-info"><h3>${product.name}</h3>
         <p class="product-category">${product.category}</p>
         <div class="product-bottom"><span class="product-price">${formatPrice(product.price)}</span>
-          <button class="add-cart" data-cart="${product.id}" aria-label="${t('cart')}">🛒</button>
+          <div style="display:flex;gap:5px">
+            <button class="add-cart" data-cart="${product.id}" aria-label="${t('cart')}">🛒</button>
+            <a href="https://t.me/BetaTester91?text=${encodeURIComponent('Interesuje mnie produkt: '+product.name+' (ID: '+product.id+')')}" target="_blank" class="contact-btn" title="Kontakt">✉</a>
+          </div>
         </div>
       </div>`;
     grid.appendChild(card);
@@ -451,6 +454,25 @@ document.getElementById("addCategoryForm").addEventListener("submit",(e)=>{
 document.getElementById("settingsForm").addEventListener("submit",(e)=>{
   e.preventDefault();
   showToast("Settings saved (demo)");
+});
+
+// RODO Consent
+document.addEventListener("DOMContentLoaded",()=>{
+  const rodoAccepted=localStorage.getItem("rodo-accepted");
+  if(!rodoAccepted){
+    document.getElementById("rodoModal").style.display="flex";
+  }
+});
+
+document.getElementById("acceptRodo").addEventListener("click",()=>{
+  localStorage.setItem("rodo-accepted","true");
+  document.getElementById("rodoModal").style.display="none";
+  showToast("RODO accepted");
+});
+
+document.getElementById("declineRodo").addEventListener("click",()=>{
+  document.getElementById("rodoModal").style.display="none";
+  showToast("RODO declined - some features may be limited");
 });
 
 // Apply saved interface
