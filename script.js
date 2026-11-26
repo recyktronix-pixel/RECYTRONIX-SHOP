@@ -52,7 +52,7 @@ const translations = {
     priceAsc: "Cena rosnąco",
     priceDesc: "Cena malejąco",
     nameAZ: "Nazwa A–Z",
-    noProducts: "Nie znaleziono produktów.", condAll: "Wszystkie", navAbout: "O nas", navTerms: "Regulamin", navPrivacy: "Polityka prywatności", navShipping: "Dostawa i zwroty", navApk: "APK i boty", payTitle: "Metody płatności", payPalDesc: "Szybka i bezpieczna płatność", payBankTitle: "Przelew bankowy", payBankDesc: "Dostępny przelew SEPA", payBlikDesc: "Szybka płatność mobilna", payCryptoDesc: "Akceptujemy USDT TRON", payBtn: "Zapłać przez PayPal", condNew: "Nowe", condUsed: "Używane", badgeUsed: "używany", payViaTelegram: "📩 Dane płatności w Telegramie",
+    noProducts: "Nie znaleziono produktów.", condAll: "Wszystkie", navAbout: "O nas", navTerms: "Regulamin", navPrivacy: "Polityka prywatności", navShipping: "Dostawa i zwroty", navApk: "APK i boty", payTitle: "Metody płatności", payPalDesc: "Szybka i bezpieczna płatność", payBankTitle: "Przelew bankowy", payBankDesc: "Dostępny przelew SEPA", payBlikDesc: "Szybka płatność mobilna", payCryptoDesc: "Akceptujemy USDT TRON", payBtn: "Zapłać przez PayPal", condNew: "Nowe", condUsed: "Używane", badgeUsed: "używany", payViaTelegram: "📩 Dane płatności w Telegramie", payShowBlik: "👁 Pokaż kod BLIK", payHideBlik: "🙈 Ukryj kod BLIK",
     benefits1: "Bezpieczne płatności",
     benefits2: "Pomoc PL / DE",
     benefits3: "Wsparcie AI Shadow",
@@ -95,7 +95,7 @@ const translations = {
     priceAsc: "Preis aufsteigend",
     priceDesc: "Preis absteigend",
     nameAZ: "Name A–Z",
-    noProducts: "Keine Produkte gefunden.", condAll: "Alle", navAbout: "Über uns", navTerms: "AGB", navPrivacy: "Datenschutzerklärung", navShipping: "Versand & Rückgabe", navApk: "APK & Bots", payTitle: "Zahlungsmethoden", payPalDesc: "Schnelle und sichere Zahlung", payBankTitle: "Banküberweisung", payBankDesc: "SEPA-Überweisung verfügbar", payBlikDesc: "Schnelle mobile Zahlung", payCryptoDesc: "USDT TRON wird akzeptiert", payBtn: "Mit PayPal zahlen", condNew: "Neu", condUsed: "Gebraucht", badgeUsed: "gebraucht", payViaTelegram: "📩 Zahlungsdaten per Telegram",
+    noProducts: "Keine Produkte gefunden.", condAll: "Alle", navAbout: "Über uns", navTerms: "AGB", navPrivacy: "Datenschutzerklärung", navShipping: "Versand & Rückgabe", navApk: "APK & Bots", payTitle: "Zahlungsmethoden", payPalDesc: "Schnelle und sichere Zahlung", payBankTitle: "Banküberweisung", payBankDesc: "SEPA-Überweisung verfügbar", payBlikDesc: "Schnelle mobile Zahlung", payCryptoDesc: "USDT TRON wird akzeptiert", payBtn: "Mit PayPal zahlen", condNew: "Neu", condUsed: "Gebraucht", badgeUsed: "gebraucht", payViaTelegram: "📩 Zahlungsdaten per Telegram", payShowBlik: "👁 BLIK-Code anzeigen", payHideBlik: "🙈 BLIK-Code ausblenden",
     benefits1: "Sichere Zahlungen",
     benefits2: "Hilfe PL / DE",
     benefits3: "AI-Shadow-Support",
@@ -138,7 +138,7 @@ const translations = {
     priceAsc: "Price ascending",
     priceDesc: "Price descending",
     nameAZ: "Name A–Z",
-    noProducts: "No products found.", condAll: "All", navAbout: "About us", navTerms: "Terms", navPrivacy: "Privacy Policy", navShipping: "Shipping & Returns", navApk: "APK & Bots", payTitle: "Payment Methods", payPalDesc: "Fast and secure payment", payBankTitle: "Bank Transfer", payBankDesc: "SEPA transfer available", payBlikDesc: "Quick mobile payment", payCryptoDesc: "USDT TRON accepted", payBtn: "Pay with PayPal", condNew: "New", condUsed: "Used", badgeUsed: "used", payViaTelegram: "📩 Get payment details on Telegram",
+    noProducts: "No products found.", condAll: "All", navAbout: "About us", navTerms: "Terms", navPrivacy: "Privacy Policy", navShipping: "Shipping & Returns", navApk: "APK & Bots", payTitle: "Payment Methods", payPalDesc: "Fast and secure payment", payBankTitle: "Bank Transfer", payBankDesc: "SEPA transfer available", payBlikDesc: "Quick mobile payment", payCryptoDesc: "USDT TRON accepted", payBtn: "Pay with PayPal", condNew: "New", condUsed: "Used", badgeUsed: "used", payViaTelegram: "📩 Get payment details on Telegram", payShowBlik: "👁 Show BLIK code", payHideBlik: "🙈 Hide BLIK code",
     benefits1: "Secure payments",
     benefits2: "Help PL / DE",
     benefits3: "AI Shadow support",
@@ -181,7 +181,7 @@ const translations = {
     priceAsc: "Prijs oplopend",
     priceDesc: "Prijs aflopend",
     nameAZ: "Naam A–Z",
-    noProducts: "Geen producten gevonden.", condAll: "Alle", condNew: "Nieuw", navAbout: "Over ons", navTerms: "Voorwaarden", navPrivacy: "Privacybeleid", navShipping: "Verzending & Retouren", navApk: "APK & Bots", payTitle: "Betaalmethoden", payPalDesc: "Snelle en veilige betaling", payBankTitle: "Bankoverschrijving", payBankDesc: "SEPA-overboeking beschikbaar", payBlikDesc: "Snelle mobiele betaling", payCryptoDesc: "USDT TRON geaccepteerd", payBtn: "Betalen met PayPal", condUsed: "Gebruikt", badgeUsed: "gebruikt", payViaTelegram: "📩 Betaalgegevens via Telegram",
+    noProducts: "Geen producten gevonden.", condAll: "Alle", condNew: "Nieuw", navAbout: "Over ons", navTerms: "Voorwaarden", navPrivacy: "Privacybeleid", navShipping: "Verzending & Retouren", navApk: "APK & Bots", payTitle: "Betaalmethoden", payPalDesc: "Snelle en veilige betaling", payBankTitle: "Bankoverschrijving", payBankDesc: "SEPA-overboeking beschikbaar", payBlikDesc: "Snelle mobiele betaling", payCryptoDesc: "USDT TRON geaccepteerd", payBtn: "Betalen met PayPal", condUsed: "Gebruikt", badgeUsed: "gebruikt", payViaTelegram: "📩 Betaalgegevens via Telegram", payShowBlik: "👁 BLIK-code tonen", payHideBlik: "🙈 BLIK-code verbergen",
     benefits1: "Veilige betalingen",
     benefits2: "Hulp PL / DE",
     benefits3: "AI Shadow-ondersteuning",
@@ -224,7 +224,7 @@ const translations = {
     priceAsc: "Цена по возрастанию",
     priceDesc: "Цена по убыванию",
     nameAZ: "Название А–Я",
-    noProducts: "Товары не найдены.", condAll: "Все", navAbout: "О нас", navTerms: "Условия", navPrivacy: "Политика конфиденциальности", navShipping: "Доставка и возврат", navApk: "APK и боты", payTitle: "Способы оплаты", payPalDesc: "Быстрый и безопасный платёж", payBankTitle: "Банковский перевод", payBankDesc: "Доступен перевод SEPA", payBlikDesc: "Быстрая мобильная оплата", payCryptoDesc: "Принимаем USDT TRON", payBtn: "Оплатить через PayPal", condNew: "Новые", condUsed: "Б/у", badgeUsed: "б/у", payViaTelegram: "📩 Данные для оплаты в Telegram",
+    noProducts: "Товары не найдены.", condAll: "Все", navAbout: "О нас", navTerms: "Условия", navPrivacy: "Политика конфиденциальности", navShipping: "Доставка и возврат", navApk: "APK и боты", payTitle: "Способы оплаты", payPalDesc: "Быстрый и безопасный платёж", payBankTitle: "Банковский перевод", payBankDesc: "Доступен перевод SEPA", payBlikDesc: "Быстрая мобильная оплата", payCryptoDesc: "Принимаем USDT TRON", payBtn: "Оплатить через PayPal", condNew: "Новые", condUsed: "Б/у", badgeUsed: "б/у", payViaTelegram: "📩 Данные для оплаты в Telegram", payShowBlik: "👁 Показать код BLIK", payHideBlik: "🙈 Скрыть код BLIK",
     benefits1: "Безопасные платежи",
     benefits2: "Помощь PL / DE",
     benefits3: "Поддержка AI Shadow",
@@ -743,7 +743,7 @@ document.getElementById("aiChatInput").addEventListener("keypress",(e)=>{
 });
 
 // --- Copy buttons dla danych płatniczych ---
-document.querySelectorAll(".payment-info").forEach(el=>{
+document.querySelectorAll(".payment-info:not(#blikCode)").forEach(el=>{
   const btn=document.createElement("button");
   btn.className="copy-btn";
   btn.type="button";
@@ -760,6 +760,31 @@ document.querySelectorAll(".payment-info").forEach(el=>{
   });
   el.insertAdjacentElement("afterend",btn);
 });
+
+// --- BLIK: ukryj/pokaż kod ---
+const blikToggle=document.getElementById("blikToggle");
+const blikCode=document.getElementById("blikCode");
+if(blikToggle&&blikCode){
+  const setBlikLabel=()=>{blikToggle.textContent=t(blikCode.style.display==="none"?"payShowBlik":"payHideBlik");};
+  blikToggle.addEventListener("click",()=>{
+    const show=blikCode.style.display==="none";
+    blikCode.style.display=show?"":"none";
+    let cb=document.getElementById("blikCopy");
+    if(show&&!cb){
+      cb=document.createElement("button");
+      cb.id="blikCopy";cb.className="copy-btn";cb.type="button";
+      cb.textContent="📋 Kopiuj";
+      cb.addEventListener("click",()=>{
+        navigator.clipboard&&navigator.clipboard.writeText(blikCode.textContent.trim())
+          .then(()=>showToast("Skopiowano do schowka")).catch(()=>showToast("Nie udało się skopiować"));
+      });
+      blikCode.insertAdjacentElement("afterend",cb);
+    }
+    if(cb)cb.style.display=show?"":"none";
+    setBlikLabel();
+  });
+  setBlikLabel();
+}
 
 // --- Condition tabs (Nowe / Używane) ---
 document.querySelectorAll("#conditionTabs .cond-tab").forEach(btn=>{
