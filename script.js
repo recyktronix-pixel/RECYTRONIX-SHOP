@@ -711,3 +711,24 @@ document.getElementById("sendAiMessage").addEventListener("click",()=>{
 document.getElementById("aiChatInput").addEventListener("keypress",(e)=>{
   if(e.key==="Enter")document.getElementById("sendAiMessage").click();
 });
+
+// --- Newsletter ---
+(function(){
+  const form=document.getElementById("newsletterForm");
+  if(!form)return;
+  form.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    const input=document.getElementById("newsletterEmail");
+    const msg=document.getElementById("newsletterMsg");
+    const email=(input.value||"").trim().toLowerCase();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.textContent="Podaj poprawny adres e-mail.";msg.style.color="#ff7b7b";return;}
+    let list=[];
+    try{list=JSON.parse(localStorage.getItem("recyktronix-newsletter")||"[]");}catch(_){}
+    if(list.some(x=>x.email===email)){msg.textContent="Ten adres jest już zapisany.";msg.style.color="var(--muted)";return;}
+    list.push({email,ts:new Date().toISOString()});
+    localStorage.setItem("recyktronix-newsletter",JSON.stringify(list));
+    input.value="";
+    msg.textContent="Dziękujemy! Zapisaliśmy Twój adres. Wkrótce napiszemy z nowościami.";
+    msg.style.color="#4ade80";
+  });
+})();

@@ -158,3 +158,11 @@ footer{background:#080f19;border-top:1px solid var(--border);padding:28px 4%;dis
 .form-row>*{flex:1}
 .admin-hint{color:var(--muted);font-size:.85rem;padding:.5rem 0}
 @media(max-width:768px){.form-row{flex-direction:column}}
+
+/* Newsletter */
+.newsletter-form{display:flex;gap:10px;justify-content:center;max-width:480px;margin:18px auto 0;flex-wrap:wrap}
+.newsletter-form input{flex:1;min-width:220px;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:#0d1a2b;color:var(--text)}
+.newsletter-form button{padding:12px 24px;border-radius:8px;border:none;background:linear-gradient(135deg,var(--blue2),var(--blue));color:#04121f;font-weight:bold;cursor:pointer}
+.newsletter-form button:hover{filter:brightness(1.1)}
+.newsletter-msg{margin-top:12px;font-size:.9rem;min-height:1.2em}
+@media(max-width:600px){.newsletter-form{flex-direction:column}.newsletter-form input,.newsletter-form button{width:100%}}
