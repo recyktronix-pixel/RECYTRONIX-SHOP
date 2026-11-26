@@ -58,15 +58,8 @@
 
   <section class="shop-layout">
     <aside class="sidebar">
-      <h3>KATEGORIE</h3>
-      <button class="category active" data-category="all">Wszystkie produkty</button>
-      <button class="category" data-category="electronics">Elektronika</button>
-      <button class="category" data-category="computers">Komputery i IT</button>
-      <button class="category" data-category="audio">Audio i Video</button>
-      <button class="category" data-category="accessories">Akcesoria</button>
-      <button class="category" data-category="home">Dom i biuro</button>
-      <button class="category" data-category="tools">Narzędzia</button>
-      <button class="category" data-category="other">Pozostałe</button>
+      <h3 id="categoriesTitle">KATEGORIE</h3>
+      <div id="categoryList"></div>
       <div class="ai-card" id="ai">
         <div class="ai-icon">AI</div><h3>RECYKTRONIX AI</h3>
         <p>Twój asystent zakupowy. Porady, dobór sprzętu i pomoc technologiczna.</p>
@@ -170,16 +163,17 @@
         <h4>Add New Product</h4>
         <form id="addProductForm">
           <input type="text" id="prodName" placeholder="Product name" required>
-          <input type="number" id="prodPrice" placeholder="Price (EUR)" required>
-          <select id="prodCategory">
-            <option value="electronics">Electronics</option>
-            <option value="computers">Computers & IT</option>
-            <option value="audio">Audio & Video</option>
-            <option value="accessories">Accessories</option>
-            <option value="home">Home & Office</option>
-            <option value="tools">Tools</option>
-            <option value="other">Other</option>
-          </select>
+          <div class="form-row">
+            <input type="number" id="prodPrice" placeholder="Price (EUR)" required step="0.01">
+            <input type="number" id="prodStock" placeholder="Stock" min="0" value="1">
+          </div>
+          <div class="form-row">
+            <select id="prodCategory"></select>
+            <select id="prodCondition">
+              <option value="new">New</option>
+              <option value="used">Used / Refurbished</option>
+            </select>
+          </div>
           <textarea id="prodDesc" placeholder="Description" rows="3"></textarea>
           <input type="url" id="prodImage" placeholder="Image URL">
           <button type="submit">Add Product</button>
@@ -210,6 +204,21 @@
           <button type="submit">Save Settings</button>
         </form>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cart Modal -->
+<div id="cartModal" class="cart-modal" style="display:none">
+  <div class="cart-content">
+    <div class="cart-header">
+      <h3>Koszyk</h3>
+      <button id="closeCart" class="cart-close">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Razem:</span><strong id="cartTotal">€0.00</strong></div>
+      <button id="checkoutBtn" class="checkout-btn">Zamów przez Telegram</button>
     </div>
   </div>
 </div>

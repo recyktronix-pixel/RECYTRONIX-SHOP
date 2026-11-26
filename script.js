@@ -1,11 +1,35 @@
-﻿const products = [
-  {id:1,name:"Smartfon Pro 256 GB",category:"electronics",price:1299,image:"assets/products/smartphone.jpg"},
-  {id:2,name:"Słuchawki Gaming Pro RGB",category:"audio",price:249,image:"assets/products/headphones.jpg"},
-  {id:3,name:"Laptop Business 16",category:"computers",price:1899,image:"assets/products/laptop.jpg"},
-  {id:4,name:"Kamera 4K Ultra HD",category:"electronics",price:299,image:"assets/products/camera.jpg"},
-  {id:5,name:"Dron Pro 4K GPS",category:"electronics",price:599,image:"assets/products/drone.jpg"},
-  {id:6,name:"Akcesoria komputerowe",category:"accessories",price:199,image:""}
+﻿const DEFAULT_PRODUCTS = [
+  {id:1,name:"Smartfon Pro 256 GB",category:"electronics",price:1299,image:"assets/products/smartphone.jpg",description:"Flagowy smartfon z aparatem 108MP",stock:5,condition:"new"},
+  {id:2,name:"Słuchawki Gaming Pro RGB",category:"audio",price:249,image:"assets/products/headphones.jpg",description:"Słuchawki bezprzewodowe z RGB",stock:12,condition:"new"},
+  {id:3,name:"Laptop Business 16",category:"computers",price:1899,image:"assets/products/laptop.jpg",description:"Laptop do pracy i biznesu",stock:3,condition:"new"},
+  {id:4,name:"Kamera 4K Ultra HD",category:"electronics",price:299,image:"assets/products/camera.jpg",description:"Kamera do vlogów i pracy",stock:8,condition:"new"},
+  {id:5,name:"Dron Pro 4K GPS",category:"electronics",price:599,image:"assets/products/drone.jpg",description:"Dron z GPS i kamerą 4K",stock:4,condition:"new"},
+  {id:6,name:"Akcesoria komputerowe",category:"accessories",price:199,image:"",description:"Zestaw akcesoriów komputerowych",stock:20,condition:"new"}
 ];
+
+const DEFAULT_CATEGORIES = [
+  {id:"all", name:"Wszystkie produkty"},
+  {id:"electronics", name:"Elektronika"},
+  {id:"computers", name:"Komputery i IT"},
+  {id:"audio", name:"Audio i Video"},
+  {id:"accessories", name:"Akcesoria"},
+  {id:"home", name:"Dom i biuro"},
+  {id:"tools", name:"Narzędzia"},
+  {id:"other", name:"Pozostałe"}
+];
+
+function loadJSON(key, fallback){
+  try{ const v=localStorage.getItem(key); return v?JSON.parse(v):fallback; }catch(e){ return fallback; }
+}
+function saveJSON(key, val){ localStorage.setItem(key, JSON.stringify(val)); }
+
+let products = loadJSON('recyktronix-products', null) || DEFAULT_PRODUCTS.slice();
+let categories = loadJSON('recyktronix-categories', null) || DEFAULT_CATEGORIES.slice();
+if (!localStorage.getItem('recyktronix-products')) saveJSON('recyktronix-products', products);
+if (!localStorage.getItem('recyktronix-categories')) saveJSON('recyktronix-categories', categories);
+
+function saveProducts(){ saveJSON('recyktronix-products', products); }
+function saveCategories(){ saveJSON('recyktronix-categories', categories); }
 
 const translations = {
   pl: {
@@ -181,47 +205,47 @@ const translations = {
     total: "Totaal"
   },
   ru: {
-    search: " , , ...",
-    categories: "",
-    allProducts: " ",
-    electronics: "",
-    computers: "  IT",
-    audio: "  ",
-    accessories: "",
-    home: "  ",
-    tools: "",
-    other: "",
+    search: "Поиск товаров, категорий, модели...",
+    categories: "КАТЕГОРИИ",
+    allProducts: "Все товары",
+    electronics: "Электроника",
+    computers: "Компьютеры и IT",
+    audio: "Аудио и видео",
+    accessories: "Аксессуары",
+    home: "Дом и офис",
+    tools: "Инструменты",
+    other: "Прочее",
     aiTitle: "RECYKTRONIX AI",
-    aiDesc: " shopping-. ,     .",
-    openAI: " AI",
-    featured: " ",
-    sort: "",
-    recommended: "",
-    priceAsc: "  ",
-    priceDesc: "  ",
-    nameAZ: " –",
-    noProducts: "  .",
-    benefits1: " ",
-    benefits2: " ",
-    benefits3: " ",
-    benefits4: " ",
-    benefits5: " PL / DE",
+    aiDesc: "Ваш помощник по покупкам. Советы, подбор техники и техническая помощь.",
+    openAI: "Открыть AI",
+    featured: "Избранные товары",
+    sort: "Сортировка",
+    recommended: "Рекомендуемые",
+    priceAsc: "Цена по возрастанию",
+    priceDesc: "Цена по убыванию",
+    nameAZ: "Название А–Я",
+    noProducts: "Товары не найдены.",
+    benefits1: "Быстрая доставка",
+    benefits2: "Безопасные покупки",
+    benefits3: "Проверенный ассортимент",
+    benefits4: "Возврат товара",
+    benefits5: "Помощь PL / DE",
     heroTitle: "RECYKTRONIX",
     heroSubtitle: "e-Shop Business Pro",
-    heroDesc: " .  .  .",
-    checkOffer: " ",
-    contact: ":",
-    rights: "  .",
-    cart: "",
-    favorites: "",
-    account: "",
-    addedToCart: "  ",
-    updatedFavorites: " ",
-    cartEmpty: " ",
-    showingFavorites: "  ",
-    showingAll: "  ",
-    products: "",
-    total: ""
+    heroDesc: "Современные технологии. Проверенная техника. Профессиональный сервис.",
+    checkOffer: "СМОТРЕТЬ ПРЕДЛОЖЕНИЯ",
+    contact: "Контакт:",
+    rights: "Все права защищены.",
+    cart: "Корзина",
+    favorites: "Избранное",
+    account: "Аккаунт",
+    addedToCart: "Добавлено в корзину",
+    updatedFavorites: "Избранное обновлено",
+    cartEmpty: "Корзина пуста",
+    showingFavorites: "Показаны избранные товары",
+    showingAll: "Показаны все товары",
+    products: "товары",
+    total: "Итого"
   }
 };
 
@@ -281,14 +305,36 @@ function renderProducts(){
   });
   emptyMessage.hidden=filtered.length>0;emptyMessage.textContent=t('noProducts');updateCounters();
 }
+function categoryLabel(cat){
+  // domyślne kategorie mają tłumaczenia, własne pokazują nazwę
+  if (cat.id === 'all') return t('allProducts');
+  const translated = t(cat.id);
+  return translated === cat.id ? cat.name : translated;
+}
+
+function renderCategories(){
+  const list = document.getElementById("categoryList");
+  if (!list) return;
+  list.innerHTML = "";
+  categories.forEach(cat=>{
+    const btn=document.createElement("button");
+    btn.className="category"+(selectedCategory===cat.id?" active":"");
+    btn.dataset.category=cat.id;
+    btn.textContent=categoryLabel(cat);
+    btn.addEventListener("click",()=>{
+      document.querySelectorAll(".category").forEach(item=>item.classList.remove("active"));
+      btn.classList.add("active");selectedCategory=cat.id;showFavoritesOnly=false;renderProducts();
+    });
+    list.appendChild(btn);
+  });
+}
+
 function updateLanguage(){
   document.getElementById("language").value=currentLang;
   document.getElementById("searchInput").placeholder=t('search');
-  document.querySelectorAll(".category").forEach(btn=>{
-    const cat=btn.dataset.category;
-    const key = cat === 'all' ? 'allProducts' : cat;
-    btn.textContent = t(key) || btn.textContent;
-  });
+  const catTitle=document.getElementById("categoriesTitle");
+  if (catTitle) catTitle.textContent=t('categories');
+  renderCategories();
   document.querySelectorAll(".benefits span").forEach((span,i)=>{
     const keys=['benefits1','benefits2','benefits3','benefits4','benefits5'];
     span.textContent=t(keys[i]);
@@ -311,10 +357,6 @@ function updateLanguage(){
   document.querySelectorAll(".footer-links a")[2].textContent="Shipping & Returns";
   localStorage.setItem('recyktronix-lang',currentLang);
 }
-document.querySelectorAll(".category").forEach(button=>button.addEventListener("click",()=>{
-  document.querySelectorAll(".category").forEach(item=>item.classList.remove("active"));
-  button.classList.add("active");selectedCategory=button.dataset.category;showFavoritesOnly=false;renderProducts();
-}));
 document.getElementById("searchInput").addEventListener("input",event=>{searchQuery=event.target.value;renderProducts();});
 document.getElementById("searchButton").addEventListener("click",()=>{searchQuery=document.getElementById("searchInput").value;renderProducts();});
 document.getElementById("sortProducts").addEventListener("change",renderProducts);
@@ -337,10 +379,64 @@ document.getElementById("favoritesButton").addEventListener("click",()=>{
   renderProducts();showToast(showFavoritesOnly?t('showingFavorites'):t('showingAll'));
   document.getElementById("products").scrollIntoView({behavior:"smooth"});
 });
+const cartModal=document.getElementById("cartModal");
+
+function renderCart(){
+  const itemsEl=document.getElementById("cartItems");
+  const totalEl=document.getElementById("cartTotal");
+  const checkoutBtn=document.getElementById("checkoutBtn");
+  itemsEl.innerHTML="";
+  if(!cart.length){
+    itemsEl.innerHTML=`<p class="cart-empty">${t('cartEmpty')}</p>`;
+    totalEl.textContent=formatPrice(0);
+    checkoutBtn.disabled=true;
+    return;
+  }
+  checkoutBtn.disabled=false;
+  let total=0;
+  cart.forEach((id,idx)=>{
+    const p=products.find(item=>item.id===id);
+    if(!p)return;
+    total+=p.price;
+    const row=document.createElement("div");
+    row.className="cart-item";
+    row.innerHTML=`
+      <div class="cart-item-info">
+        <strong>${p.name}</strong>
+        <span>${formatPrice(p.price)}</span>
+      </div>
+      <button class="cart-remove" data-idx="${idx}" title="Usuń">×</button>`;
+    itemsEl.appendChild(row);
+  });
+  totalEl.textContent=formatPrice(total);
+}
+
 document.getElementById("cartButton").addEventListener("click",()=>{
-  if(!cart.length){showToast(t('cartEmpty'));return;}
-  const total=cart.reduce((sum,id)=>sum+(products.find(item=>item.id===id)?.price||0),0);
-  showToast(`${cart.length} ${t('products')} | ${t('total')}: ${formatPrice(total)}`);
+  renderCart();
+  cartModal.style.display="flex";
+});
+document.getElementById("closeCart").addEventListener("click",()=>{
+  cartModal.style.display="none";
+});
+cartModal.addEventListener("click",(e)=>{
+  if(e.target===cartModal)cartModal.style.display="none";
+});
+document.getElementById("cartItems").addEventListener("click",(e)=>{
+  const btn=e.target.closest("[data-idx]");
+  if(btn){
+    cart.splice(Number(btn.dataset.idx),1);
+    updateCounters();renderCart();
+  }
+});
+document.getElementById("checkoutBtn").addEventListener("click",()=>{
+  if(!cart.length)return;
+  const lines=cart.map(id=>{
+    const p=products.find(item=>item.id===id);
+    return p?`- ${p.name} (${formatPrice(p.price)})`:"";
+  }).filter(Boolean);
+  const total=cart.reduce((s,id)=>s+(products.find(i=>i.id===id)?.price||0),0);
+  const msg=`Nowe zamówienie ze strony RECYKTRONIX:\n${lines.join("\n")}\nRazem: ${formatPrice(total)}\n\nProszę o kontakt w sprawie płatności.`;
+  window.open(`https://t.me/ShadowAIHubBot?start=${encodeURIComponent(msg)}`,"_blank");
 });
 document.getElementById("year").textContent=new Date().getFullYear();
 document.getElementById("language").addEventListener("change",event=>{
@@ -383,7 +479,19 @@ adminTabs.forEach(tab=>{
   });
 });
 
+function populateCategorySelect(){
+  const sel=document.getElementById("prodCategory");
+  if(!sel)return;
+  sel.innerHTML="";
+  categories.filter(c=>c.id!=="all").forEach(c=>{
+    const opt=document.createElement("option");
+    opt.value=c.id;opt.textContent=c.name;
+    sel.appendChild(opt);
+  });
+}
+
 function loadAdminData(){
+  populateCategorySelect();
   // Load products
   const productList=document.getElementById("adminProductList");
   productList.innerHTML="";
@@ -393,68 +501,146 @@ function loadAdminData(){
     item.innerHTML=`
       <div class="admin-item-info">
         <div class="admin-item-name">${p.name}</div>
-        <div class="admin-item-details">${formatPrice(p.price)} | ${p.category}</div>
+        <div class="admin-item-details">${formatPrice(p.price)} | ${p.category} | stock: ${p.stock??0} | ${p.condition||"new"}</div>
       </div>
       <div class="admin-item-actions">
-        <button class="edit-btn">Edit</button>
-        <button class="delete-btn">Delete</button>
+        <button class="edit-btn" data-edit="${p.id}">Edit</button>
+        <button class="delete-btn" data-del-prod="${p.id}">Delete</button>
       </div>`;
     productList.appendChild(item);
   });
-  
+
   // Load categories
   const categoryList=document.getElementById("adminCategoryList");
   categoryList.innerHTML="";
-  const categories=[...new Set(products.map(p=>p.category))];
-  categories.forEach(cat=>{
+  categories.filter(c=>c.id!=="all").forEach(cat=>{
+    const inUse=products.some(p=>p.category===cat.id);
     const item=document.createElement("div");
     item.className="admin-item";
     item.innerHTML=`
       <div class="admin-item-info">
-        <div class="admin-item-name">${cat}</div>
+        <div class="admin-item-name">${cat.name} <small>(${cat.id})</small></div>
+        ${inUse?'<div class="admin-item-details">in use</div>':''}
       </div>
       <div class="admin-item-actions">
-        <button class="delete-btn">Delete</button>
+        <button class="delete-btn" data-del-cat="${cat.id}">Delete</button>
       </div>`;
     categoryList.appendChild(item);
   });
+
+  // Users (local demo list)
+  const users=loadJSON('recyktronix-users',[]);
+  const userList=document.getElementById("adminUserList");
+  userList.innerHTML=users.length
+    ? users.map(u=>`<div class="admin-item"><div class="admin-item-info"><div class="admin-item-name">${u.name||u}</div></div></div>`).join("")
+    : '<p class="admin-hint">Brak zarejestrowanych użytkowników.</p>';
+
+  // Settings
+  const s=loadJSON('recyktronix-settings',{});
+  document.getElementById("siteName").value=s.name||"RECYKTRONIX";
+  document.getElementById("siteEmail").value=s.email||"recyktronix@gmail.com";
+  document.getElementById("sitePhone").value=s.phone||"";
+  document.getElementById("siteDesc").value=s.desc||"";
 }
+
+// Product delete/edit delegation
+document.getElementById("adminProductList").addEventListener("click",(e)=>{
+  const del=e.target.closest("[data-del-prod]");
+  const edit=e.target.closest("[data-edit]");
+  if(del){
+    const id=Number(del.dataset.delProd);
+    products=products.filter(p=>p.id!==id);
+    saveProducts();renderProducts();loadAdminData();
+    showToast("Product deleted");
+  }
+  if(edit){
+    const id=Number(edit.dataset.edit);
+    const p=products.find(item=>item.id===id);
+    if(!p)return;
+    const name=prompt("Name:",p.name);if(name===null)return;
+    const price=parseFloat(prompt("Price EUR:",p.price));if(isNaN(price))return;
+    const stock=parseInt(prompt("Stock:",p.stock??0),10);
+    const desc=prompt("Description:",p.description||"");
+    p.name=name;p.price=price;if(!isNaN(stock))p.stock=stock;if(desc!==null)p.description=desc;
+    saveProducts();renderProducts();loadAdminData();
+    showToast("Product updated");
+  }
+});
+
+document.getElementById("adminCategoryList").addEventListener("click",(e)=>{
+  const del=e.target.closest("[data-del-cat]");
+  if(!del)return;
+  const id=del.dataset.delCat;
+  if(products.some(p=>p.category===id)){showToast("Category in use - cannot delete");return;}
+  categories=categories.filter(c=>c.id!==id);
+  saveCategories();renderCategories();populateCategorySelect();loadAdminData();
+  showToast("Category deleted");
+});
 
 document.getElementById("addProductForm").addEventListener("submit",(e)=>{
   e.preventDefault();
-  const name=document.getElementById("prodName").value;
+  const name=document.getElementById("prodName").value.trim();
   const price=parseFloat(document.getElementById("prodPrice").value);
+  const stock=parseInt(document.getElementById("prodStock").value,10)||0;
   const category=document.getElementById("prodCategory").value;
-  const desc=document.getElementById("prodDesc").value;
-  const image=document.getElementById("prodImage").value;
-  
-  const newProduct={
+  const condition=document.getElementById("prodCondition").value;
+  const desc=document.getElementById("prodDesc").value.trim();
+  const image=document.getElementById("prodImage").value.trim();
+  if(!name||isNaN(price))return;
+
+  products.push({
     id:Date.now(),
     name,
     price,
     category,
+    condition,
+    stock,
     description:desc,
     image:image||""
-  };
-  
-  products.push(newProduct);
+  });
+
+  saveProducts();
   renderProducts();
   loadAdminData();
   e.target.reset();
-  showToast("Product added successfully");
+  showToast("Product added");
 });
 
 document.getElementById("addCategoryForm").addEventListener("submit",(e)=>{
   e.preventDefault();
-  const name=document.getElementById("catName").value;
-  showToast(`Category "${name}" added (demo)`);
+  const name=document.getElementById("catName").value.trim();
+  if(!name)return;
+  const id="custom-"+Date.now();
+  categories.push({id,name});
+  saveCategories();
+  renderCategories();
+  populateCategorySelect();
+  loadAdminData();
   e.target.reset();
+  showToast(`Category "${name}" added`);
 });
 
 document.getElementById("settingsForm").addEventListener("submit",(e)=>{
   e.preventDefault();
-  showToast("Settings saved (demo)");
+  saveJSON('recyktronix-settings',{
+    name:document.getElementById("siteName").value.trim(),
+    email:document.getElementById("siteEmail").value.trim(),
+    phone:document.getElementById("sitePhone").value.trim(),
+    desc:document.getElementById("siteDesc").value.trim()
+  });
+  applySettings();
+  showToast("Settings saved");
 });
+
+function applySettings(){
+  const s=loadJSON('recyktronix-settings',{});
+  const brand=document.querySelector(".brand strong");
+  if(brand&&s.name)brand.textContent=s.name.toUpperCase();
+  const mail=document.querySelector(".footer-brand");
+  if(mail&&s.name)mail.childNodes[0].textContent=s.name.toUpperCase()+" ";
+  const emailLink=document.querySelector('.footer a[href^="mailto:"]');
+  if(emailLink&&s.email){emailLink.href="mailto:"+s.email;emailLink.textContent=s.email;}
+}
 
 // RODO Consent
 document.addEventListener("DOMContentLoaded",()=>{
@@ -482,6 +668,7 @@ if (localStorage.getItem('recyktronix-interface') === 'alt') {
 
 updateLanguage();
 renderProducts();
+applySettings();
 
 // AI Chat Modal
 document.querySelector(".ai-card a").addEventListener("click",(e)=>{
