@@ -337,10 +337,7 @@ function updateLanguage(){
   const catTitle=document.getElementById("categoriesTitle");
   if (catTitle) catTitle.textContent=t('categories');
   renderCategories();
-  document.querySelectorAll(".benefits span").forEach((span,i)=>{
-    const keys=['benefits1','benefits2','benefits3','benefits4','benefits5'];
-    span.textContent=t(keys[i]);
-  });
+  // benefits tłumaczone przez data-i18n (benefits1, benefits3)
   document.querySelector(".ai-card h3").textContent=t('aiTitle');
   document.querySelector(".ai-card p").textContent=t('aiDesc');
   document.querySelector(".ai-card a").textContent=t('openAI')+" →";
