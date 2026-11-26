@@ -332,7 +332,7 @@ function renderCategories(){
 }
 
 function updateLanguage(){
-  document.getElementById("language").value=currentLang;
+  document.querySelectorAll("#langNav button").forEach(b=>b.classList.toggle("active",b.dataset.lang===currentLang));
   document.getElementById("searchInput").placeholder=t('search');
   const catTitle=document.getElementById("categoriesTitle");
   if (catTitle) catTitle.textContent=t('categories');
@@ -449,8 +449,10 @@ document.getElementById("checkoutBtn").addEventListener("click",()=>{
   window.open(`https://t.me/ShadowAIHubBot?start=${encodeURIComponent(msg)}`,"_blank");
 });
 document.getElementById("year").textContent=new Date().getFullYear();
-document.getElementById("language").addEventListener("change",event=>{
-  currentLang=event.target.value;
+document.getElementById("langNav").addEventListener("click",event=>{
+  const btn=event.target.closest("button[data-lang]");
+  if(!btn)return;
+  currentLang=btn.dataset.lang;
   updateLanguage();
   renderProducts();
 });

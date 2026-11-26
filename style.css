@@ -170,6 +170,12 @@ footer{background:#080f19;border-top:1px solid var(--border);padding:28px 4%;dis
 .cond-tab:hover{border-color:var(--blue);color:var(--text)}
 .cond-tab.active{background:linear-gradient(135deg,var(--blue2),var(--blue));color:#04121f;border-color:transparent;font-weight:bold}
 
+/* Language nav buttons */
+.lang-nav{display:flex;gap:4px;background:var(--panel);border:1px solid var(--border);border-radius:9px;padding:4px}
+.lang-nav button{background:transparent;border:none;color:var(--muted);font-size:.78rem;font-weight:bold;padding:6px 9px;border-radius:6px;cursor:pointer;transition:.15s}
+.lang-nav button:hover{color:var(--text)}
+.lang-nav button.active{background:var(--blue);color:#04121f}
+
 /* Copy buttons */
 .copy-btn{display:block;width:fit-content;margin:7px 0 14px auto;padding:6px 14px;border-radius:7px;border:1px solid var(--blue);background:rgba(0,200,255,.08);color:var(--blue);font-size:.75rem;font-weight:bold;cursor:pointer;transition:.2s}
 .copy-btn:hover{background:var(--blue);color:#04121f;box-shadow:0 0 14px rgba(0,200,255,.5)}

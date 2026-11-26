@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#050a12">
   <meta name="description" content="RECYKTRONIX Business Pro – sklep technologiczny.">
   <title>RECYKTRONIX | e-Shop Business Pro</title>
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 <header class="header">
@@ -18,9 +18,9 @@
     <input id="searchInput" type="search" placeholder="Szukaj produktów, kategorii, modelu..." aria-label="Szukaj produktów">
     <button id="searchButton" aria-label="Szukaj">⌕</button>
   </div>
-  <select id="language" aria-label="Język">
-    <option value="pl">PL</option><option value="de">DE</option><option value="en">EN</option><option value="nl">NL</option><option value="ru">RU</option>
-  </select>
+  <div class="lang-nav" id="langNav" aria-label="Język">
+    <button type="button" data-lang="pl">PL</button><button type="button" data-lang="de">DE</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="nl">NL</button><button type="button" data-lang="ru">RU</button>
+  </div>
   <button class="header-icon" title="Konto" aria-label="Konto">♙</button>
   <button class="header-icon" id="favoritesButton" title="Ulubione" aria-label="Ulubione">♡ <span id="favoritesCount">0</span></button>
   <button class="header-icon" id="cartButton" title="Koszyk" aria-label="Koszyk">🛒 <span id="cartCount">0</span></button>
@@ -253,7 +253,7 @@
   </div>
 </div>
 
-<script src="script.js?v=10"></script>
+<script src="script.js?v=11"></script>
 </body>
 </html>
 
