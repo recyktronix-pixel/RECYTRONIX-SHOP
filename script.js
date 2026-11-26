@@ -52,10 +52,10 @@ const translations = {
     priceAsc: "Cena rosnąco",
     priceDesc: "Cena malejąco",
     nameAZ: "Nazwa A–Z",
-    noProducts: "Nie znaleziono produktów.",
-    benefits1: "Szybka wysyłka",
-    benefits2: "Bezpieczne zakupy",
-    benefits3: "Sprawdzony asortyment",
+    noProducts: "Nie znaleziono produktów.", condAll: "Wszystkie", navAbout: "O nas", navTerms: "Regulamin", navPrivacy: "Polityka prywatności", navShipping: "Dostawa i zwroty", condNew: "Nowe", condUsed: "Używane / Refurbished", badgeUsed: "używany",
+    benefits1: "Bezpieczne płatności",
+    benefits2: "Pomoc PL / DE",
+    benefits3: "Wsparcie AI Shadow",
     benefits4: "Obsługa zwrotów",
     benefits5: "Pomoc PL / DE",
     heroTitle: "RECYKTRONIX",
@@ -95,10 +95,10 @@ const translations = {
     priceAsc: "Preis aufsteigend",
     priceDesc: "Preis absteigend",
     nameAZ: "Name A–Z",
-    noProducts: "Keine Produkte gefunden.",
-    benefits1: "Schneller Versand",
-    benefits2: "Sicheres Einkaufen",
-    benefits3: "Geprüftes Sortiment",
+    noProducts: "Keine Produkte gefunden.", condAll: "Alle", navAbout: "Über uns", navTerms: "AGB", navPrivacy: "Datenschutzerklärung", navShipping: "Versand & Rückgabe", condNew: "Neu", condUsed: "Gebraucht / Refurbished", badgeUsed: "gebraucht",
+    benefits1: "Sichere Zahlungen",
+    benefits2: "Hilfe PL / DE",
+    benefits3: "AI-Shadow-Support",
     benefits4: "Rückgabe-Service",
     benefits5: "Hilfe PL / DE",
     heroTitle: "RECYKTRONIX",
@@ -138,10 +138,10 @@ const translations = {
     priceAsc: "Price ascending",
     priceDesc: "Price descending",
     nameAZ: "Name A–Z",
-    noProducts: "No products found.",
-    benefits1: "Fast shipping",
-    benefits2: "Secure shopping",
-    benefits3: "Verified assortment",
+    noProducts: "No products found.", condAll: "All", navAbout: "About us", navTerms: "Terms", navPrivacy: "Privacy Policy", navShipping: "Shipping & Returns", condNew: "New", condUsed: "Used / Refurbished", badgeUsed: "used",
+    benefits1: "Secure payments",
+    benefits2: "Help PL / DE",
+    benefits3: "AI Shadow support",
     benefits4: "Return service",
     benefits5: "Help PL / DE",
     heroTitle: "RECYKTRONIX",
@@ -181,10 +181,10 @@ const translations = {
     priceAsc: "Prijs oplopend",
     priceDesc: "Prijs aflopend",
     nameAZ: "Naam A–Z",
-    noProducts: "Geen producten gevonden.",
-    benefits1: "Snelle verzending",
-    benefits2: "Veilig winkelen",
-    benefits3: "Geverifieerd assortiment",
+    noProducts: "Geen producten gevonden.", condAll: "Alle", condNew: "Nieuw", navAbout: "Over ons", navTerms: "Voorwaarden", navPrivacy: "Privacybeleid", navShipping: "Verzending & Retouren", condUsed: "Gebruikt / Refurbished", badgeUsed: "gebruikt",
+    benefits1: "Veilige betalingen",
+    benefits2: "Hulp PL / DE",
+    benefits3: "AI Shadow-ondersteuning",
     benefits4: "Retourservice",
     benefits5: "Hulp PL / DE",
     heroTitle: "RECYKTRONIX",
@@ -224,10 +224,10 @@ const translations = {
     priceAsc: "Цена по возрастанию",
     priceDesc: "Цена по убыванию",
     nameAZ: "Название А–Я",
-    noProducts: "Товары не найдены.",
-    benefits1: "Быстрая доставка",
-    benefits2: "Безопасные покупки",
-    benefits3: "Проверенный ассортимент",
+    noProducts: "Товары не найдены.", condAll: "Все", navAbout: "О нас", navTerms: "Условия", navPrivacy: "Политика конфиденциальности", navShipping: "Доставка и возврат", condNew: "Новые", condUsed: "Б/у / Восстановленные", badgeUsed: "б/у",
+    benefits1: "Безопасные платежи",
+    benefits2: "Помощь PL / DE",
+    benefits3: "Поддержка AI Shadow",
     benefits4: "Возврат товара",
     benefits5: "Помощь PL / DE",
     heroTitle: "RECYKTRONIX",
@@ -294,7 +294,7 @@ function renderProducts(){
         <button class="favorite ${favorites.includes(product.id)?"selected":""}" data-favorite="${product.id}" aria-label="${t('favorites')}">${favorites.includes(product.id)?"♥":"♡"}</button>
       </div>
       <div class="product-info"><h3>${product.name}</h3>
-        <p class="product-category">${categoryLabel(categories.find(c=>c.id===product.category)||{id:product.category,name:product.category})}${product.condition==="used"?' · <span class="cond-badge used">używany</span>':''}</p>
+        <p class="product-category">${categoryLabel(categories.find(c=>c.id===product.category)||{id:product.category,name:product.category})}${product.condition==="used"?` · <span class="cond-badge used">${t('badgeUsed')}</span>`:''}</p>
         ${product.description?`<p class="product-desc">${product.description}</p>`:""}
         <div class="product-bottom"><span class="product-price">${formatPrice(product.price)}</span>
           <div style="display:flex;gap:5px">
@@ -348,15 +348,21 @@ function updateLanguage(){
   document.getElementById("sortProducts").options[0].textContent=t('recommended');
   document.getElementById("sortProducts").options[1].textContent=t('priceAsc');
   document.getElementById("sortProducts").options[2].textContent=t('priceDesc');
+  const condKeyMap={all:'condAll',new:'condNew',used:'condUsed'};
+  document.querySelectorAll("#conditionTabs .cond-tab").forEach(b=>{
+    b.textContent=t(condKeyMap[b.dataset.cond]||'condAll');
+  });
   document.getElementById("sortProducts").options[3].textContent=t('nameAZ');
   document.querySelector(".hero h1").textContent=t('heroTitle');
   document.querySelector(".hero h2 span").textContent=t('heroSubtitle');
   document.querySelector(".hero p").textContent=t('heroDesc');
   document.querySelector(".primary-button").textContent=t('checkOffer')+" →";
   document.querySelector(".footer-brand span").textContent=t('heroSubtitle');
-  document.querySelector(".footer-links a:nth-child(2)").textContent="Privacy Policy";
-  document.querySelectorAll(".footer-links a")[0].textContent="Terms";
-  document.querySelectorAll(".footer-links a")[2].textContent="Shipping & Returns";
+  document.querySelector('.footer-links a[href="o-nas.html"]').textContent=t('navAbout');
+  document.querySelector('.footer-links a[href="legal/terms-and-conditions.html"]').textContent=t('navTerms');
+  document.querySelector('.footer-links a[href="legal/privacy-policy.html"]').textContent=t('navPrivacy');
+  document.querySelector('.footer-links a[href="legal/returns-and-complaints.html"]').textContent=t('navShipping');
+  renderProducts();
   localStorage.setItem('recyktronix-lang',currentLang);
 }
 document.getElementById("searchInput").addEventListener("input",event=>{searchQuery=event.target.value;renderProducts();});
