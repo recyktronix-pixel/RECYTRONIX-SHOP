@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050a12">
+<title>APK i Boty AI | RECYKTRONIX</title>
+<meta name="description" content="Pobierz aplikacje RECYKTRONIX AI na Androida i korzystaj z botów Telegram. Subskrypcje premium.">
+<style>
+:root{--bg:#050a12;--panel:#0b1421;--blue:#00c8ff;--blue2:#087cff;--text:#eef6ff;--muted:#91a4b9;--border:#17476a}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+a{color:var(--blue);text-decoration:none}
+header{padding:44px 5% 30px;text-align:center;border-bottom:1px solid var(--border)}
+header h1{font-size:2rem;letter-spacing:.5px}
+header p{color:var(--muted);margin-top:8px}
+main{max-width:1100px;margin:0 auto;padding:36px 20px 70px}
+h2{color:var(--blue);font-size:1.3rem;margin:38px 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;transition:.2s}
+.card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(0,200,255,.12);transform:translateY(-2px)}
+.card .icon{font-size:34px}
+.card h3{font-size:1.05rem}
+.card p{color:var(--muted);font-size:.88rem;flex:1}
+.meta{font-size:.78rem;color:var(--blue);font-weight:bold}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-block;padding:9px 16px;border-radius:8px;font-size:.85rem;font-weight:bold;cursor:pointer;border:1px solid var(--border);background:#0d1a2b;color:var(--text);transition:.2s;text-align:center}
+.btn:hover{border-color:var(--blue)}
+.btn.primary{background:var(--blue);color:#04121f;border-color:transparent}
+.btn.primary:hover{filter:brightness(1.1)}
+.btn.qr{border-color:var(--blue);color:var(--blue)}
+.btn.qr:hover{background:rgba(0,200,255,.12)}
+.price{font-size:1.3rem;font-weight:bold;color:var(--blue)}
+.price small{font-size:.8rem;color:var(--muted);font-weight:normal}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-box{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:26px;max-width:420px;width:100%;text-align:center}
+.modal-box h3{margin-bottom:14px;color:var(--blue)}
+.qr-white{background:#fff;padding:14px;border-radius:12px;display:inline-block;line-height:0}
+.qr-white img,.qr-white canvas{display:block}
+.modal-info{margin-top:14px;font-size:.85rem;color:var(--muted)}
+.modal-info strong{color:var(--text)}
+.close-x{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--muted);font-size:26px;cursor:pointer}
+footer{border-top:1px solid var(--border);padding:24px 5%;text-align:center;color:var(--muted);font-size:.85rem}
+footer a{margin:0 8px}
+.note{background:#0d1a2b;border:1px solid var(--border);border-radius:10px;padding:14px 18px;color:var(--muted);font-size:.85rem;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>RECYKTRONIX AI — Aplikacje i Boty</h1>
+  <p>Aplikacje na Androida, boty Telegram i subskrypcje premium</p>
+</header>
+
+<main>
+
+<section>
+  <h2>📱 Aplikacje Android (APK)</h2>
+  <p class="note">Pobierz plik APK i zainstaluj na telefonie (zezwól na instalację z nieznanych źródeł). Kod QR otworzysz aparatem telefonu — przeniesie Cię prosto do pobierania.</p>
+  <div class="grid" id="apkGrid"></div>
+</section>
+
+<section>
+  <h2>🤖 Boty Telegram</h2>
+  <div class="grid" id="botGrid"></div>
+</section>
+
+<section>
+  <h2>💎 Subskrypcje premium</h2>
+  <p class="note">Subskrypcja aktywowana po zaksięgowaniu przelewu — wyślij potwierdzenie na <a href="mailto:recyktronix@gmail.com">recyktronix@gmail.com</a> lub Telegram.</p>
+  <div class="grid" id="subGrid"></div>
+</section>
+
+</main>
+
+<!-- QR modal -->
+<div id="qrModal" class="modal">
+  <div class="modal-box">
+    <button class="close-x" data-close>×</button>
+    <h3 id="qrTitle">Kod QR</h3>
+    <div class="qr-white" id="qrBox"></div>
+    <p class="modal-info" id="qrInfo"></p>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html">Sklep</a> ·
+  <a href="o-nas.html">O nas</a> ·
+  <a href="legal/terms-and-conditions.html">Regulamin</a> ·
+  <a href="legal/privacy-policy.html">Polityka prywatności</a>
+  <div style="margin-top:10px">© 2026 RECYKTRONIX</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const BASE=location.origin+location.pathname.replace(/[^/]*$/,'');
+const EMAIL="recyktronix@gmail.com";
+const TG="https://t.me/ShadowAIHubBot";
+const IBAN="LT813250011871373390";
+
+const APKS=[
+ {file:"Recytronix-Live-Translator-AI.apk",name:"Live Translator AI",desc:"Tłumacz głosowy i tekstowy na żywo. Mówisz — słyszysz tłumaczenie.",size:"70 MB",icon:"🌐"},
+ {file:"Recytronix-Business-Assistant-AI-new.apk",name:"Business Assistant AI",desc:"Asystent biznesowy AI — maile, organizacja, ceny, dokumenty.",size:"19 MB",icon:"💼"},
+ {file:"Recyktronix-Geilenkirchen-Assistant-AI.apk",name:"Geilenkirchen Assistant AI",desc:"Asystent lokalny Geilenkirchen — praca, urząd, organizacja życia.",size:"11 MB",icon:"📍"},
+ {file:"Recyktronix-Firmware-Unlock-AI.apk",name:"Firmware Unlock AI",desc:"Narzędzie do odblokowywania firmware urządzeń.",size:"18 MB",icon:"🔓"}
+];
+
+const BOTS=[
+ {user:"ShadowAIHubBot",name:"Shadow AI — główny asystent",desc:"Koordynator: rozmowy, wyceny, porady, link do całego zespołu agentów.",icon:"👑"},
+ {user:"BetaTester91",name:"RECYTRONIX Support",desc:"Wsparcie techniczne i kontakt w sprawie zamówień oraz subskrypcji.",icon:"🛟"}
+];
+
+const SUBS=[
+ {name:"Shadow AI Pro",price:4.99,period:"/miesiąc",desc:"Pełny dostęp do Shadow: głos, pamięć, agenci, wyceny.",icon:"⭐"},
+ {name:"Pakiet Botów",price:9.99,period:"/miesiąc",desc:"Wszystkie boty Telegram + priorytetowa odpowiedź Shadowa.",icon:"🤖"},
+ {name:"Wszystko",price:14.99,period:"/miesiąc",desc:"Subskrypcja kompletna: Shadow Pro + boty + wczesny dostęp do nowych funkcji.",icon:"👑"}
+];
+
+const apkGrid=document.getElementById("apkGrid");
+APKS.forEach(a=>{
+  const url=BASE+'apks/'+encodeURIComponent(a.file);
+  const el=document.createElement("div");el.className="card";
+  el.innerHTML=`<div class="icon">${a.icon}</div><h3>${a.name}</h3><p>${a.desc}</p>
+    <div class="meta">APK • ${a.size}</div>
+    <div class="btns">
+      <a class="btn primary" href="${url}" download>⬇ Pobierz APK</a>
+      <button class="btn qr" data-qr="${url}" data-title="${a.name} — pobierz APK">⌗ Kod QR</button>
+    </div>`;
+  apkGrid.appendChild(el);
+});
+
+const botGrid=document.getElementById("botGrid");
+BOTS.forEach(b=>{
+  const url="https://t.me/"+b.user;
+  const el=document.createElement("div");el.className="card";
+  el.innerHTML=`<div class="icon">${b.icon}</div><h3>${b.name}</h3><p>${b.desc}</p>
+    <div class="meta">@${b.user}</div>
+    <div class="btns">
+      <a class="btn primary" href="${url}" target="_blank">Otwórz w Telegramie</a>
+      <button class="btn qr" data-qr="${url}" data-title="${b.name} — Telegram">⌗ Kod QR</button>
+    </div>`;
+  botGrid.appendChild(el);
+});
+
+const subGrid=document.getElementById("subGrid");
+SUBS.forEach(s=>{
+  const el=document.createElement("div");el.className="card";
+  el.innerHTML=`<div class="icon">${s.icon}</div><h3>${s.name}</h3><p>${s.desc}</p>
+    <div class="price">€${s.price.toFixed(2)}<small>${s.period}</small></div>
+    <div class="btns"><button class="btn primary" data-sub="${s.price.toFixed(2)}|${s.name}">Kup subskrypcję</button></div>`;
+  subGrid.appendChild(el);
+});
+
+// --- QR modal ---
+const qrModal=document.getElementById("qrModal");
+const qrBox=document.getElementById("qrBox");
+function showQR(text,title,info){
+  document.getElementById("qrTitle").textContent=title;
+  document.getElementById("qrInfo").innerHTML=info||"Zeskanuj aparatem telefonu.";
+  qrBox.innerHTML="";
+  if(typeof QRCode!=="undefined"){
+    new QRCode(qrBox,{text,width:220,height:220,colorDark:"#eef6ff",colorLight:"#ffffff"});
+  }else{
+    qrBox.innerHTML='<p style="color:#333;padding:20px">Ładuję kod QR...</p>';
+  }
+  qrModal.classList.add("open");
+}
+document.querySelectorAll("[data-qr]").forEach(btn=>btn.addEventListener("click",()=>{
+  showQR(btn.dataset.qr,btn.dataset.title,"Zeskanuj telefonem — otworzy się strona pobierania.");
+}));
+document.querySelectorAll("[data-close]").forEach(b=>b.addEventListener("click",()=>qrModal.classList.remove("open")));
+qrModal.addEventListener("click",e=>{if(e.target===qrModal)qrModal.classList.remove("open");});
+
+// --- Płatność subskrypcji przez QR ---
+document.getElementById("subGrid").addEventListener("click",e=>{
+  const btn=e.target.closest("[data-sub]");if(!btn)return;
+  const [price,name]=btn.dataset.sub.split("|");
+  const orderNo="SUB-"+Date.now().toString(36).toUpperCase();
+  const title=`Subskrypcja ${name} ${orderNo}`;
+  const epdu=["BCD","002","1","SCT",IBAN,"RECYTRONIX",price,"EUR",title, ""].join("\n");
+  showQR(epdu,`Zapłać: ${name} — €${price}/mies.`,
+    `Kwota: <strong>€${price}</strong> · Tytuł: <strong>${title}</strong><br>IBAN: <strong>${IBAN.replace(/(.{4})/g,"$1 ").trim()}</strong><br>Zeskanuj aplikacją bankową (Przelew na telefon). Po zaksięgowaniu wyślij potwierdzenie na ${EMAIL} lub Telegram.`);
+});
+</script>
+</body>
+</html>

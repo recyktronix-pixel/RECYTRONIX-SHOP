@@ -52,7 +52,7 @@ const translations = {
     priceAsc: "Cena rosnąco",
     priceDesc: "Cena malejąco",
     nameAZ: "Nazwa A–Z",
-    noProducts: "Nie znaleziono produktów.", condAll: "Wszystkie", navAbout: "O nas", navTerms: "Regulamin", navPrivacy: "Polityka prywatności", navShipping: "Dostawa i zwroty", payTitle: "Metody płatności", payPalDesc: "Szybka i bezpieczna płatność", payBankTitle: "Przelew bankowy", payBankDesc: "Dostępny przelew SEPA", payBlikDesc: "Szybka płatność mobilna", payCryptoDesc: "Akceptujemy USDT TRON", payBtn: "Zapłać przez PayPal", condNew: "Nowe", condUsed: "Używane", badgeUsed: "używany",
+    noProducts: "Nie znaleziono produktów.", condAll: "Wszystkie", navAbout: "O nas", navTerms: "Regulamin", navPrivacy: "Polityka prywatności", navShipping: "Dostawa i zwroty", navApk: "APK i boty", payTitle: "Metody płatności", payPalDesc: "Szybka i bezpieczna płatność", payBankTitle: "Przelew bankowy", payBankDesc: "Dostępny przelew SEPA", payBlikDesc: "Szybka płatność mobilna", payCryptoDesc: "Akceptujemy USDT TRON", payBtn: "Zapłać przez PayPal", condNew: "Nowe", condUsed: "Używane", badgeUsed: "używany",
     benefits1: "Bezpieczne płatności",
     benefits2: "Pomoc PL / DE",
     benefits3: "Wsparcie AI Shadow",
@@ -95,7 +95,7 @@ const translations = {
     priceAsc: "Preis aufsteigend",
     priceDesc: "Preis absteigend",
     nameAZ: "Name A–Z",
-    noProducts: "Keine Produkte gefunden.", condAll: "Alle", navAbout: "Über uns", navTerms: "AGB", navPrivacy: "Datenschutzerklärung", navShipping: "Versand & Rückgabe", payTitle: "Zahlungsmethoden", payPalDesc: "Schnelle und sichere Zahlung", payBankTitle: "Banküberweisung", payBankDesc: "SEPA-Überweisung verfügbar", payBlikDesc: "Schnelle mobile Zahlung", payCryptoDesc: "USDT TRON wird akzeptiert", payBtn: "Mit PayPal zahlen", condNew: "Neu", condUsed: "Gebraucht", badgeUsed: "gebraucht",
+    noProducts: "Keine Produkte gefunden.", condAll: "Alle", navAbout: "Über uns", navTerms: "AGB", navPrivacy: "Datenschutzerklärung", navShipping: "Versand & Rückgabe", navApk: "APK & Bots", payTitle: "Zahlungsmethoden", payPalDesc: "Schnelle und sichere Zahlung", payBankTitle: "Banküberweisung", payBankDesc: "SEPA-Überweisung verfügbar", payBlikDesc: "Schnelle mobile Zahlung", payCryptoDesc: "USDT TRON wird akzeptiert", payBtn: "Mit PayPal zahlen", condNew: "Neu", condUsed: "Gebraucht", badgeUsed: "gebraucht",
     benefits1: "Sichere Zahlungen",
     benefits2: "Hilfe PL / DE",
     benefits3: "AI-Shadow-Support",
@@ -138,7 +138,7 @@ const translations = {
     priceAsc: "Price ascending",
     priceDesc: "Price descending",
     nameAZ: "Name A–Z",
-    noProducts: "No products found.", condAll: "All", navAbout: "About us", navTerms: "Terms", navPrivacy: "Privacy Policy", navShipping: "Shipping & Returns", payTitle: "Payment Methods", payPalDesc: "Fast and secure payment", payBankTitle: "Bank Transfer", payBankDesc: "SEPA transfer available", payBlikDesc: "Quick mobile payment", payCryptoDesc: "USDT TRON accepted", payBtn: "Pay with PayPal", condNew: "New", condUsed: "Used", badgeUsed: "used",
+    noProducts: "No products found.", condAll: "All", navAbout: "About us", navTerms: "Terms", navPrivacy: "Privacy Policy", navShipping: "Shipping & Returns", navApk: "APK & Bots", payTitle: "Payment Methods", payPalDesc: "Fast and secure payment", payBankTitle: "Bank Transfer", payBankDesc: "SEPA transfer available", payBlikDesc: "Quick mobile payment", payCryptoDesc: "USDT TRON accepted", payBtn: "Pay with PayPal", condNew: "New", condUsed: "Used", badgeUsed: "used",
     benefits1: "Secure payments",
     benefits2: "Help PL / DE",
     benefits3: "AI Shadow support",
@@ -181,7 +181,7 @@ const translations = {
     priceAsc: "Prijs oplopend",
     priceDesc: "Prijs aflopend",
     nameAZ: "Naam A–Z",
-    noProducts: "Geen producten gevonden.", condAll: "Alle", condNew: "Nieuw", navAbout: "Over ons", navTerms: "Voorwaarden", navPrivacy: "Privacybeleid", navShipping: "Verzending & Retouren", payTitle: "Betaalmethoden", payPalDesc: "Snelle en veilige betaling", payBankTitle: "Bankoverschrijving", payBankDesc: "SEPA-overboeking beschikbaar", payBlikDesc: "Snelle mobiele betaling", payCryptoDesc: "USDT TRON geaccepteerd", payBtn: "Betalen met PayPal", condUsed: "Gebruikt", badgeUsed: "gebruikt",
+    noProducts: "Geen producten gevonden.", condAll: "Alle", condNew: "Nieuw", navAbout: "Over ons", navTerms: "Voorwaarden", navPrivacy: "Privacybeleid", navShipping: "Verzending & Retouren", navApk: "APK & Bots", payTitle: "Betaalmethoden", payPalDesc: "Snelle en veilige betaling", payBankTitle: "Bankoverschrijving", payBankDesc: "SEPA-overboeking beschikbaar", payBlikDesc: "Snelle mobiele betaling", payCryptoDesc: "USDT TRON geaccepteerd", payBtn: "Betalen met PayPal", condUsed: "Gebruikt", badgeUsed: "gebruikt",
     benefits1: "Veilige betalingen",
     benefits2: "Hulp PL / DE",
     benefits3: "AI Shadow-ondersteuning",
@@ -224,7 +224,7 @@ const translations = {
     priceAsc: "Цена по возрастанию",
     priceDesc: "Цена по убыванию",
     nameAZ: "Название А–Я",
-    noProducts: "Товары не найдены.", condAll: "Все", navAbout: "О нас", navTerms: "Условия", navPrivacy: "Политика конфиденциальности", navShipping: "Доставка и возврат", payTitle: "Способы оплаты", payPalDesc: "Быстрый и безопасный платёж", payBankTitle: "Банковский перевод", payBankDesc: "Доступен перевод SEPA", payBlikDesc: "Быстрая мобильная оплата", payCryptoDesc: "Принимаем USDT TRON", payBtn: "Оплатить через PayPal", condNew: "Новые", condUsed: "Б/у", badgeUsed: "б/у",
+    noProducts: "Товары не найдены.", condAll: "Все", navAbout: "О нас", navTerms: "Условия", navPrivacy: "Политика конфиденциальности", navShipping: "Доставка и возврат", navApk: "APK и боты", payTitle: "Способы оплаты", payPalDesc: "Быстрый и безопасный платёж", payBankTitle: "Банковский перевод", payBankDesc: "Доступен перевод SEPA", payBlikDesc: "Быстрая мобильная оплата", payCryptoDesc: "Принимаем USDT TRON", payBtn: "Оплатить через PayPal", condNew: "Новые", condUsed: "Б/у", badgeUsed: "б/у",
     benefits1: "Безопасные платежи",
     benefits2: "Помощь PL / DE",
     benefits3: "Поддержка AI Shadow",
@@ -702,11 +702,7 @@ updateLanguage();
 renderProducts();
 applySettings();
 
-// AI Chat Modal
-document.querySelector(".ai-card a").addEventListener("click",(e)=>{
-  e.preventDefault();
-  document.getElementById("aiChatModal").style.display="flex";
-});
+// AI card link prowadzi do apki.html - bez przechwytywania
 
 document.getElementById("closeAiChat").addEventListener("click",()=>{
   document.getElementById("aiChatModal").style.display="none";
