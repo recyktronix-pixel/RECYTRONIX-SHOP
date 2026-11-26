@@ -107,7 +107,9 @@ footer{background:#080f19;border-top:1px solid var(--border);padding:28px 4%;dis
 .payment-method p{color:var(--muted);font-size:14px;margin-bottom:15px}
 .payment-link{display:inline-block;padding:10px 20px;background:var(--blue);color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:14px;transition:.2s}
 .payment-link:hover{background:var(--blue2)}
-.payment-method .payment-info{font-family:'Consolas','Courier New',monospace;font-size:12.5px;color:var(--text);background:#0d1a2b;border:1px solid var(--border);border-left:3px solid var(--blue);padding:11px 14px;border-radius:8px;margin-top:10px;margin-bottom:0;word-break:break-all;letter-spacing:.2px}
+.payment-method .payment-info{font-family:'Consolas','Courier New',monospace;font-size:12.5px;color:var(--text);background:#0d1a2b;border:1px solid var(--border);border-left:3px solid var(--blue);padding:11px 14px;border-radius:8px;margin-top:10px;margin-bottom:0;word-break:break-all;letter-spacing:.2px;text-align:left}
+.pay-toggle{display:inline-block;margin-top:12px;padding:9px 18px;border-radius:8px;border:1px solid var(--blue);background:rgba(0,200,255,.08);color:var(--blue);font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
+.pay-toggle:hover{background:var(--blue);color:#04121f;box-shadow:0 0 14px rgba(0,200,255,.5)}
 @media(max-width:768px){.payment-methods{grid-template-columns:1fr}}
 
 
@@ -189,7 +191,7 @@ footer{background:#080f19;border-top:1px solid var(--border);padding:28px 4%;dis
 @media(max-width:560px){.pay-body{flex-direction:column;align-items:center}}
 
 /* Copy buttons */
-.copy-btn{display:block;width:fit-content;margin:7px 0 14px auto;padding:6px 14px;border-radius:7px;border:1px solid var(--blue);background:rgba(0,200,255,.08);color:var(--blue);font-size:.75rem;font-weight:bold;cursor:pointer;transition:.2s}
+.copy-btn{display:block;width:fit-content;margin:8px auto 4px;padding:6px 14px;border-radius:7px;border:1px solid var(--blue);background:rgba(0,200,255,.08);color:var(--blue);font-size:.75rem;font-weight:bold;cursor:pointer;transition:.2s}
 .copy-btn:hover{background:var(--blue);color:#04121f;box-shadow:0 0 14px rgba(0,200,255,.5)}
 
 /* Newsletter */
