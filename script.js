@@ -437,8 +437,6 @@ document.getElementById("cartItems").addEventListener("click",(e)=>{
 });
 // --- Płatność QR (Przelew na telefon / EPDU) ---
 const payModal=document.getElementById("payModal");
-const PAY_IBAN="LT813250011871373390";
-const PAY_NAME="RECYKTRONIX";
 
 function cartTotalAmount(){
   return cart.reduce((s,id)=>s+(products.find(i=>i.id===id)?.price||0),0);
@@ -449,12 +447,13 @@ function openPaymentQR(){
   const total=cartTotalAmount();
   const orderNo="RCK-"+Date.now().toString(36).toUpperCase();
   const title=`Zamowienie ${orderNo}`;
-  // Format BCD / "Przelew na telefon" - czytelny przez aplikacje bankowe
-  const epdu=["BCD","002","1","SCT",PAY_IBAN,PAY_NAME,total.toFixed(2),"EUR",title, ""].join("\n");
+  // QR = link do Telegrama @BetaTester91 z gotowym zamówieniem - bez danych odbiorcy
+  const tgMsg=`Zamowienie ${orderNo} na ${formatPrice(total)}`;
+  const qrText=`https://t.me/BetaTester91?start=${encodeURIComponent(tgMsg)}`;
   const box=document.getElementById("payQr");
   box.innerHTML="";
   if(typeof QRCode!=="undefined"){
-    new QRCode(box,{text:epdu,width:230,height:230,correctLevel:QRCode.CorrectLevel.M,colorDark:"#eef6ff",colorLight:"#0b1421"});
+    new QRCode(box,{text:qrText,width:230,height:230,correctLevel:QRCode.CorrectLevel.M,colorDark:"#eef6ff",colorLight:"#0b1421"});
   }else{
     box.innerHTML=`<p style="color:var(--muted);font-size:.85rem">Ładuję kod QR...</p>`;
   }

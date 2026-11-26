@@ -94,9 +94,6 @@ footer a{margin:0 8px}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 const BASE=location.origin+location.pathname.replace(/[^/]*$/,'');
-const EMAIL="recyktronix@gmail.com";
-const TG="https://t.me/ShadowAIHubBot";
-const IBAN="LT813250011871373390";
 
 const APKS=[
  {file:"Recytronix-Live-Translator-AI.apk",name:"Live Translator AI",desc:"Tłumacz głosowy i tekstowy na żywo. Mówisz — słyszysz tłumaczenie.",size:"70 MB",icon:"🌐"},
@@ -171,15 +168,15 @@ document.querySelectorAll("[data-qr]").forEach(btn=>btn.addEventListener("click"
 document.querySelectorAll("[data-close]").forEach(b=>b.addEventListener("click",()=>qrModal.classList.remove("open")));
 qrModal.addEventListener("click",e=>{if(e.target===qrModal)qrModal.classList.remove("open");});
 
-// --- Płatność subskrypcji przez QR ---
+// --- Subskrypcja przez QR = link do Telegrama ---
 document.getElementById("subGrid").addEventListener("click",e=>{
   const btn=e.target.closest("[data-sub]");if(!btn)return;
   const [price,name]=btn.dataset.sub.split("|");
   const orderNo="SUB-"+Date.now().toString(36).toUpperCase();
-  const title=`Subskrypcja ${name} ${orderNo}`;
-  const epdu=["BCD","002","1","SCT",IBAN,"RECYTRONIX",price,"EUR",title, ""].join("\n");
-  showQR(epdu,`Zapłać: ${name} — €${price}/mies.`,
-    `Kwota: <strong>€${price}</strong> · Tytuł: <strong>${title}</strong><br>IBAN: <strong>${IBAN.replace(/(.{4})/g,"$1 ").trim()}</strong><br>Zeskanuj aplikacją bankową (Przelew na telefon). Po zaksięgowaniu wyślij potwierdzenie na ${EMAIL} lub Telegram.`);
+  const tgMsg=`Subskrypcja ${name} — €${price}/mies. (${orderNo})`;
+  const qrText=`https://t.me/BetaTester91?start=${encodeURIComponent(tgMsg)}`;
+  showQR(qrText,`Zapłać: ${name} — €${price}/mies.`,
+    `Zeskanuj telefonem — otworzy się Telegram <strong>@BetaTester91</strong> z gotową wiadomością.<br>Kwota: <strong>€${price}/miesiąc</strong> · Tam ustalimy szczegóły płatności.<br>Bezpośrednio: <a href="https://t.me/BetaTester91" target="_blank">t.me/BetaTester91</a>`);
 });
 </script>
 </body>
