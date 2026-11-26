@@ -437,6 +437,8 @@ document.getElementById("cartItems").addEventListener("click",(e)=>{
 });
 // --- Płatność QR (Przelew na telefon / EPDU) ---
 const payModal=document.getElementById("payModal");
+const DEFAULT_PAY_NOTE=document.getElementById("payNote")?document.getElementById("payNote").innerHTML:"";
+const DEFAULT_PAY_TITLE=document.querySelector("#payModal .cart-header h3")?document.querySelector("#payModal .cart-header h3").textContent:"";
 
 function cartTotalAmount(){
   return cart.reduce((s,id)=>s+(products.find(i=>i.id===id)?.price||0),0);
@@ -459,6 +461,8 @@ function openPaymentQR(){
   }
   document.getElementById("payAmount").textContent=formatPrice(total);
   document.getElementById("payTitle").textContent=title;
+  document.getElementById("payNote").innerHTML=DEFAULT_PAY_NOTE;
+  document.querySelector("#payModal .cart-header h3").textContent=DEFAULT_PAY_TITLE;
   cartModal.style.display="none";
   payModal.style.display="flex";
 }
@@ -467,6 +471,45 @@ document.getElementById("checkoutBtn").addEventListener("click",openPaymentQR);
 document.getElementById("closePay").addEventListener("click",()=>{payModal.style.display="none";});
 document.getElementById("payDoneBtn").addEventListener("click",()=>{payModal.style.display="none";});
 payModal.addEventListener("click",(e)=>{if(e.target===payModal)payModal.style.display="none";});
+
+// --- QR per metoda płatności (PayPal / SEPA / Crypto) ---
+const PAYQR={
+  paypal:{
+    text:"https://paypal.me/RECYKTRONIX",
+    title:"PayPal",
+    detail:"paypal.me/RECYKTRONIX",
+    info:"Zeskanuj telefonem — otworzy się <strong>PayPal</strong> z gotową stroną płatności na Twoje konto."
+  },
+  bank:{
+    build:()=>["BCD","002","1","SCT","LT813250011871373390","RECYKTRONIX","","EUR","Platnosc RECYKTRONIX",""].join("\n"),
+    title:"Przelew bankowy SEPA",
+    detail:"SEPA Credit Transfer — IBAN LT81",
+    info:"Zeskanuj <strong>aplikacją bankową</strong> (Przelew na telefon / SEPA-QR) — odbiorca i tytuł wypełnią się same. <strong>Kwotę wpisz ręcznie.</strong>"
+  },
+  crypto:{
+    text:"THXkPP2g44fvJJw5TXyRqdPm78fBoH9wG5",
+    title:"Crypto — USDT TRC20",
+    detail:"TRON / USDT",
+    info:"Zeskanuj <strong>portfelem krypto</strong> (TrustWallet, TronLink) — adres odbiorcy wczyta się sam."
+  }
+};
+document.querySelectorAll(".pay-method-qr").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const cfg=PAYQR[btn.dataset.payqr];
+    if(!cfg)return;
+    const text=cfg.build?cfg.build():cfg.text;
+    const box=document.getElementById("payQr");
+    box.innerHTML="";
+    if(typeof QRCode!=="undefined"){
+      new QRCode(box,{text,width:230,height:230,correctLevel:QRCode.CorrectLevel.M,colorDark:"#eef6ff",colorLight:"#0b1421"});
+    }
+    document.getElementById("payAmount").textContent=cfg.title;
+    document.getElementById("payTitle").textContent=cfg.detail;
+    document.getElementById("payNote").innerHTML=cfg.info;
+    document.querySelector("#payModal .cart-header h3").textContent=cfg.title;
+    payModal.style.display="flex";
+  });
+});
 document.getElementById("year").textContent=new Date().getFullYear();
 document.getElementById("langNav").addEventListener("click",event=>{
   const btn=event.target.closest("button[data-lang]");
