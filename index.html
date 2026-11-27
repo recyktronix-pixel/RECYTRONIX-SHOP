@@ -13,43 +13,53 @@
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://recyktronix-pixel.github.io/RECYTRONIX-SHOP/#organization",
+        "@id": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/#organization",
         "name": "RECYKTRONIX",
         "alternateName": "RECYKTRONIX Technology Store",
-        "url": "https://recyktronix-pixel.github.io/RECYTRONIX-SHOP/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://recyktronix-pixel.github.io/RECYTRONIX-SHOP/grafika.png"
-        },
-        "knowsAbout": ["Electronics","Smartphones","Laptops","Headphones","Cameras","Drones","Technology accessories","Digital services","AI tools","Telegram bots"]
+        "url": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/",
+        "description": [
+          {"@value": "RECYKTRONIX – sklep internetowy z elektroniką, smartfonami, laptopami, słuchawkami, kamerami, dronami, akcesoriami i usługami cyfrowymi.", "@language": "pl"},
+          {"@value": "RECYKTRONIX – an online technology store offering smartphones, laptops, headphones, cameras, drones, accessories and digital services.", "@language": "en"}
+        ],
+        "knowsAbout": ["Electronics","Smartphones","Laptops","Headphones","Cameras","Drones","Technology accessories","Digital services","AI tools","Telegram bots"],
+        "logo": {"@type": "ImageObject","url": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/grafika.png"}
       },
       {
         "@type": "OnlineStore",
         "@id": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/#store",
         "name": "RECYKTRONIX",
         "url": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/",
-        "parentOrganization": {"@id": "https://recyktronix-pixel.github.io/RECYTRONIX-SHOP/#organization"},
-        "currenciesAccepted": "EUR",
+        "parentOrganization": {"@id": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/#organization"},
+        "currenciesAccepted": "EUR, PLN",
         "paymentAccepted": ["PayPal","BLIK","SEPA Bank Transfer","USDT"],
         "availableLanguage": ["Polish","English","German","Dutch","Russian"]
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://recyktronix-pixel.github.io/RECYTRONIX-SHOP/#localbusiness",
+        "@id": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/#localbusiness",
         "name": "RECYKTRONIX",
         "url": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/",
-        "email": "recyktronix@gmail.com",
+        "description": [
+          {"@value": "Sklep technologiczny RECYKTRONIX oferujący elektronikę i produkty cyfrowe klientom w Polsce i Unii Europejskiej.", "@language": "pl"},
+          {"@value": "RECYKTRONIX technology store offering electronics and digital products to customers in Poland and across the European Union.", "@language": "en"}
+        ],
         "parentOrganization": {"@id": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/#organization"},
+        "email": "recyktronix@gmail.com",
         "priceRange": "€€-€€€",
-        "currenciesAccepted": "EUR"
+        "currenciesAccepted": "EUR, PLN"
       },
       {
         "@type": "WebSite",
         "@id": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/#website",
         "url": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/",
         "name": "RECYKTRONIX",
+        "alternateName": "RECYKTRONIX Online Technology Store",
         "publisher": {"@id": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/#organization"},
         "inLanguage": ["pl","en","de","nl","ru"],
+        "description": [
+          {"@value": "Oficjalny sklep internetowy RECYKTRONIX – elektronika, technologie i usługi cyfrowe.", "@language": "pl"},
+          {"@value": "Official RECYKTRONIX online store – electronics, technology and digital services.", "@language": "en"}
+        ],
         "potentialAction": {
           "@type": "SearchAction",
           "target": {"@type": "EntryPoint","urlTemplate": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/?q={search_term_string}"},
@@ -59,8 +69,14 @@
       {
         "@type": "Product",
         "@id": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/#smartphone-256gb",
-        "name": "Smartfon Pro 256 GB",
-        "description": "Nowoczesny smartfon z pamięcią 256 GB — przestrzeń na zdjęcia, aplikacje, filmy i dokumenty.",
+        "name": [
+          {"@value": "Smartfon Pro 256 GB", "@language": "pl"},
+          {"@value": "256 GB Smartphone", "@language": "en"}
+        ],
+        "description": [
+          {"@value": "Nowoczesny smartfon z pamięcią 256 GB — przestrzeń na zdjęcia, aplikacje, filmy i dokumenty.", "@language": "pl"},
+          {"@value": "A modern 256 GB smartphone with room for photos, apps, videos and documents.", "@language": "en"}
+        ],
         "brand": {"@type": "Brand","name": "RECYKTRONIX"},
         "category": "Electronics > Mobile Phones > Smartphones",
         "additionalProperty": {"@type": "PropertyValue","name": "Internal storage","value": "256 GB"},
