@@ -48,6 +48,9 @@ function openAuth(mode){
   $("authPassword").setAttribute("autocomplete",authMode==="login"?"current-password":"new-password");
   $("authTitle").textContent=at(authMode==="login"?"login":"register");
   $("authSubmit").textContent=at(authMode==="login"?"submitLogin":"submitRegister");
+  $("authName").placeholder=at("name");
+  $("authEmail").placeholder=at("email");
+  $("authPassword").placeholder=at("password");
   $("authError").textContent="";
   authModal.style.display="flex";
 }

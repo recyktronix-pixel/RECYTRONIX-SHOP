@@ -53,13 +53,21 @@ const translations = {
     priceDesc: "Cena malejąco",
     nameAZ: "Nazwa A–Z",
     noProducts: "Nie znaleziono produktów.", condAll: "Wszystkie", navAbout: "O nas", navTerms: "Regulamin", navPrivacy: "Polityka prywatności", navShipping: "Dostawa i zwroty", navApk: "APK i boty", payTitle: "Metody płatności", payPalDesc: "Szybka i bezpieczna płatność", payBankTitle: "Przelew bankowy", payBankDesc: "Dostępny przelew SEPA", payBlikDesc: "Szybka płatność mobilna", payCryptoDesc: "Akceptujemy USDT TRON", payBtn: "Zapłać przez PayPal", condNew: "Nowe", condUsed: "Używane", badgeUsed: "używany", payViaTelegram: "📩 Dane płatności w Telegramie", payShowBlik: "👁 Pokaż kod BLIK", payHideBlik: "🙈 Ukryj kod BLIK",
+    navHome:"Start",navProducts:"Produkty",navPromos:"Promocje",navNew:"Nowości",navAi:"RECYKTRONIX AI",navHelp:"Pomoc",navContact:"Kontakt",
+    offerEyebrow:"NASZA OFERTA",stripQ1:"✦ Jakość biznesowa",stripQ2:"⚙ Profesjonalna obsługa",stripQ3:"◇ Wyselekcjonowany asortyment",
+    helpTitle:"RECYKTRONIX – technologia w jednym miejscu",helpDesc:"Zapoznaj się z naszą ofertą i skontaktuj się z nami, jeśli potrzebujesz pomocy w wyborze produktu.",
+    newsTitle:"Newsletter",newsDesc:"Zapisz się, aby otrzymywać informacje o nowościach, promocjach i poradach technologicznych.",newsPh:"Twój adres e-mail",newsBtn:"Zapisz się",newsBad:"Podaj poprawny adres e-mail.",newsDup:"Ten adres jest już zapisany.",newsOk:"Dziękujemy! Zapisaliśmy Twój adres. Wkrótce napiszemy z nowościami.",
+    cartTitle:"Koszyk",cartDiscount:"Rabat członkowski −5%",cartTotalLbl:"Razem:",checkoutBtn:"DALEJ DO PŁATNOŚCI",
+    payModalTitle:"Zapłać przelewem",payAmountLbl:"Kwota:",payOrderLbl:"Zamówienie:",payClose:"Zamknij",payNoteTxt:"Zeskanuj kod telefonem — otworzy się Telegram @BetaTester91 z gotową wiadomością o zamówieniu. Tam ustalimy szczegóły płatności.",
+    footerContact:"Kontakt:",footerTg:"Telegram:",footerRights:"Wszelkie prawa zastrzeżone.",footerInvite:"zapraszamy do kontaktu!",
+    aiWelcome:"Witaj! Jestem asystentem RECYKTRONIX AI. W czym mogę pomóc?",aiPlaceholder:"Wpisz wiadomość...",aiSend:"Wyślij",
     benefits1: "Bezpieczne płatności",
     benefits2: "Pomoc PL / DE",
     benefits3: "Wsparcie AI Shadow",
     benefits4: "Obsługa zwrotów",
     benefits5: "Pomoc PL / DE",
     heroTitle: "RECYKTRONIX",
-    heroSubtitle: "e-Shop Business Pro",
+    heroSubtitle: "Business Pro",
     heroDesc: "Nowoczesna technologia. Sprawdzony sprzęt. Profesjonalna obsługa.",
     checkOffer: "SPRAWDŹ OFERTĘ",
     contact: "Kontakt:",
@@ -96,13 +104,21 @@ const translations = {
     priceDesc: "Preis absteigend",
     nameAZ: "Name A–Z",
     noProducts: "Keine Produkte gefunden.", condAll: "Alle", navAbout: "Über uns", navTerms: "AGB", navPrivacy: "Datenschutzerklärung", navShipping: "Versand & Rückgabe", navApk: "APK & Bots", payTitle: "Zahlungsmethoden", payPalDesc: "Schnelle und sichere Zahlung", payBankTitle: "Banküberweisung", payBankDesc: "SEPA-Überweisung verfügbar", payBlikDesc: "Schnelle mobile Zahlung", payCryptoDesc: "USDT TRON wird akzeptiert", payBtn: "Mit PayPal zahlen", condNew: "Neu", condUsed: "Gebraucht", badgeUsed: "gebraucht", payViaTelegram: "📩 Zahlungsdaten per Telegram", payShowBlik: "👁 BLIK-Code anzeigen", payHideBlik: "🙈 BLIK-Code ausblenden",
+    navHome:"Start",navProducts:"Produkte",navPromos:"Angebote",navNew:"Neuheiten",navAi:"RECYKTRONIX AI",navHelp:"Hilfe",navContact:"Kontakt",
+    offerEyebrow:"UNSER ANGEBOT",stripQ1:"✦ Business-Qualität",stripQ2:"⚙ Professioneller Service",stripQ3:"◇ Kuratiertes Sortiment",
+    helpTitle:"RECYKTRONIX – Technik an einem Ort",helpDesc:"Entdecken Sie unser Sortiment und kontaktieren Sie uns, wenn Sie Hilfe bei der Produktauswahl benötigen.",
+    newsTitle:"Newsletter",newsDesc:"Abonnieren Sie Neuigkeiten, Aktionen und Technik-Tipps.",newsPh:"Ihre E-Mail-Adresse",newsBtn:"Abonnieren",newsBad:"Bitte geben Sie eine gültige E-Mail-Adresse ein.",newsDup:"Diese Adresse ist bereits eingetragen.",newsOk:"Danke! Ihre Adresse wurde gespeichert. Wir melden uns bald.",
+    cartTitle:"Warenkorb",cartDiscount:"Mitglieder-Rabatt −5%",cartTotalLbl:"Gesamt:",checkoutBtn:"WEITER ZUR ZAHLUNG",
+    payModalTitle:"Per Überweisung zahlen",payAmountLbl:"Betrag:",payOrderLbl:"Bestellung:",payClose:"Schließen",payNoteTxt:"Code mit dem Handy scannen — Telegram @BetaTester91 öffnet sich mit Ihrer Bestellnachricht.",
+    footerContact:"Kontakt:",footerTg:"Telegram:",footerRights:"Alle Rechte vorbehalten.",footerInvite:"kontaktieren Sie uns!",
+    aiWelcome:"Hallo! Ich bin der RECYKTRONIX AI Assistent. Wie kann ich helfen?",aiPlaceholder:"Nachricht eingeben...",aiSend:"Senden",
     benefits1: "Sichere Zahlungen",
     benefits2: "Hilfe PL / DE",
     benefits3: "AI-Shadow-Support",
     benefits4: "Rückgabe-Service",
     benefits5: "Hilfe PL / DE",
     heroTitle: "RECYKTRONIX",
-    heroSubtitle: "e-Shop Business Pro",
+    heroSubtitle: "Business Pro",
     heroDesc: "Moderne Technologie. Geprüfte Ausrüstung. Professioneller Service.",
     checkOffer: "ANGEBOT PRÜFEN",
     contact: "Kontakt:",
@@ -139,13 +155,21 @@ const translations = {
     priceDesc: "Price descending",
     nameAZ: "Name A–Z",
     noProducts: "No products found.", condAll: "All", navAbout: "About us", navTerms: "Terms", navPrivacy: "Privacy Policy", navShipping: "Shipping & Returns", navApk: "APK & Bots", payTitle: "Payment Methods", payPalDesc: "Fast and secure payment", payBankTitle: "Bank Transfer", payBankDesc: "SEPA transfer available", payBlikDesc: "Quick mobile payment", payCryptoDesc: "USDT TRON accepted", payBtn: "Pay with PayPal", condNew: "New", condUsed: "Used", badgeUsed: "used", payViaTelegram: "📩 Get payment details on Telegram", payShowBlik: "👁 Show BLIK code", payHideBlik: "🙈 Hide BLIK code",
+    navHome:"Home",navProducts:"Products",navPromos:"Promotions",navNew:"New",navAi:"RECYKTRONIX AI",navHelp:"Help",navContact:"Contact",
+    offerEyebrow:"OUR OFFER",stripQ1:"✦ Business quality",stripQ2:"⚙ Professional service",stripQ3:"◇ Curated selection",
+    helpTitle:"RECYKTRONIX – technology in one place",helpDesc:"Browse our offer and contact us if you need help choosing a product.",
+    newsTitle:"Newsletter",newsDesc:"Subscribe for news, promotions and tech tips.",newsPh:"Your email address",newsBtn:"Subscribe",newsBad:"Please enter a valid email address.",newsDup:"This address is already subscribed.",newsOk:"Thank you! Your address has been saved. We'll write soon.",
+    cartTitle:"Cart",cartDiscount:"Member discount −5%",cartTotalLbl:"Total:",checkoutBtn:"PROCEED TO PAYMENT",
+    payModalTitle:"Pay by bank transfer",payAmountLbl:"Amount:",payOrderLbl:"Order:",payClose:"Close",payNoteTxt:"Scan the code with your phone — Telegram @BetaTester91 opens with your order message.",
+    footerContact:"Contact:",footerTg:"Telegram:",footerRights:"All rights reserved.",footerInvite:"get in touch!",
+    aiWelcome:"Hello! I am the RECYKTRONIX AI assistant. How can I help?",aiPlaceholder:"Type a message...",aiSend:"Send",
     benefits1: "Secure payments",
     benefits2: "Help PL / DE",
     benefits3: "AI Shadow support",
     benefits4: "Return service",
     benefits5: "Help PL / DE",
     heroTitle: "RECYKTRONIX",
-    heroSubtitle: "e-Shop Business Pro",
+    heroSubtitle: "Business Pro",
     heroDesc: "Modern technology. Verified equipment. Professional service.",
     checkOffer: "CHECK OFFER",
     contact: "Contact:",
@@ -182,13 +206,21 @@ const translations = {
     priceDesc: "Prijs aflopend",
     nameAZ: "Naam A–Z",
     noProducts: "Geen producten gevonden.", condAll: "Alle", condNew: "Nieuw", navAbout: "Over ons", navTerms: "Voorwaarden", navPrivacy: "Privacybeleid", navShipping: "Verzending & Retouren", navApk: "APK & Bots", payTitle: "Betaalmethoden", payPalDesc: "Snelle en veilige betaling", payBankTitle: "Bankoverschrijving", payBankDesc: "SEPA-overboeking beschikbaar", payBlikDesc: "Snelle mobiele betaling", payCryptoDesc: "USDT TRON geaccepteerd", payBtn: "Betalen met PayPal", condUsed: "Gebruikt", badgeUsed: "gebruikt", payViaTelegram: "📩 Betaalgegevens via Telegram", payShowBlik: "👁 BLIK-code tonen", payHideBlik: "🙈 BLIK-code verbergen",
+    navHome:"Start",navProducts:"Producten",navPromos:"Acties",navNew:"Nieuw",navAi:"RECYKTRONIX AI",navHelp:"Help",navContact:"Contact",
+    offerEyebrow:"ONS AANBOD",stripQ1:"✦ Zakelijke kwaliteit",stripQ2:"⚙ Professionele service",stripQ3:"◇ Geselecteerd assortiment",
+    helpTitle:"RECYKTRONIX – technologie op één plek",helpDesc:"Bekijk ons assortiment en neem contact op als u hulp nodig heeft bij het kiezen van een product.",
+    newsTitle:"Nieuwsbrief",newsDesc:"Abonneer u voor nieuws, acties en technologietips.",newsPh:"Uw e-mailadres",newsBtn:"Abonneren",newsBad:"Voer een geldig e-mailadres in.",newsDup:"Dit adres is al ingeschreven.",newsOk:"Bedankt! Uw adres is opgeslagen. We schrijven bald.",
+    cartTitle:"Winkelwagen",cartDiscount:"Ledenkorting −5%",cartTotalLbl:"Totaal:",checkoutBtn:"DOOR NAAR BETALING",
+    payModalTitle:"Betalen per overboeking",payAmountLbl:"Bedrag:",payOrderLbl:"Bestelling:",payClose:"Sluiten",payNoteTxt:"Scan de code met je telefoon — Telegram @BetaTester91 opent met je bestelfbericht.",
+    footerContact:"Contact:",footerTg:"Telegram:",footerRights:"Alle rechten voorbehouden.",footerInvite:"neem contact op!",
+    aiWelcome:"Hallo! Ik ben de RECYKTRONIX AI assistent. Hoe kan ik helpen?",aiPlaceholder:"Typ een bericht...",aiSend:"Verzenden",
     benefits1: "Veilige betalingen",
     benefits2: "Hulp PL / DE",
     benefits3: "AI Shadow-ondersteuning",
     benefits4: "Retourservice",
     benefits5: "Hulp PL / DE",
     heroTitle: "RECYKTRONIX",
-    heroSubtitle: "e-Shop Business Pro",
+    heroSubtitle: "Business Pro",
     heroDesc: "Moderne technologie. Geverifieerde apparatuur. Professionele service.",
     checkOffer: "AANBOD BEKIJKEN",
     contact: "Contact:",
@@ -225,13 +257,21 @@ const translations = {
     priceDesc: "Цена по убыванию",
     nameAZ: "Название А–Я",
     noProducts: "Товары не найдены.", condAll: "Все", navAbout: "О нас", navTerms: "Условия", navPrivacy: "Политика конфиденциальности", navShipping: "Доставка и возврат", navApk: "APK и боты", payTitle: "Способы оплаты", payPalDesc: "Быстрый и безопасный платёж", payBankTitle: "Банковский перевод", payBankDesc: "Доступен перевод SEPA", payBlikDesc: "Быстрая мобильная оплата", payCryptoDesc: "Принимаем USDT TRON", payBtn: "Оплатить через PayPal", condNew: "Новые", condUsed: "Б/у", badgeUsed: "б/у", payViaTelegram: "📩 Данные для оплаты в Telegram", payShowBlik: "👁 Показать код BLIK", payHideBlik: "🙈 Скрыть код BLIK",
+    navHome:"Главная",navProducts:"Товары",navPromos:"Акции",navNew:"Новинки",navAi:"RECYKTRONIX AI",navHelp:"Помощь",navContact:"Контакты",
+    offerEyebrow:"НАШЕ ПРЕДЛОЖЕНИЕ",stripQ1:"✦ Бизнес-качество",stripQ2:"⚙ Профессиональный сервис",stripQ3:"◇ Отборный ассортимент",
+    helpTitle:"RECYKTRONIX – технологии в одном месте",helpDesc:"Ознакомьтесь с нашим предложением и свяжитесь с нами, если нужна помощь в выборе товара.",
+    newsTitle:"Рассылка",newsDesc:"Подпишитесь на новости, акции и советы по технике.",newsPh:"Ваш email",newsBtn:"Подписаться",newsBad:"Введите корректный email.",newsDup:"Этот адрес уже подписан.",newsOk:"Спасибо! Адрес сохранён. Скоро напишем.",
+    cartTitle:"Корзина",cartDiscount:"Скидка участника −5%",cartTotalLbl:"Итого:",checkoutBtn:"ПЕРЕЙТИ К ОПЛАТЕ",
+    payModalTitle:"Оплата переводом",payAmountLbl:"Сумма:",payOrderLbl:"Заказ:",payClose:"Закрыть",payNoteTxt:"Отсканируйте код телефоном — откроется Telegram @BetaTester91 с вашим заказом.",
+    footerContact:"Контакт:",footerTg:"Telegram:",footerRights:"Все права защищены.",footerInvite:"свяжитесь с нами!",
+    aiWelcome:"Здравствуйте! Я ассистент RECYKTRONIX AI. Чем могу помочь?",aiPlaceholder:"Введите сообщение...",aiSend:"Отправить",
     benefits1: "Безопасные платежи",
     benefits2: "Помощь PL / DE",
     benefits3: "Поддержка AI Shadow",
     benefits4: "Возврат товара",
     benefits5: "Помощь PL / DE",
     heroTitle: "RECYKTRONIX",
-    heroSubtitle: "e-Shop Business Pro",
+    heroSubtitle: "Business Pro",
     heroDesc: "Современные технологии. Проверенная техника. Профессиональный сервис.",
     checkOffer: "СМОТРЕТЬ ПРЕДЛОЖЕНИЯ",
     contact: "Контакт:",
@@ -465,8 +505,8 @@ function openPaymentQR(){
   }
   document.getElementById("payAmount").textContent=formatPrice(total);
   document.getElementById("payTitle").textContent=title;
-  document.getElementById("payNote").innerHTML=DEFAULT_PAY_NOTE;
-  document.querySelector("#payModal .cart-header h3").textContent=DEFAULT_PAY_TITLE;
+  document.getElementById("payNote").textContent=t("payNoteTxt");
+  document.querySelector("#payModal .cart-header h3").textContent=t("payModalTitle");
   cartModal.style.display="none";
   payModal.style.display="flex";
   window.dispatchEvent(new CustomEvent("recytronix:checkout",{detail:{orderNo,total,items:cart.slice()}}));
@@ -810,14 +850,14 @@ document.querySelectorAll("#conditionTabs .cond-tab").forEach(btn=>{
     const input=document.getElementById("newsletterEmail");
     const msg=document.getElementById("newsletterMsg");
     const email=(input.value||"").trim().toLowerCase();
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.textContent="Podaj poprawny adres e-mail.";msg.style.color="#ff7b7b";return;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.textContent=t("newsBad");msg.style.color="#ff7b7b";return;}
     let list=[];
     try{list=JSON.parse(localStorage.getItem("recyktronix-newsletter")||"[]");}catch(_){}
-    if(list.some(x=>x.email===email)){msg.textContent="Ten adres jest już zapisany.";msg.style.color="var(--muted)";return;}
+    if(list.some(x=>x.email===email)){msg.textContent=t("newsDup");msg.style.color="var(--muted)";return;}
     list.push({email,ts:new Date().toISOString()});
     localStorage.setItem("recyktronix-newsletter",JSON.stringify(list));
     input.value="";
-    msg.textContent="Dziękujemy! Zapisaliśmy Twój adres. Wkrótce napiszemy z nowościami.";
+    msg.textContent=t("newsOk");
     msg.style.color="#4ade80";
   });
 })();

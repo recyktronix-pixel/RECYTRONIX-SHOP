@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#050a12">
   <meta name="description" content="RECYKTRONIX Business Pro – sklep technologiczny.">
   <title>RECYKTRONIX | e-Shop Business Pro</title>
-  <link rel="stylesheet" href="style.css?v=23">
+  <link rel="stylesheet" href="style.css?v=24">
 </head>
 <body>
 <header class="header">
@@ -29,9 +29,9 @@
 </header>
 
 <nav class="navigation" aria-label="Główna nawigacja">
-  <a class="active" href="#">Start</a><a href="#products">Produkty</a>
-  <a href="#promotions">Promocje</a><a href="#products">Nowości</a>
-  <a href="#ai">RECYKTRONIX AI</a><a href="#help">Pomoc</a><a href="#contact">Kontakt</a>
+  <a class="active" href="#" data-i18n="navHome">Start</a><a href="#products" data-i18n="navProducts">Produkty</a>
+  <a href="#promotions" data-i18n="navPromos">Promocje</a><a href="#products" data-i18n="navNew">Nowości</a>
+  <a href="#ai" data-i18n="navAi">RECYKTRONIX AI</a><a href="#help" data-i18n="navHelp">Pomoc</a><a href="#contact" data-i18n="navContact">Kontakt</a>
 </nav>
 
 <main class="container">
@@ -66,7 +66,7 @@
 
     <section class="catalog" id="products">
       <div class="section-heading">
-        <div><span class="eyebrow">NASZA OFERTA</span><h2>Wybrane produkty</h2></div>
+        <div><span class="eyebrow" data-i18n="offerEyebrow">NASZA OFERTA</span><h2>Wybrane produkty</h2></div>
         <select id="sortProducts" aria-label="Sortowanie">
           <option value="default">Polecane</option><option value="priceAsc">Cena rosnąco</option>
           <option value="priceDesc">Cena malejąco</option><option value="name">Nazwa A–Z</option>
@@ -84,12 +84,12 @@
 
   <section class="business-strip" id="promotions">
     <div><span class="strip-logo">R</span><strong>RECYKTRONIX</strong><small>BUSINESS PRO</small></div>
-    <div>✦ Jakość biznesowa</div><div>⚙ Profesjonalna obsługa</div><div>◇ Wyselekcjonowany asortyment</div>
+    <div data-i18n="stripQ1">✦ Jakość biznesowa</div><div data-i18n="stripQ2">⚙ Profesjonalna obsługa</div><div data-i18n="stripQ3">◇ Wyselekcjonowany asortyment</div>
   </section>
 
   <section class="info-section" id="help">
-    <h2>RECYKTRONIX – technologia w jednym miejscu</h2>
-    <p>Zapoznaj się z naszą ofertą i skontaktuj się z nami, jeśli potrzebujesz pomocy w wyborze produktu.</p>
+    <h2 data-i18n="helpTitle">RECYKTRONIX – technologia w jednym miejscu</h2>
+    <p data-i18n="helpDesc">Zapoznaj się z naszą ofertą i skontaktuj się z nami, jeśli potrzebujesz pomocy w wyborze produktu.</p>
   </section>
 
   <section class="payment-section" id="payment">
@@ -128,11 +128,11 @@
   </section>
 
   <section class="info-section" id="newsletter">
-    <h2>Newsletter</h2>
-    <p>Zapisz się, aby otrzymywać informacje o nowościach, promocjach i poradach technologicznych.</p>
+    <h2 data-i18n="newsTitle">Newsletter</h2>
+    <p data-i18n="newsDesc">Zapisz się, aby otrzymywać informacje o nowościach, promocjach i poradach technologicznych.</p>
     <form id="newsletterForm" class="newsletter-form">
-      <input type="email" id="newsletterEmail" placeholder="Twój adres e-mail" required>
-      <button type="submit">Zapisz się</button>
+      <input type="email" id="newsletterEmail" data-i18n-ph="newsPh" placeholder="Twój adres e-mail" required>
+      <button type="submit" data-i18n="newsBtn">Zapisz się</button>
     </form>
     <p id="newsletterMsg" class="newsletter-msg"></p>
   </section>
@@ -140,9 +140,9 @@
 
 <footer id="contact">
   <div class="footer-brand">RECYKTRONIX <span>Business Pro</span></div>
-  <div>Kontakt: <a href="mailto:recyktronix@gmail.com">recyktronix@gmail.com</a></div>
-  <div>Telegram: <a href="https://t.me/ShadowAIHubBot" target="_blank">@ShadowAIHubBot</a> - zapraszamy do kontaktu!</div>
-  <div>© <span id="year"></span> RECYKTRONIX. Wszelkie prawa zastrzeżone.</div>
+  <div><span data-i18n="footerContact">Kontakt:</span> <a href="mailto:recyktronix@gmail.com">recyktronix@gmail.com</a></div>
+  <div><span data-i18n="footerTg">Telegram:</span> <a href="https://t.me/ShadowAIHubBot" target="_blank">@ShadowAIHubBot</a> - <span data-i18n="footerInvite">zapraszamy do kontaktu!</span></div>
+  <div>© <span id="year"></span> RECYKTRONIX. <span data-i18n="footerRights">Wszelkie prawa zastrzeżone.</span></div>
   <div class="footer-links"><a href="o-nas.html" data-i18n="navAbout">O nas</a><a href="apki.html" data-i18n="navApk">APK i boty</a><a href="legal/terms-and-conditions.html" data-i18n="navTerms">Regulamin</a><a href="legal/privacy-policy.html">Polityka prywatności</a><a href="legal/returns-and-complaints.html">Dostawa i zwroty</a></div>
 </footer>
 
@@ -250,14 +250,14 @@
 <div id="cartModal" class="cart-modal" style="display:none">
   <div class="cart-content">
     <div class="cart-header">
-      <h3>Koszyk</h3>
+      <h3 data-i18n="cartTitle">Koszyk</h3>
       <button id="closeCart" class="cart-close">×</button>
     </div>
     <div id="cartItems" class="cart-items"></div>
     <div class="cart-footer">
-      <div class="cart-discount" id="cartDiscount" style="display:none">Rabat członkowski −5%</div>
-      <div class="cart-total"><span>Razem:</span><strong id="cartTotal">€0.00</strong></div>
-      <button id="checkoutBtn" class="checkout-btn">DALEJ DO PŁATNOŚCI</button>
+      <div class="cart-discount" id="cartDiscount" style="display:none" data-i18n="cartDiscount">Rabat członkowski −5%</div>
+      <div class="cart-total"><span data-i18n="cartTotalLbl">Razem:</span><strong id="cartTotal">€0.00</strong></div>
+      <button id="checkoutBtn" class="checkout-btn" data-i18n="checkoutBtn">DALEJ DO PŁATNOŚCI</button>
     </div>
   </div>
 </div>
@@ -266,19 +266,19 @@
 <div id="payModal" class="cart-modal" style="display:none">
   <div class="cart-content pay-content">
     <div class="cart-header">
-      <h3>Zapłać przelewem</h3>
+      <h3 data-i18n="payModalTitle">Zapłać przelewem</h3>
       <button id="closePay" class="cart-close">×</button>
     </div>
     <div class="pay-body">
       <div id="payQr" class="pay-qr"></div>
       <div class="pay-details">
-        <p class="pay-row"><span>Kwota:</span><strong id="payAmount"></strong></p>
-        <p class="pay-row"><span>Zamówienie:</span><strong id="payTitle"></strong></p>
-        <p class="pay-note" id="payNote">Zeskanuj kod telefonem — otworzy się Telegram <strong>@BetaTester91</strong> z gotową wiadomością o zamówieniu. Tam ustalimy szczegóły płatności. Możesz też napisać bezpośrednio: <a href="https://t.me/BetaTester91" target="_blank">t.me/BetaTester91</a></p>
+        <p class="pay-row"><span data-i18n="payAmountLbl">Kwota:</span><strong id="payAmount"></strong></p>
+        <p class="pay-row"><span data-i18n="payOrderLbl">Zamówienie:</span><strong id="payTitle"></strong></p>
+        <p class="pay-note" id="payNote" data-i18n="payNoteTxt">Zeskanuj kod telefonem — otworzy się Telegram <strong>@BetaTester91</strong> z gotową wiadomością o zamówieniu. Tam ustalimy szczegóły płatności.</p>
       </div>
     </div>
     <div class="cart-footer">
-      <button id="payDoneBtn" class="checkout-btn">Zamknij</button>
+      <button id="payDoneBtn" class="checkout-btn" data-i18n="payClose">Zamknij</button>
     </div>
   </div>
 </div>
@@ -334,7 +334,7 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="script.js?v=21"></script>
+<script src="script.js?v=24"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="supabase-config.js"></script>
 <script src="auth.js"></script>
