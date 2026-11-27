@@ -261,3 +261,9 @@ footer{background:#080f19;border-top:1px solid var(--border);padding:28px 4%;dis
 .listing-modal-content{max-width:480px}
 .lst-ai-actions{display:flex;gap:8px;margin-top:8px}
 .lst-ai-actions .pay-toggle{flex:1;margin-top:0;text-align:center}
+.admin-hint{color:var(--muted);font-size:.85rem;margin:0 0 .75rem}
+.lst-approve,.lst-reject{padding:.45rem .9rem;border-radius:7px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:.8rem;font-weight:600;margin-left:6px}
+.lst-approve{border-color:#4ade80;color:#4ade80}
+.lst-approve:hover{background:#4ade80;color:#04121f}
+.lst-reject{border-color:#ff6b6b;color:#ff6b6b}
+.lst-reject:hover{background:#ff6b6b;color:#fff}

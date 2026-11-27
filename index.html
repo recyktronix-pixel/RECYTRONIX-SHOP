@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#050a12">
   <meta name="description" content="RECYKTRONIX Business Pro – sklep technologiczny.">
   <title>RECYKTRONIX | e-Shop Business Pro</title>
-  <link rel="stylesheet" href="style.css?v=25">
+  <link rel="stylesheet" href="style.css?v=27">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -294,6 +294,7 @@
       <button class="admin-tab active" data-tab="products">Products</button>
       <button class="admin-tab" data-tab="categories">Categories</button>
       <button class="admin-tab" data-tab="users">Users</button>
+      <button class="admin-tab" data-tab="listings">Listings</button>
       <button class="admin-tab" data-tab="settings">Settings</button>
     </div>
     <div class="admin-body">
@@ -351,6 +352,11 @@
       <div id="adminUsers" class="admin-section">
         <h4>User Management</h4>
         <div id="adminUserList"></div>
+      </div>
+      <div id="adminListings" class="admin-section">
+        <h4>User Listings (moderation)</h4>
+        <p class="admin-hint">Ogłoszenia dodane przez użytkowników wymagają zatwierdzenia.</p>
+        <div id="adminListingsList"></div>
       </div>
       <div id="adminSettings" class="admin-section">
         <h4>Site Settings</h4>
@@ -488,7 +494,7 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="script.js?v=26"></script>
+<script src="script.js?v=27"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="supabase-config.js"></script>
 <script src="auth.js"></script>
@@ -496,6 +502,7 @@
 <script src="comments.js"></script>
 <script src="user-listing.js"></script>
 <script src="ship-bar.js"></script>
+<script src="listings-sync.js"></script>
 </body>
 </html>
 
