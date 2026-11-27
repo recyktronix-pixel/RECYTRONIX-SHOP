@@ -85,7 +85,19 @@ const translations = {
     showingFavorites: "Wyświetlasz ulubione produkty",
     showingAll: "Wyświetlasz wszystkie produkty",
     products: "produkty",
-    total: "Razem"
+    total: "Razem",
+    heroEyebrow: "TECHNOLOGIA • JAKOŚĆ • ZAUFANIE",
+    heroCaption: "PREMIUM SKLEP TECHNOLOGICZNY",
+    rodoTitle: "RODO - Zgoda na przetwarzanie danych",
+    rodoAdmin: "Administratorem danych osobowych jest RECYKTRONIX z siedzibą w Polsce.",
+    rodoPurpose: "Przetwarzamy dane w celu realizacji zamówień, obsługi zapytań i marketingu.",
+    rodoRights: "Masz prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia oraz sprzeciwu.",
+    rodoL4a: "Szczegóły w", rodoPrivacy: "Polityce prywatności",
+    rodoAccept: "Akceptuję", rodoDecline: "Odrzuć",
+    copyBtn: "📋 Kopiuj", copiedOk: "Skopiowano do schowka", copiedFail: "Nie udało się skopiować",
+    authLoginTab: "Logowanie", authRegisterTab: "Rejestracja",
+    authNote: "Konto daje rabat −5% i historię zamówień.", accountTitle: "Konto",
+    blikCodeLbl: "Kod BLIK:"
   },
   de: {
     search: "Produkte, Kategorien, Modell suchen...",
@@ -140,7 +152,19 @@ const translations = {
     showingFavorites: "Sie sehen Ihre Favoriten",
     showingAll: "Sie sehen alle Produkte",
     products: "Produkte",
-    total: "Gesamt"
+    total: "Gesamt",
+    heroEyebrow: "TECHNOLOGIE • QUALITÄT • VERTRAUEN",
+    heroCaption: "PREMIUM-TECHNOLOGIESHOP",
+    rodoTitle: "DSGVO - Einwilligung zur Datenverarbeitung",
+    rodoAdmin: "Verantwortlicher für personenbezogene Daten ist RECYKTRONIX mit Sitz in Polen.",
+    rodoPurpose: "Wir verarbeiten Daten zur Abwicklung von Bestellungen, Beantwortung von Anfragen und für Marketing.",
+    rodoRights: "Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch.",
+    rodoL4a: "Details in der", rodoPrivacy: "Datenschutzerklärung",
+    rodoAccept: "Ich akzeptiere", rodoDecline: "Ablehnen",
+    copyBtn: "📋 Kopieren", copiedOk: "In die Zwischenablage kopiert", copiedFail: "Kopieren fehlgeschlagen",
+    authLoginTab: "Anmelden", authRegisterTab: "Registrieren",
+    authNote: "Konto gibt 5% Rabatt und Bestellhistorie.", accountTitle: "Konto",
+    blikCodeLbl: "BLIK-Code:"
   },
   en: {
     search: "Search products, categories, model...",
@@ -195,7 +219,19 @@ const translations = {
     showingFavorites: "Showing favorites",
     showingAll: "Showing all products",
     products: "products",
-    total: "Total"
+    total: "Total",
+    heroEyebrow: "TECHNOLOGY • QUALITY • TRUST",
+    heroCaption: "PREMIUM TECHNOLOGY STORE",
+    rodoTitle: "GDPR - Consent to data processing",
+    rodoAdmin: "The data controller is RECYKTRONIX based in Poland.",
+    rodoPurpose: "We process data to fulfil orders, handle enquiries and for marketing.",
+    rodoRights: "You have the right to access, rectify, erase, restrict processing, data portability and to object.",
+    rodoL4a: "Details in the", rodoPrivacy: "Privacy Policy",
+    rodoAccept: "I accept", rodoDecline: "Decline",
+    copyBtn: "📋 Copy", copiedOk: "Copied to clipboard", copiedFail: "Copy failed",
+    authLoginTab: "Sign in", authRegisterTab: "Sign up",
+    authNote: "Account gives 5% discount and order history.", accountTitle: "Account",
+    blikCodeLbl: "BLIK code:"
   },
   nl: {
     search: "Zoek producten, categorieën, model...",
@@ -250,7 +286,19 @@ const translations = {
     showingFavorites: "Favorieten worden getoond",
     showingAll: "Alle producten worden getoond",
     products: "producten",
-    total: "Totaal"
+    total: "Totaal",
+    heroEyebrow: "TECHNOLOGIE • KWALITEIT • VERTROUWEN",
+    heroCaption: "PREMIUM TECHNOLOGIEWINKEL",
+    rodoTitle: "AVG - Toestemming voor gegevensverwerking",
+    rodoAdmin: "Verwerkingsverantwoordelijke is RECYKTRONIX gevestigd in Polen.",
+    rodoPurpose: "Wij verwerken gegevens voor orderverwerking, het beantwoorden van vragen en marketing.",
+    rodoRights: "U heeft recht op inzage, rectificatie, verwijdering, beperking van de verwerking, overdraagbaarheid en bezwaar.",
+    rodoL4a: "Details in het", rodoPrivacy: "Privacybeleid",
+    rodoAccept: "Ik accepteer", rodoDecline: "Weigeren",
+    copyBtn: "📋 Kopiëren", copiedOk: "Gekopieerd naar klembord", copiedFail: "Kopiëren mislukt",
+    authLoginTab: "Inloggen", authRegisterTab: "Registreren",
+    authNote: "Account geeft 5% korting en bestelhistoriek.", accountTitle: "Account",
+    blikCodeLbl: "BLIK-code:"
   },
   ru: {
     search: "Поиск товаров, категорий, модели...",
@@ -305,7 +353,19 @@ const translations = {
     showingFavorites: "Показаны избранные товары",
     showingAll: "Показаны все товары",
     products: "товары",
-    total: "Итого"
+    total: "Итого",
+    heroEyebrow: "ТЕХНОЛОГИИ • КАЧЕСТВО • ДОВЕРИЕ",
+    heroCaption: "PREMIUM МАГАЗИН ТЕХНИКИ",
+    rodoTitle: "GDPR - Согласие на обработку данных",
+    rodoAdmin: "Оператором персональных данных является RECYKTRONIX (Польша).",
+    rodoPurpose: "Мы обрабатываем данные для выполнения заказов, ответов на запросы и маркетинга.",
+    rodoRights: "Вы имеете право на доступ, исправление, удаление, ограничение обработки, переносимость данных и возражение.",
+    rodoL4a: "Подробнее в", rodoPrivacy: "Политике конфиденциальности",
+    rodoAccept: "Принимаю", rodoDecline: "Отклонить",
+    copyBtn: "📋 Копировать", copiedOk: "Скопировано в буфер обмена", copiedFail: "Не удалось скопировать",
+    authLoginTab: "Вход", authRegisterTab: "Регистрация",
+    authNote: "Аккаунт даёт скидку 5% и историю заказов.", accountTitle: "Аккаунт",
+    blikCodeLbl: "Код BLIK:"
   }
 };
 
@@ -818,20 +878,22 @@ document.getElementById("aiChatInput").addEventListener("keypress",(e)=>{
 });
 
 // --- Copy buttons dla danych płatniczych ---
+const copyText=txt=>{
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(()=>showToast(t('copiedOk'))).catch(()=>showToast(t('copiedFail')));
+  }else{
+    const ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();
+    try{document.execCommand("copy");showToast(t('copiedOk'));}catch(_){showToast(t('copiedFail'));}
+    ta.remove();
+  }
+};
 document.querySelectorAll(".payment-info:not(#blikCode)").forEach(el=>{
   const btn=document.createElement("button");
-  btn.className="copy-btn";
-  btn.type="button";
-  btn.textContent="📋 Kopiuj";
+  btn.className="copy-btn";btn.type="button";
+  btn.setAttribute("data-i18n","copyBtn");btn.textContent=t("copyBtn");
   btn.addEventListener("click",()=>{
-    const text=el.firstChild.textContent.trim();
-    if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(()=>showToast("Skopiowano do schowka")).catch(()=>showToast("Nie udało się skopiować"));
-    }else{
-      const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();
-      try{document.execCommand("copy");showToast("Skopiowano do schowka");}catch(_){showToast("Nie udało się skopiować");}
-      ta.remove();
-    }
+    const src=el.querySelector(".pay-val")||el.firstChild;
+    copyText((src.textContent||"").trim());
   });
   el.appendChild(btn);
 });
@@ -848,10 +910,10 @@ if(blikToggle&&blikCode){
     if(show&&!cb){
       cb=document.createElement("button");
       cb.id="blikCopy";cb.className="copy-btn";cb.type="button";
-      cb.textContent="📋 Kopiuj";
+      cb.setAttribute("data-i18n","copyBtn");cb.textContent=t("copyBtn");
       cb.addEventListener("click",()=>{
-        navigator.clipboard&&navigator.clipboard.writeText(blikCode.textContent.trim())
-          .then(()=>showToast("Skopiowano do schowka")).catch(()=>showToast("Nie udało się skopiować"));
+        const num=document.getElementById("blikNum");
+        copyText(num?num.textContent.trim():"786881698");
       });
       blikCode.insertAdjacentElement("afterend",cb);
     }

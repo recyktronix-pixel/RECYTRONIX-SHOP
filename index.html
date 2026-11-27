@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#050a12">
   <meta name="description" content="RECYKTRONIX Business Pro – sklep technologiczny.">
   <title>RECYKTRONIX | e-Shop Business Pro</title>
-  <link rel="stylesheet" href="style.css?v=27">
+  <link rel="stylesheet" href="style.css?v=28">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -141,14 +141,14 @@
 <main class="container">
   <section class="hero">
     <div class="hero-copy">
-      <div class="eyebrow">TECHNOLOGY • QUALITY • TRUST</div>
+      <div class="eyebrow" data-i18n="heroEyebrow">TECHNOLOGY • QUALITY • TRUST</div>
       <h1>RECYKTRONIX</h1><h2>e-Shop <span>Business Pro</span></h2>
       <p>Nowoczesna technologia. Sprawdzony sprzęt. Profesjonalna obsługa.</p>
       <a href="#products" class="primary-button">SPRAWDŹ OFERTĘ →</a>
     </div>
     <div class="hero-visual" aria-hidden="true">
       <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-      <div class="hero-symbol">R</div><div class="hero-caption">PREMIUM TECHNOLOGY STORE</div>
+      <div class="hero-symbol">R</div><div class="hero-caption" data-i18n="heroCaption">PREMIUM TECHNOLOGY STORE</div>
     </div>
   </section>
 
@@ -239,7 +239,7 @@
       <div class="payment-method">
         <h3>📱 BLIK</h3>
         <p data-i18n="payBlikDesc">Quick mobile payment</p>
-        <p class="payment-info" id="blikCode" style="display:none">BLIK Code: 786881698</p>
+        <p class="payment-info" id="blikCode" style="display:none"><span data-i18n="blikCodeLbl">BLIK Code:</span> <span id="blikNum">786881698</span></p>
         <div class="pay-actions">
           <button class="pay-toggle" type="button" id="blikToggle" data-i18n="payShowBlik">👁 Show BLIK code</button>
         </div>
@@ -247,8 +247,11 @@
       <div class="payment-method">
         <h3>₿ Crypto</h3>
         <p data-i18n="payCryptoDesc">USDT TRON accepted</p>
-        <p class="payment-info">TrustWallet TRON: THXkPP2g44fvJJw5TXyRqdPm78fBoH9wG5</p>
-        <p class="payment-info">TrustWallet USDT: TNbLsPrZWHRZWBeWMYacXt7G8uAD4L2Awb</p>
+        <p class="payment-info"><span class="pay-label">TrustWallet TRON:</span> <span class="pay-val">THXkPP2g44fvJJw5TXyRqdPm78fBoH9wG5</span></p>
+        <p class="payment-info"><span class="pay-label">TrustWallet USDT:</span> <span class="pay-val">TNbLsPrZWHRZWBeWMYacXt7G8uAD4L2Awb</span></p>
+        <div class="pay-actions">
+          <a href="https://t.me/BetaTester91" target="_blank" class="pay-toggle tg-link" data-i18n="payViaTelegram">📩 Get payment details on Telegram</a>
+        </div>
       </div>
     </div>
   </section>
@@ -423,8 +426,8 @@
       <button id="closeAuth" class="cart-close">×</button>
     </div>
     <div class="auth-tabs">
-      <button type="button" id="tabLogin" class="auth-tab active">Logowanie</button>
-      <button type="button" id="tabRegister" class="auth-tab">Rejestracja</button>
+      <button type="button" id="tabLogin" class="auth-tab active" data-i18n="authLoginTab">Logowanie</button>
+      <button type="button" id="tabRegister" class="auth-tab" data-i18n="authRegisterTab">Rejestracja</button>
     </div>
     <form id="authForm" class="auth-form">
       <input id="authName" type="text" placeholder="Imię i nazwisko" autocomplete="name" style="display:none">
@@ -433,7 +436,7 @@
       <div id="authError" class="auth-error"></div>
       <button type="submit" id="authSubmit" class="checkout-btn">Zaloguj się</button>
     </form>
-    <p class="auth-note">Konto daje rabat −5% i historię zamówień.</p>
+    <p class="auth-note" data-i18n="authNote">Konto daje rabat −5% i historię zamówień.</p>
   </div>
 </div>
 
@@ -441,7 +444,7 @@
 <div id="accountModal" class="cart-modal" style="display:none">
   <div class="cart-content auth-content">
     <div class="cart-header">
-      <h3>Konto</h3>
+      <h3 data-i18n="accountTitle">Konto</h3>
       <button id="closeAccount" class="cart-close">×</button>
     </div>
     <div id="accountBody" class="account-body"></div>
@@ -487,20 +490,20 @@
 <!-- RODO Consent Modal -->
 <div id="rodoModal" class="rodo-modal" style="display:none">
   <div class="rodo-content">
-    <h3>RODO - Zgoda na przetwarzanie danych</h3>
-    <p>Administratorem danych osobowych jest RECYKTRONIX z siedzibą w Polsce.</p>
-    <p>Przetwarzamy dane w celu realizacji zamówień, obsługi zapytań i marketingu.</p>
-    <p>Masz prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia oraz sprzeciwu.</p>
-    <p>Szczegóły w <a href="legal/privacy-policy.html" target="_blank">Polityce prywatności</a>.</p>
+    <h3 data-i18n="rodoTitle">RODO - Zgoda na przetwarzanie danych</h3>
+    <p data-i18n="rodoAdmin">Administratorem danych osobowych jest RECYKTRONIX z siedzibą w Polsce.</p>
+    <p data-i18n="rodoPurpose">Przetwarzamy dane w celu realizacji zamówień, obsługi zapytań i marketingu.</p>
+    <p data-i18n="rodoRights">Masz prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia oraz sprzeciwu.</p>
+    <p><span data-i18n="rodoL4a">Szczegóły w</span> <a href="legal/privacy-policy.html" target="_blank"><span data-i18n="rodoPrivacy">Polityce prywatności</span></a>.</p>
     <div class="rodo-buttons">
-      <button id="acceptRodo" class="rodo-accept">Akceptuję</button>
-      <button id="declineRodo" class="rodo-decline">Odrzuć</button>
+      <button id="acceptRodo" class="rodo-accept" data-i18n="rodoAccept">Akceptuję</button>
+      <button id="declineRodo" class="rodo-decline" data-i18n="rodoDecline">Odrzuć</button>
     </div>
   </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="script.js?v=27"></script>
+<script src="script.js?v=28"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="supabase-config.js"></script>
 <script src="auth.js"></script>
