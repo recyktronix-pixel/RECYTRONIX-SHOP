@@ -234,3 +234,30 @@ footer{background:#080f19;border-top:1px solid var(--border);padding:28px 4%;dis
 .listing-ai button:hover{background:var(--blue2)}
 .listing-ai button:disabled{background:#555;cursor:wait}
 .listing-ai-result{background:#0d1a2b;border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-size:.85rem;color:var(--muted)}
+
+/* Shipping bar */
+.ship-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 16px;background:var(--panel);border-bottom:1px solid var(--border);font-size:.85rem}
+.ship-ico{font-size:1rem}
+.ship-lbl{color:var(--muted);white-space:nowrap}
+.ship-bar select{background:var(--bg);border:1px solid var(--border);border-radius:7px;color:var(--text);padding:5px 8px;font-size:.82rem;max-width:130px}
+.ship-bar select:focus{outline:none;border-color:var(--blue)}
+
+/* Comments */
+.comments-list{display:flex;flex-direction:column;gap:.75rem;margin:1rem 0}
+.comment-item{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem}
+.comment-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.comment-head small{color:var(--muted);margin-left:auto}
+.comment-stars{color:#ffd54a;letter-spacing:1px}
+.comment-item p{margin:0;color:var(--text);font-size:.92rem;line-height:1.5}
+.comment-form{display:flex;flex-direction:column;gap:.75rem;margin-top:1rem}
+.comment-form input,.comment-form select,.comment-form textarea{padding:.75rem 1rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font:inherit}
+.comment-form input:focus,.comment-form select:focus,.comment-form textarea:focus{outline:none;border-color:var(--blue)}
+.comment-form button{padding:.8rem;background:var(--blue);color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:600}
+.comment-form button:hover{background:var(--blue2)}
+
+/* User listing */
+.listing-open-btn{display:block;width:100%;margin-top:14px;padding:.7rem;background:rgba(0,200,255,.1);border:1px dashed var(--blue);border-radius:10px;color:var(--blue);font-weight:600;cursor:pointer;transition:.2s;font-size:.85rem}
+.listing-open-btn:hover{background:rgba(0,200,255,.2);box-shadow:0 0 12px rgba(0,200,255,.25)}
+.listing-modal-content{max-width:480px}
+.lst-ai-actions{display:flex;gap:8px;margin-top:8px}
+.lst-ai-actions .pay-toggle{flex:1;margin-top:0;text-align:center}

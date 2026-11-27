@@ -50,3 +50,36 @@ drop trigger if exists on_auth_user_created on auth.users;
 create trigger on_auth_user_created
   after insert on auth.users
   for each row execute function public.handle_new_user();
+
+-- Komentarze/opinie (publiczne czytanie, publiczne dodawanie)
+create table if not exists public.comments (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  rating int not null default 5,
+  text text not null,
+  created_at timestamptz not null default now()
+);
+alter table public.comments enable row level security;
+drop policy if exists "comments_select_all" on public.comments;
+create policy "comments_select_all" on public.comments for select using (true);
+drop policy if exists "comments_insert_all" on public.comments;
+create policy "comments_insert_all" on public.comments for insert with check (true);
+
+-- Ogłoszenia dodawane przez użytkowników (status: pending -> admin akceptuje)
+create table if not exists public.listings (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users(id) on delete set null,
+  name text not null,
+  price numeric(10,2) not null,
+  category text,
+  condition text default 'new',
+  description text,
+  image text,
+  status text not null default 'pending',
+  created_at timestamptz not null default now()
+);
+alter table public.listings enable row level security;
+drop policy if exists "listings_select_public" on public.listings;
+create policy "listings_select_public" on public.listings for select using (status = 'approved' or auth.uid() = user_id);
+drop policy if exists "listings_insert_own" on public.listings;
+create policy "listings_insert_own" on public.listings for insert with check (true);

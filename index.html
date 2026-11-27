@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#050a12">
   <meta name="description" content="RECYKTRONIX Business Pro – sklep technologiczny.">
   <title>RECYKTRONIX | e-Shop Business Pro</title>
-  <link rel="stylesheet" href="style.css?v=24">
+  <link rel="stylesheet" href="style.css?v=25">
 </head>
 <body>
 <header class="header">
@@ -33,6 +33,17 @@
   <a href="#promotions" data-i18n="navPromos">Promocje</a><a href="#products" data-i18n="navNew">Nowości</a>
   <a href="#ai" data-i18n="navAi">RECYKTRONIX AI</a><a href="#help" data-i18n="navHelp">Pomoc</a><a href="#contact" data-i18n="navContact">Kontakt</a>
 </nav>
+
+<div class="ship-bar">
+  <span class="ship-ico">📍</span>
+  <span class="ship-lbl" data-i18n="shipFromLbl">Wysyłka z</span>
+  <select id="shipFrom"></select>
+  <span>→</span>
+  <span class="ship-lbl" data-i18n="shipToLbl">do</span>
+  <select id="shipTo"></select>
+  <span class="ship-lbl" data-i18n="shipCarrierLbl">Przewoźnik:</span>
+  <select id="shipCarrier"></select>
+</div>
 
 <main class="container">
   <section class="hero">
@@ -62,6 +73,7 @@
         <p>Twój asystent zakupowy. Porady, dobór sprzętu i pomoc technologiczna.</p>
         <a href="apki.html" class="ai-button">Zobacz APK i boty →</a>
       </div>
+      <button type="button" id="openListing" class="listing-open-btn" data-i18n="addListing">＋ Dodaj ogłoszenie</button>
     </aside>
 
     <section class="catalog" id="products">
@@ -90,6 +102,27 @@
   <section class="info-section" id="help">
     <h2 data-i18n="helpTitle">RECYKTRONIX – technologia w jednym miejscu</h2>
     <p data-i18n="helpDesc">Zapoznaj się z naszą ofertą i skontaktuj się z nami, jeśli potrzebujesz pomocy w wyborze produktu.</p>
+  </section>
+
+  <section class="info-section" id="opinie">
+    <h2 data-i18n="comTitle">Opinie klientów</h2>
+    <p data-i18n="comDesc">Podziel się swoją opinią o sklepie RECYKTRONIX.</p>
+    <div id="commentsList" class="comments-list"></div>
+    <form id="commentForm" class="comment-form">
+      <div class="form-row">
+        <input type="text" id="commentName" data-i18n-ph="comNamePh" placeholder="Twoje imię" required maxlength="40">
+        <select id="commentRating">
+          <option value="5">★★★★★</option>
+          <option value="4">★★★★☆</option>
+          <option value="3">★★★☆☆</option>
+          <option value="2">★★☆☆☆</option>
+          <option value="1">★☆☆☆☆</option>
+        </select>
+      </div>
+      <textarea id="commentText" data-i18n-ph="comTextPh" placeholder="Twój komentarz..." required maxlength="500" rows="3"></textarea>
+      <button type="submit" data-i18n="comBtn">Dodaj opinię</button>
+    </form>
+    <p id="commentMsg" class="newsletter-msg"></p>
   </section>
 
   <section class="payment-section" id="payment">
@@ -316,6 +349,40 @@
   </div>
 </div>
 
+<!-- User Listing Modal -->
+<div id="listingModal" class="cart-modal" style="display:none">
+  <div class="cart-content auth-content listing-modal-content">
+    <div class="cart-header">
+      <h3 data-i18n="lstTitle">Dodaj ogłoszenie</h3>
+      <button id="closeListing" class="cart-close">×</button>
+    </div>
+    <div class="auth-form">
+      <input type="file" id="userListingPhoto" accept="image/*">
+      <img id="userListingPreview" alt="Podgląd" style="display:none;max-width:160px;border-radius:8px;margin:0 auto">
+      <input type="text" id="userListingName" data-i18n-ph="lstNamePh" placeholder="Nazwa (AI może zaproponować)">
+      <div class="form-row">
+        <select id="userListingCategory"></select>
+        <select id="userListingCondition">
+          <option value="new">New</option>
+          <option value="used">Used / Refurbished</option>
+        </select>
+      </div>
+      <button type="button" id="userListingAiBtn" class="pay-toggle" data-i18n="lstAi">✨ AI: wycena + opis</button>
+      <div id="userListingAiBox" class="listing-ai-result" style="display:none">
+        <p data-i18n="lstAgreeQ">Czy zgadzasz się z wyceną AI?</p>
+        <div class="lst-ai-actions">
+          <button type="button" id="userListingAccept" class="pay-toggle" data-i18n="lstYes">✓ Tak, zgadzam się</button>
+          <button type="button" id="userListingEdit" class="pay-toggle" data-i18n="lstEdit">✎ Edytuj ręcznie</button>
+        </div>
+      </div>
+      <input type="number" id="userListingPrice" data-i18n-ph="lstPricePh" placeholder="Cena EUR" step="0.01" min="0">
+      <textarea id="userListingDesc" data-i18n-ph="lstDescPh" placeholder="Opis" rows="3"></textarea>
+      <button type="button" id="userListingPublish" class="checkout-btn" data-i18n="lstPublish">Opublikuj ogłoszenie</button>
+    </div>
+    <p class="auth-note" id="userListingMsg"></p>
+  </div>
+</div>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- RODO Consent Modal -->
@@ -334,11 +401,14 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="script.js?v=24"></script>
+<script src="script.js?v=25"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="supabase-config.js"></script>
 <script src="auth.js"></script>
 <script src="listing-ai.js"></script>
+<script src="comments.js"></script>
+<script src="user-listing.js"></script>
+<script src="ship-bar.js"></script>
 </body>
 </html>
 

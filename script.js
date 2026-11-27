@@ -61,6 +61,10 @@ const translations = {
     payModalTitle:"Zapłać przelewem",payAmountLbl:"Kwota:",payOrderLbl:"Zamówienie:",payClose:"Zamknij",payNoteTxt:"Zeskanuj kod telefonem — otworzy się Telegram @BetaTester91 z gotową wiadomością o zamówieniu. Tam ustalimy szczegóły płatności.",
     footerContact:"Kontakt:",footerTg:"Telegram:",footerRights:"Wszelkie prawa zastrzeżone.",footerInvite:"zapraszamy do kontaktu!",
     aiWelcome:"Witaj! Jestem asystentem RECYKTRONIX AI. W czym mogę pomóc?",aiPlaceholder:"Wpisz wiadomość...",aiSend:"Wyślij",
+    shipFromLbl:"Wysyłka z",shipToLbl:"do",shipCarrierLbl:"Przewoźnik:",addListing:"＋ Dodaj ogłoszenie",
+    comTitle:"Opinie klientów",comDesc:"Podziel się swoją opinią o sklepie RECYKTRONIX.",comNamePh:"Twoje imię",comTextPh:"Twój komentarz...",comBtn:"Dodaj opinię",comEmpty:"Brak opinii — bądź pierwszy!",comBad:"Podaj imię i komentarz.",comThanks:"Dziękujemy za opinię!",
+    lstTitle:"Dodaj ogłoszenie",lstNamePh:"Nazwa (AI może zaproponować)",lstAi:"✨ AI: wycena + opis",lstAgreeQ:"Czy zgadzasz się z wyceną AI?",lstYes:"✓ Tak, zgadzam się",lstEdit:"✎ Edytuj ręcznie",lstPublish:"Opublikuj ogłoszenie",lstPricePh:"Cena EUR",lstDescPh:"Opis",
+    lstNeedPhoto:"Najpierw wybierz zdjęcie.",lstAiNeedCfg:"AI wymaga konfiguracji.",lstAiDone:"AI uzupełniło pola — zaakceptuj lub edytuj.",lstAiFail:"uzupełnij pola ręcznie.",lstAccepted:"Akceptujesz wycenę AI.",lstDone:"Ogłoszenie opublikowane!",lstNeedPrice:"Podaj cenę.",lstDefaultName:"Nowe ogłoszenie",lstBadPhoto:"Nie udało się wczytać zdjęcia.",
     benefits1: "Bezpieczne płatności",
     benefits2: "Pomoc PL / DE",
     benefits3: "Wsparcie AI Shadow",
@@ -112,6 +116,10 @@ const translations = {
     payModalTitle:"Per Überweisung zahlen",payAmountLbl:"Betrag:",payOrderLbl:"Bestellung:",payClose:"Schließen",payNoteTxt:"Code mit dem Handy scannen — Telegram @BetaTester91 öffnet sich mit Ihrer Bestellnachricht.",
     footerContact:"Kontakt:",footerTg:"Telegram:",footerRights:"Alle Rechte vorbehalten.",footerInvite:"kontaktieren Sie uns!",
     aiWelcome:"Hallo! Ich bin der RECYKTRONIX AI Assistent. Wie kann ich helfen?",aiPlaceholder:"Nachricht eingeben...",aiSend:"Senden",
+    shipFromLbl:"Versand aus",shipToLbl:"nach",shipCarrierLbl:"Zusteller:",addListing:"＋ Anzeige hinzufügen",
+    comTitle:"Kundenbewertungen",comDesc:"Teilen Sie Ihre Meinung über RECYKTRONIX.",comNamePh:"Ihr Name",comTextPh:"Ihr Kommentar...",comBtn:"Bewertung hinzufügen",comEmpty:"Noch keine Bewertungen — sein Sie der Erste!",comBad:"Name und Kommentar erforderlich.",comThanks:"Danke für Ihre Bewertung!",
+    lstTitle:"Anzeige hinzufügen",lstNamePh:"Name (KI kann vorschlagen)",lstAi:"✨ KI: Preis + Beschreibung",lstAgreeQ:"Stimmen Sie der KI-Bewertung zu?",lstYes:"✓ Ja, ich stimme zu",lstEdit:"✎ Manuell bearbeiten",lstPublish:"Anzeige veröffentlichen",lstPricePh:"Preis EUR",lstDescPh:"Beschreibung",
+    lstNeedPhoto:"Bitte zuerst ein Foto wählen.",lstAiNeedCfg:"KI erfordert Konfiguration.",lstAiDone:"KI hat Felder ausgefüllt — akzeptieren oder bearbeiten.",lstAiFail:"füllen Sie die Felder manuell aus.",lstAccepted:"Sie akzeptieren die KI-Bewertung.",lstDone:"Anzeige veröffentlicht!",lstNeedPrice:"Bitte Preis angeben.",lstDefaultName:"Neue Anzeige",lstBadPhoto:"Foto konnte nicht geladen werden.",
     benefits1: "Sichere Zahlungen",
     benefits2: "Hilfe PL / DE",
     benefits3: "AI-Shadow-Support",
@@ -163,6 +171,10 @@ const translations = {
     payModalTitle:"Pay by bank transfer",payAmountLbl:"Amount:",payOrderLbl:"Order:",payClose:"Close",payNoteTxt:"Scan the code with your phone — Telegram @BetaTester91 opens with your order message.",
     footerContact:"Contact:",footerTg:"Telegram:",footerRights:"All rights reserved.",footerInvite:"get in touch!",
     aiWelcome:"Hello! I am the RECYKTRONIX AI assistant. How can I help?",aiPlaceholder:"Type a message...",aiSend:"Send",
+    shipFromLbl:"Ships from",shipToLbl:"to",shipCarrierLbl:"Carrier:",addListing:"＋ Add listing",
+    comTitle:"Customer reviews",comDesc:"Share your opinion about RECYKTRONIX.",comNamePh:"Your name",comTextPh:"Your comment...",comBtn:"Post review",comEmpty:"No reviews yet — be the first!",comBad:"Please enter name and comment.",comThanks:"Thanks for your review!",
+    lstTitle:"Add listing",lstNamePh:"Name (AI can suggest)",lstAi:"✨ AI: price + description",lstAgreeQ:"Do you agree with the AI valuation?",lstYes:"✓ Yes, I agree",lstEdit:"✎ Edit manually",lstPublish:"Publish listing",lstPricePh:"Price EUR",lstDescPh:"Description",
+    lstNeedPhoto:"Please choose a photo first.",lstAiNeedCfg:"AI requires configuration.",lstAiDone:"AI filled the fields — accept or edit.",lstAiFail:"fill the fields manually.",lstAccepted:"You accepted the AI valuation.",lstDone:"Listing published!",lstNeedPrice:"Please enter a price.",lstDefaultName:"New listing",lstBadPhoto:"Could not load the photo.",
     benefits1: "Secure payments",
     benefits2: "Help PL / DE",
     benefits3: "AI Shadow support",
@@ -214,6 +226,10 @@ const translations = {
     payModalTitle:"Betalen per overboeking",payAmountLbl:"Bedrag:",payOrderLbl:"Bestelling:",payClose:"Sluiten",payNoteTxt:"Scan de code met je telefoon — Telegram @BetaTester91 opent met je bestelfbericht.",
     footerContact:"Contact:",footerTg:"Telegram:",footerRights:"Alle rechten voorbehouden.",footerInvite:"neem contact op!",
     aiWelcome:"Hallo! Ik ben de RECYKTRONIX AI assistent. Hoe kan ik helpen?",aiPlaceholder:"Typ een bericht...",aiSend:"Verzenden",
+    shipFromLbl:"Verzending uit",shipToLbl:"naar",shipCarrierLbl:"Vervoerder:",addListing:"＋ Advertentie plaatsen",
+    comTitle:"Klantbeoordelingen",comDesc:"Deel uw mening over RECYKTRONIX.",comNamePh:"Uw naam",comTextPh:"Uw reactie...",comBtn:"Beoordeling plaatsen",comEmpty:"Nog geen beoordelingen — wees de eerste!",comBad:"Vul naam en reactie in.",comThanks:"Bedankt voor uw beoordeling!",
+    lstTitle:"Advertentie plaatsen",lstNamePh:"Naam (AI kan voorstellen)",lstAi:"✨ AI: prijs + beschrijving",lstAgreeQ:"Akkoord met de AI-taxatie?",lstYes:"✓ Ja, ik ga akkoord",lstEdit:"✎ Handmatig bewerken",lstPublish:"Advertentie plaatsen",lstPricePh:"Prijs EUR",lstDescPh:"Beschrijving",
+    lstNeedPhoto:"Kies eerst een foto.",lstAiNeedCfg:"AI vereist configuratie.",lstAiDone:"AI vulde de velden in — accepteer of bewerk.",lstAiFail:"vul de velden handmatig in.",lstAccepted:"U accepteert de AI-taxatie.",lstDone:"Advertentie geplaatst!",lstNeedPrice:"Geef een prijs op.",lstDefaultName:"Nieuwe advertentie",lstBadPhoto:"Foto laden mislukt.",
     benefits1: "Veilige betalingen",
     benefits2: "Hulp PL / DE",
     benefits3: "AI Shadow-ondersteuning",
@@ -265,6 +281,10 @@ const translations = {
     payModalTitle:"Оплата переводом",payAmountLbl:"Сумма:",payOrderLbl:"Заказ:",payClose:"Закрыть",payNoteTxt:"Отсканируйте код телефоном — откроется Telegram @BetaTester91 с вашим заказом.",
     footerContact:"Контакт:",footerTg:"Telegram:",footerRights:"Все права защищены.",footerInvite:"свяжитесь с нами!",
     aiWelcome:"Здравствуйте! Я ассистент RECYKTRONIX AI. Чем могу помочь?",aiPlaceholder:"Введите сообщение...",aiSend:"Отправить",
+    shipFromLbl:"Отправка из",shipToLbl:"в",shipCarrierLbl:"Перевозчик:",addListing:"＋ Добавить объявление",
+    comTitle:"Отзывы покупателей",comDesc:"Поделитесь мнением о RECYKTRONIX.",comNamePh:"Ваше имя",comTextPh:"Ваш комментарий...",comBtn:"Оставить отзыв",comEmpty:"Отзывов пока нет — будьте первым!",comBad:"Введите имя и комментарий.",comThanks:"Спасибо за отзыв!",
+    lstTitle:"Добавить объявление",lstNamePh:"Название (AI может предложить)",lstAi:"✨ AI: цена + описание",lstAgreeQ:"Согласны с оценкой AI?",lstYes:"✓ Да, согласен",lstEdit:"✎ Изменить вручную",lstPublish:"Опубликовать объявление",lstPricePh:"Цена EUR",lstDescPh:"Описание",
+    lstNeedPhoto:"Сначала выберите фото.",lstAiNeedCfg:"AI требует настройки.",lstAiDone:"AI заполнил поля — примите или отредактируйте.",lstAiFail:"заполните поля вручную.",lstAccepted:"Вы приняли оценку AI.",lstDone:"Объявление опубликовано!",lstNeedPrice:"Укажите цену.",lstDefaultName:"Новое объявление",lstBadPhoto:"Не удалось загрузить фото.",
     benefits1: "Безопасные платежи",
     benefits2: "Помощь PL / DE",
     benefits3: "Поддержка AI Shadow",
@@ -494,7 +514,12 @@ function openPaymentQR(){
   const title=`Zamowienie ${orderNo}`;
   // QR = link do Telegrama @BetaTester91 z gotowym zamówieniem - bez danych odbiorcy
   const memberEmail=window.RECY_USER&&window.RECY_USER.email?` (klient: ${window.RECY_USER.email})`:"";
-  const tgMsg=`Zamowienie ${orderNo} na ${formatPrice(total)}${memberEmail}`;
+  let shipInfo="";
+  try{
+    const sh=JSON.parse(localStorage.getItem("recyktronix-ship")||"{}");
+    if(sh.from&&sh.to)shipInfo=` | Wysylka: ${sh.from}→${sh.to}${sh.carrier?", kurier: "+sh.carrier:""}`;
+  }catch(_){}
+  const tgMsg=`Zamowienie ${orderNo} na ${formatPrice(total)}${memberEmail}${shipInfo}`;
   const qrText=`https://t.me/BetaTester91?start=${encodeURIComponent(tgMsg)}`;
   const box=document.getElementById("payQr");
   box.innerHTML="";
