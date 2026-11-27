@@ -7,6 +7,77 @@
   <meta name="description" content="RECYKTRONIX Business Pro – sklep technologiczny.">
   <title>RECYKTRONIX | e-Shop Business Pro</title>
   <link rel="stylesheet" href="style.css?v=25">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://recyktronix-pixel.github.io/RECYTRONIX-SHOP/#organization",
+        "name": "RECYKTRONIX",
+        "alternateName": "RECYKTRONIX Technology Store",
+        "url": "https://recyktronix-pixel.github.io/RECYTRONIX-SHOP/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://recyktronix-pixel.github.io/RECYTRONIX-SHOP/grafika.png"
+        },
+        "knowsAbout": ["Electronics","Smartphones","Laptops","Headphones","Cameras","Drones","Technology accessories","Digital services","AI tools","Telegram bots"]
+      },
+      {
+        "@type": "OnlineStore",
+        "@id": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/#store",
+        "name": "RECYKTRONIX",
+        "url": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/",
+        "parentOrganization": {"@id": "https://recyktronix-pixel.github.io/RECYTRONIX-SHOP/#organization"},
+        "currenciesAccepted": "EUR",
+        "paymentAccepted": ["PayPal","BLIK","SEPA Bank Transfer","USDT"],
+        "availableLanguage": ["Polish","English","German","Dutch","Russian"]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://recyktronix-pixel.github.io/RECYTRONIX-SHOP/#localbusiness",
+        "name": "RECYKTRONIX",
+        "url": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/",
+        "email": "recyktronix@gmail.com",
+        "parentOrganization": {"@id": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/#organization"},
+        "priceRange": "€€-€€€",
+        "currenciesAccepted": "EUR"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/#website",
+        "url": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/",
+        "name": "RECYKTRONIX",
+        "publisher": {"@id": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/#organization"},
+        "inLanguage": ["pl","en","de","nl","ru"],
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {"@type": "EntryPoint","urlTemplate": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/?q={search_term_string}"},
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Product",
+        "@id": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/#smartphone-256gb",
+        "name": "Smartfon Pro 256 GB",
+        "description": "Nowoczesny smartfon z pamięcią 256 GB — przestrzeń na zdjęcia, aplikacje, filmy i dokumenty.",
+        "brand": {"@type": "Brand","name": "RECYKTRONIX"},
+        "category": "Electronics > Mobile Phones > Smartphones",
+        "additionalProperty": {"@type": "PropertyValue","name": "Internal storage","value": "256 GB"},
+        "image": ["https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/grafika.png"],
+        "url": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/#products",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/#products",
+          "price": "1299.00",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "seller": {"@id": "https://recyktronix-pixel.github.io/RECYKTRONIX-SHOP/#organization"}
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 <header class="header">
@@ -401,7 +472,7 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="script.js?v=25"></script>
+<script src="script.js?v=26"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="supabase-config.js"></script>
 <script src="auth.js"></script>

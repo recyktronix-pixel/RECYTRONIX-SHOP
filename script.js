@@ -424,6 +424,11 @@ function updateLanguage(){
   renderProducts();
   localStorage.setItem('recyktronix-lang',currentLang);
 }
+// Google SearchAction: ?q= fraza -> wstaw do wyszukiwarki
+(function(){
+  const q=new URLSearchParams(location.search).get("q");
+  if(q){const inp=document.getElementById("searchInput");if(inp){inp.value=q;searchQuery=q;}}
+})();
 document.getElementById("searchInput").addEventListener("input",event=>{searchQuery=event.target.value;renderProducts();});
 document.getElementById("searchButton").addEventListener("click",()=>{searchQuery=document.getElementById("searchInput").value;renderProducts();});
 document.getElementById("sortProducts").addEventListener("change",renderProducts);
