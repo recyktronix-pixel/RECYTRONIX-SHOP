@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FAQ RECYKTRONIX – zamówienia, płatności, dostawa, zwroty, elektronika, subskrypcje AI i wsparcie.">
+<title>FAQ – RECYKTRONIX</title>
+
+<style>
+:root {
+    --bg: #0b1421;
+    --panel: #111f30;
+    --panel-hover: #16283b;
+    --accent: #00c8ff;
+    --accent-soft: rgba(0,200,255,.12);
+    --text: #eaf4fc;
+    --muted: #9bb0c4;
+    --border: rgba(0,200,255,.22);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: min(1050px, 92%);
+    margin: auto;
+}
+
+.topbar {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.back-link {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.hero {
+    text-align: center;
+    padding: 65px 15px 45px;
+}
+
+.hero h1 {
+    font-size: clamp(34px, 6vw, 52px);
+    margin: 0 0 12px;
+    letter-spacing: 1px;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: auto;
+}
+
+.hero-line {
+    width: 75px;
+    height: 3px;
+    background: var(--accent);
+    margin: 24px auto 0;
+    border-radius: 5px;
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.faq-section {
+    margin-bottom: 45px;
+}
+
+.section-title {
+    font-size: 21px;
+    color: var(--accent);
+    margin: 35px 0 17px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.faq-item {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    margin-bottom: 13px;
+    overflow: hidden;
+    transition: border-color .2s, background .2s;
+}
+
+.faq-item[open] {
+    border-color: var(--accent);
+    background: var(--panel-hover);
+}
+
+.faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 19px 52px 19px 20px;
+    position: relative;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.faq-item[open] summary::after {
+    content: "−";
+}
+
+.faq-item summary:hover {
+    color: var(--accent);
+}
+
+.answer {
+    padding: 0 20px 20px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.answer p {
+    margin: 10px 0;
+}
+
+.answer strong {
+    color: var(--text);
+}
+
+.language-block {
+    border-top: 1px solid var(--border);
+    margin-top: 15px;
+    padding-top: 13px;
+}
+
+.language-label {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.answer-de {
+    margin-top: 12px;
+    border-left: 2px solid var(--accent);
+    padding-left: 13px;
+}
+
+.answer-de summary {
+    cursor: pointer;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: bold;
+    list-style: none;
+}
+
+.answer-de summary::-webkit-details-marker {
+    display: none;
+}
+
+.answer-de summary::before {
+    content: "＋ ";
+}
+
+.answer-de[open] summary::before {
+    content: "− ";
+}
+
+.answer-de p {
+    color: var(--muted);
+}
+
+.contact-box {
+    background: linear-gradient(135deg, #10263b, #0d1b2b);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 30px 22px;
+    text-align: center;
+    margin: 55px 0;
+}
+
+.contact-box h2 {
+    color: var(--accent);
+    margin-top: 0;
+}
+
+.contact-box p {
+    color: var(--muted);
+}
+
+.contact-button {
+    display: inline-block;
+    background: var(--accent);
+    color: #06121d;
+    padding: 12px 23px;
+    border-radius: 7px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.contact-button:hover {
+    background: #65ddff;
+    text-decoration: none;
+}
+
+.footer {
+    text-align: center;
+    padding: 25px 15px;
+    color: #71869a;
+    font-size: 12px;
+    border-top: 1px solid var(--border);
+}
+
+.footer a {
+    margin: 0 7px;
+}
+
+@media(max-width:600px) {
+    .hero {
+        padding-top: 45px;
+    }
+
+    .faq-item summary {
+        font-size: 14px;
+        padding: 17px 45px 17px 15px;
+    }
+
+    .answer {
+        padding: 0 15px 17px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="container">
+        <a class="back-link" href="./">← Powrót do sklepu</a>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <h1>RECYKTRONIX <span>FAQ</span></h1>
+        <p>
+            Najważniejsze informacje o zakupach, płatnościach,
+            dostawie, zwrotach, produktach technologicznych
+            oraz usługach cyfrowych.
+        </p>
+        <div class="hero-line"></div>
+    </section>
+
+    <!-- ZAMÓWIENIA I PŁATNOŚCI -->
+
+    <section class="faq-section">
+        <h2 class="section-title">🛒 Zamówienia i płatności</h2>
+
+        <details class="faq-item">
+            <summary>1. Jak złożyć zamówienie w RECYKTRONIX?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    Wybierz produkt, dodaj go do koszyka i przejdź
+                    do zamówienia. Następnie podaj wymagane dane,
+                    wybierz sposób dostawy i metodę płatności.
+                    Przed zatwierdzeniem sprawdź podsumowanie
+                    zamówienia.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        Select a product, add it to your cart and
+                        proceed to checkout. Enter the required
+                        details, choose delivery and payment
+                        methods, then review your order.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Wählen Sie ein Produkt aus, legen Sie es in
+                        den Warenkorb und gehen Sie zur Kasse.
+                        Geben Sie die erforderlichen Daten ein,
+                        wählen Sie Versand- und Zahlungsart und
+                        überprüfen Sie Ihre Bestellung.
+                    </p>
+                </details>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>2. Jak działają płatności QR i dane płatności w Telegramie?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    Przy wybranych metodach płatności sklep może
+                    udostępnić kod QR lub szczegóły płatności
+                    za pośrednictwem Telegrama. Postępuj zgodnie
+                    z instrukcjami przypisanymi do konkretnego
+                    zamówienia. Przed wysłaniem środków sprawdź
+                    odbiorcę, kwotę i dane transakcji.
+                </p>
+                <p>
+                    Nie przekazuj nikomu haseł, kodów logowania,
+                    kluczy prywatnych ani fraz odzyskiwania portfela.
+                    Potwierdzenie płatności zachowaj do czasu
+                    zakończenia realizacji zamówienia.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        For selected payment methods, the Store may
+                        provide a QR code or payment details through
+                        Telegram. Follow the instructions for your
+                        order and verify the recipient, amount and
+                        transaction details before sending funds.
+                    </p>
+                    <p>
+                        Never share passwords, login codes, private
+                        keys or wallet recovery phrases.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Bei ausgewählten Zahlungsarten kann der Shop
+                        einen QR-Code oder Zahlungsinformationen
+                        über Telegram bereitstellen. Folgen Sie den
+                        Anweisungen zu Ihrer Bestellung und prüfen
+                        Sie Empfänger, Betrag und Transaktionsdaten
+                        vor der Zahlung.
+                    </p>
+                    <p>
+                        Geben Sie niemals Passwörter, Anmeldecodes,
+                        private Schlüssel oder Wiederherstellungsphrasen
+                        Ihrer Wallet weiter.
+                    </p>
+                </details>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>3. Jakie metody płatności są dostępne?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    Dostępne metody płatności mogą obejmować:
+                </p>
+                <ul>
+                    <li>PayPal,</li>
+                    <li>BLIK,</li>
+                    <li>przelew bankowy SEPA,</li>
+                    <li>USDT w sieci TRON (TRC20).</li>
+                </ul>
+                <p>
+                    Dostępność konkretnej metody jest prezentowana
+                    podczas składania zamówienia.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        Available payment methods may include PayPal,
+                        BLIK, SEPA bank transfer and USDT on the
+                        TRON network (TRC20). Availability is shown
+                        during checkout.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Zu den verfügbaren Zahlungsmethoden können
+                        PayPal, BLIK, SEPA-Banküberweisung und USDT
+                        im TRON-Netzwerk (TRC20) gehören. Die
+                        verfügbaren Optionen werden beim Bestellvorgang
+                        angezeigt.
+                    </p>
+                </details>
+            </div>
+        </details>
+    </section>
+
+    <!-- DOSTAWA -->
+
+    <section class="faq-section">
+        <h2 class="section-title">🚚 Dostawa i wysyłka</h2>
+
+        <details class="faq-item">
+            <summary>4. Ile kosztuje wysyłka z Niemiec do Polski?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    Koszt dostawy zależy od rodzaju produktu,
+                    gabarytów, wybranej metody transportu i adresu
+                    odbiorcy. Dokładna cena powinna być przedstawiona
+                    przed zatwierdzeniem zamówienia.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        Delivery costs depend on the product,
+                        package size, shipping method and destination.
+                        The applicable price should be displayed
+                        before order confirmation.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Die Versandkosten hängen vom Produkt, den
+                        Paketmaßen, der Versandart und der
+                        Lieferadresse ab. Der genaue Preis wird
+                        vor Abschluss der Bestellung angezeigt.
+                    </p>
+                </details>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>5. Jak długo trwa dostawa do Polski i innych krajów UE?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    Czas dostawy zależy od dostępności produktu,
+                    miejsca nadania, kraju odbiorcy i przewoźnika.
+                    Przewidywany termin powinien być podany przy
+                    zamówieniu lub potwierdzony przez obsługę sklepu.
+                    W przypadku opóźnienia klient powinien otrzymać
+                    informację o statusie przesyłki.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        Delivery time depends on product availability,
+                        dispatch location, destination country and
+                        carrier. The estimated delivery date should
+                        be provided during checkout or confirmed by
+                        Store support.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Die Lieferzeit hängt von der Verfügbarkeit
+                        des Produkts, dem Versandort, dem Zielland
+                        und dem Versanddienstleister ab. Der
+                        voraussichtliche Liefertermin wird beim
+                        Bestellvorgang angegeben oder vom Kundenservice
+                        bestätigt.
+                    </p>
+                </details>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>6. Jakimi firmami kurierskimi realizowana jest dostawa?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    W zależności od lokalizacji i rodzaju przesyłki
+                    mogą być dostępne usługi DPD, DHL, InPost oraz
+                    dostawa do Paczkomatów. Lista dostępnych opcji
+                    jest zależna od adresu i konkretnego zamówienia.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        Depending on the destination and parcel type,
+                        delivery may be available through DPD, DHL,
+                        InPost or parcel lockers. Available options
+                        depend on the delivery address and order.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Je nach Lieferadresse und Sendungsart können
+                        DPD, DHL, InPost oder Paketstationen verfügbar
+                        sein. Die konkreten Versandoptionen hängen
+                        von der jeweiligen Bestellung ab.
+                    </p>
+                </details>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>7. Czy otrzymam numer śledzenia przesyłki?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    Jeżeli przewoźnik udostępnia śledzenie przesyłki,
+                    numer lub link do monitorowania zostanie
+                    przekazany klientowi po nadaniu paczki.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        If tracking is available, the tracking
+                        number or link will be provided after
+                        the parcel has been dispatched.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Sofern eine Sendungsverfolgung verfügbar ist,
+                        erhalten Sie nach dem Versand eine
+                        Sendungsnummer oder einen Tracking-Link.
+                    </p>
+                </details>
+            </div>
+        </details>
+    </section>
+
+    <!-- PRODUKTY -->
+
+    <section class="faq-section">
+        <h2 class="section-title">📱 Produkty i jakość</h2>
+
+        <details class="faq-item">
+            <summary>8. Czy sprzedawane produkty są nowe czy używane?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    Status produktu powinien być wyraźnie wskazany
+                    na jego karcie. Oferta może obejmować produkty
+                    nowe, używane lub odnowione. Przed zakupem
+                    sprawdź opis, stan techniczny i ewentualne
+                    ślady użytkowania.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        The condition of each product should be
+                        clearly stated on its product page.
+                        Listings may include new, used or refurbished
+                        items. Check the description and condition
+                        before purchasing.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Der Zustand jedes Produkts sollte auf der
+                        jeweiligen Produktseite eindeutig angegeben
+                        sein. Das Angebot kann neue, gebrauchte oder
+                        generalüberholte Artikel umfassen. Bitte
+                        prüfen Sie die Beschreibung vor dem Kauf.
+                    </p>
+                </details>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>9. W jaki sposób sprawdzany jest stan techniczny produktów?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    Zakres kontroli powinien być opisany przy
+                    konkretnym produkcie. W zależności od kategorii
+                    może obejmować kontrolę uruchamiania, podstawowych
+                    funkcji, ekranu, portów, akcesoriów i widocznego
+                    stanu obudowy. Szczegóły kontroli należy
+                    potwierdzić w opisie oferty.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        The inspection scope should be stated for
+                        each product. Depending on the category,
+                        checks may include startup, basic functions,
+                        display, ports, accessories and visible
+                        external condition.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Der Umfang der Prüfung sollte für jedes
+                        Produkt angegeben werden. Je nach Kategorie
+                        kann die Prüfung das Einschalten, grundlegende
+                        Funktionen, Display, Anschlüsse, Zubehör und
+                        den sichtbaren Gehäusezustand umfassen.
+                    </p>
+                </details>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>10. Czy produkty posiadają gwarancję?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    Informacja o ewentualnej gwarancji handlowej
+                    znajduje się w opisie produktu lub dokumentacji.
+                    Niezależnie od gwarancji klientowi przysługują
+                    prawa wynikające z obowiązujących przepisów
+                    dotyczących zgodności towaru z umową.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        Any commercial warranty is described on
+                        the product page or in the accompanying
+                        documentation. Statutory consumer rights
+                        remain unaffected.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Angaben zu einer möglichen freiwilligen
+                        Garantie finden Sie in der Produktbeschreibung
+                        oder in den Unterlagen. Die gesetzlichen
+                        Verbraucherrechte bleiben unberührt.
+                    </p>
+                </details>
+            </div>
+        </details>
+    </section>
+
+    <!-- ZWROTY I REKLAMACJE -->
+
+    <section class="faq-section">
+        <h2 class="section-title">↩️ Zwroty, reklamacje i dane osobowe</h2>
+
+        <details class="faq-item">
+            <summary>11. Czy mogę zwrócić zakupiony produkt w ciągu 14 dni?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    Konsument zawierający umowę na odległość ma
+                    co do zasady 14 dni na odstąpienie od umowy
+                    bez podawania przyczyny. Termin i sposób jego
+                    obliczania zależą od rodzaju umowy. Obowiązują
+                    również ustawowe wyjątki. Szczegóły znajdują
+                    się w Polityce zwrotów i reklamacji.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        Consumers generally have 14 days to withdraw
+                        from a distance contract without giving
+                        a reason. The applicable rules and statutory
+                        exceptions depend on the type of contract.
+                        See the Returns and Complaints Policy.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Verbraucher haben bei Fernabsatzverträgen
+                        grundsätzlich 14 Tage Zeit, den Vertrag
+                        ohne Angabe von Gründen zu widerrufen.
+                        Es gelten gesetzliche Ausnahmen. Einzelheiten
+                        finden Sie in der Rückgabe- und
+                        Reklamationsrichtlinie.
+                    </p>
+                </details>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>12. Jak zgłosić reklamację?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    Skontaktuj się ze sklepem, podając numer
+                    zamówienia, nazwę produktu i opis problemu.
+                    W miarę możliwości dołącz zdjęcia lub inne
+                    informacje pomagające ocenić zgłoszenie.
+                    Reklamacje są rozpatrywane zgodnie z właściwymi
+                    przepisami prawa.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        Contact the Store with your order number,
+                        product name and a description of the issue.
+                        Where possible, include photos or other
+                        relevant information. Complaints are handled
+                        in accordance with applicable law.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Kontaktieren Sie den Shop unter Angabe Ihrer
+                        Bestellnummer, des Produktnamens und einer
+                        Beschreibung des Problems. Fügen Sie nach
+                        Möglichkeit Fotos oder weitere Informationen
+                        bei. Reklamationen werden gemäß dem
+                        anwendbaren Recht bearbeitet.
+                    </p>
+                </details>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>13. Jak RECYKTRONIX chroni moje dane osobowe?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    Dane osobowe są przetwarzane w celach związanych
+                    z obsługą zamówień, płatności, dostawy, reklamacji
+                    i kontaktem z klientem, zgodnie z właściwymi
+                    przepisami o ochronie danych, w tym RODO.
+                    Szczegóły określa Polityka prywatności.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        Personal data is processed for order
+                        management, payments, delivery, complaints
+                        and customer communication in accordance
+                        with applicable data protection laws,
+                        including the GDPR. See the Privacy Policy.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Personenbezogene Daten werden zur Abwicklung
+                        von Bestellungen, Zahlungen, Lieferungen,
+                        Reklamationen und zur Kundenkommunikation
+                        gemäß den geltenden Datenschutzvorschriften,
+                        einschließlich der DSGVO, verarbeitet.
+                        Einzelheiten finden Sie in der
+                        Datenschutzerklärung.
+                    </p>
+                </details>
+            </div>
+        </details>
+    </section>
+
+    <!-- USŁUGI CYFROWE -->
+
+    <section class="faq-section">
+        <h2 class="section-title">🤖 AI, APK i boty Telegram</h2>
+
+        <details class="faq-item">
+            <summary>14. Jak działają subskrypcje AI i botów Telegram?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    Wybrane narzędzia AI i boty Telegram mogą być
+                    udostępniane w modelu subskrypcyjnym.
+                    Przed zakupem sprawdź opis usługi, zakres
+                    funkcji, okres subskrypcji, cenę, zasady
+                    odnowienia oraz sposób rezygnacji.
+                </p>
+                <p>
+                    Dostęp do usługi może wymagać konta Telegram
+                    lub spełnienia dodatkowych wymagań technicznych
+                    wskazanych w opisie konkretnej subskrypcji.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        Selected AI tools and Telegram bots may
+                        be offered through subscriptions. Before
+                        purchasing, review the service description,
+                        features, subscription period, price,
+                        renewal terms and cancellation procedure.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Ausgewählte KI-Tools und Telegram-Bots können
+                        im Abonnement angeboten werden. Prüfen Sie
+                        vor dem Kauf die Leistungsbeschreibung,
+                        Funktionen, Laufzeit, Preis,
+                        Verlängerungsbedingungen und
+                        Kündigungsmöglichkeiten.
+                    </p>
+                </details>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>15. Czym jest galeria APK i botów Telegram?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    Galeria APK i botów Telegram to katalog
+                    prezentujący dostępne aplikacje, narzędzia
+                    i rozwiązania cyfrowe. Każda pozycja powinna
+                    zawierać opis funkcji, wymagania techniczne
+                    i warunki dostępu.
+                </p>
+                <p>
+                    Przed instalacją aplikacji sprawdź jej źródło,
+                    wymagane uprawnienia i zgodność z urządzeniem.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        The APK and Telegram bot gallery is a
+                        catalogue of available applications,
+                        tools and digital services. Each listing
+                        should describe its features, technical
+                        requirements and access conditions.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Die APK- und Telegram-Bot-Galerie ist ein
+                        Katalog verfügbarer Anwendungen, Tools und
+                        digitaler Dienste. Jeder Eintrag sollte
+                        Funktionen, technische Voraussetzungen
+                        und Zugangsbedingungen beschreiben.
+                    </p>
+                </details>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>16. Czy mogę dodać własne ogłoszenie na stronie?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    Jeżeli funkcja ogłoszeń jest aktywna, użytkownik
+                    może przesłać propozycję publikacji zgodnie
+                    z instrukcjami na stronie. Ogłoszenie może
+                    wymagać weryfikacji i akceptacji administratora
+                    przed opublikowaniem.
+                </p>
+                <p>
+                    Nie należy przesyłać treści niezgodnych z prawem,
+                    wprowadzających w błąd ani naruszających prawa
+                    innych osób.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        If the listing feature is enabled, users
+                        may submit content according to the
+                        instructions on the website. Listings may
+                        require administrator review and approval
+                        before publication.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Sofern die Anzeigenfunktion aktiviert ist,
+                        können Nutzer Beiträge gemäß den Anweisungen
+                        auf der Website einreichen. Vor der
+                        Veröffentlichung kann eine Prüfung und
+                        Freigabe durch den Administrator erforderlich
+                        sein.
+                    </p>
+                </details>
+            </div>
+        </details>
+    </section>
+
+    <!-- KONTAKT -->
+
+    <section class="faq-section">
+        <h2 class="section-title">💬 Kontakt i wsparcie</h2>
+
+        <details class="faq-item">
+            <summary>17. Jak skontaktować się z obsługą RECYKTRONIX?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    W sprawach zamówień, płatności, dostaw,
+                    reklamacji i usług cyfrowych korzystaj z danych
+                    kontaktowych opublikowanych w sklepie.
+                    W wiadomości podaj numer zamówienia, jeśli
+                    sprawa dotyczy zakupu.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        For orders, payments, deliveries, complaints
+                        and digital services, use the contact details
+                        published in the Store. Include your order
+                        number when contacting support about
+                        a purchase.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        Bei Fragen zu Bestellungen, Zahlungen,
+                        Lieferungen, Reklamationen und digitalen
+                        Diensten verwenden Sie bitte die im Shop
+                        veröffentlichten Kontaktdaten. Geben Sie
+                        bei Anfragen zu einem Kauf Ihre Bestellnummer
+                        an.
+                    </p>
+                </details>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>18. Czym jest wsparcie AI Shadow?</summary>
+            <div class="answer">
+                <span class="language-label">POLSKI</span>
+                <p>
+                    AI Shadow to nazwa asystenta wsparcia
+                    RECYKTRONIX. Może pomagać w uzyskaniu informacji
+                    o sklepie, produktach i dostępnych usługach.
+                    W sprawach wymagających decyzji administratora,
+                    reklamacji lub rozliczeń należy skorzystać
+                    z oficjalnego kontaktu ze sklepem.
+                </p>
+                <div class="language-block">
+                    <span class="language-label">ENGLISH</span>
+                    <p>
+                        AI Shadow is the RECYKTRONIX support
+                        assistant. It may help users find
+                        information about the Store, products
+                        and available services. Matters requiring
+                        an administrator's decision, complaints
+                        or payment settlement should be directed
+                        to official Store support.
+                    </p>
+                </div>
+                <details class="answer-de">
+                    <summary>DEUTSCH</summary>
+                    <p>
+                        AI Shadow ist der Support-Assistent von
+                        RECYKTRONIX. Er kann bei Fragen zum Shop,
+                        zu Produkten und verfügbaren Diensten
+                        helfen. Angelegenheiten, die eine
+                        Entscheidung des Administrators,
+                        eine Reklamationsbearbeitung oder eine
+                        Zahlungsabrechnung erfordern, sind an
+                        den offiziellen Kundenservice zu richten.
+                    </p>
+                </details>
+            </div>
+        </details>
+    </section>
+
+    <section class="contact-box">
+        <h2>Nie znalazłeś odpowiedzi?</h2>
+        <p>
+            Skontaktuj się z RECYKTRONIX.
+            Wybierz oficjalny kanał kontaktowy dostępny w sklepie.
+        </p>
+        <a class="contact-button" href="./">Przejdź do sklepu</a>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p>© <span id="year"></span> RECYKTRONIX. Wszelkie prawa zastrzeżone.</p>
+    <p>
+        <a href="./">Sklep</a>
+        <a href="legal/privacy-policy.html">Polityka prywatności</a>
+        <a href="legal/terms-and-conditions.html">Regulamin</a>
+        <a href="legal/returns-and-complaints.html">Zwroty i reklamacje</a>
+    </p>
+    <p>FAQ – Polski / English / Deutsch</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+// Accordion: po otwarciu pytania zamknij pozostałe
+document.querySelectorAll(".faq-item").forEach(item => {
+    item.addEventListener("toggle", () => {
+        if (item.open) {
+            document.querySelectorAll(".faq-item").forEach(other => {
+                if (other !== item) {
+                    other.open = false;
+                }
+            });
+        }
+    });
+});
+</script>
+
+</body>
+</html>
